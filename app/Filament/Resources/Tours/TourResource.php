@@ -13,14 +13,21 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class TourResource extends Resource
 {
     protected static ?string $model = Tour::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'gmdi-tour';
+
+    protected static ?string $label = 'Tour Category';
 
     protected static ?string $recordTitleAttribute = 'Tour';
+
+    protected static string | UnitEnum | null $navigationGroup = 'Categories';
+
+    protected static ?int $navigationSort = 1;
 
     public static function form(Schema $schema): Schema
     {
@@ -43,7 +50,6 @@ class TourResource extends Resource
     {
         return [
             'index' => ListTours::route('/'),
-            'create' => CreateTour::route('/create'),
         ];
     }
 }

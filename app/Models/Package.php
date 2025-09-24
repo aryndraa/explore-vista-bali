@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Package extends Model
@@ -20,9 +21,14 @@ class Package extends Model
         'notes'
     ];
 
-    public function tour()
+    public function tour(): BelongsTo
     {
         return $this->belongsTo(Tour::class);
+    }
+
+    public function places(): HasMany
+    {
+        return $this->hasMany(PackagePlace::class);
     }
 
     public function features (): HasMany
