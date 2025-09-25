@@ -6,6 +6,7 @@ use App\Filament\Resources\Packages\Pages\CreatePackage;
 use App\Filament\Resources\Packages\Pages\EditPackage;
 use App\Filament\Resources\Packages\Pages\ListPackages;
 use App\Filament\Resources\Packages\Pages\ViewPackage;
+use App\Filament\Resources\Packages\RelationManagers\PlacesRelationManager;
 use App\Filament\Resources\Packages\Schemas\PackageForm;
 use App\Filament\Resources\Packages\Tables\PackagesTable;
 use App\Models\Package;
@@ -36,7 +37,7 @@ class PackageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PlacesRelationManager::class
         ];
     }
 
@@ -44,8 +45,8 @@ class PackageResource extends Resource
     {
         return [
             'index'  => ListPackages::route('/'),
-            'view'   => ViewPackage::route('/{record}'),
             'create' => CreatePackage::route('/create'),
+            'view'   => ViewPackage::route('/{record}'),
             'edit'   => EditPackage::route('/{record}/edit'),
         ];
     }

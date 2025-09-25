@@ -12,6 +12,9 @@ class ViewPackage extends ViewRecord
 {
     protected static string $resource = PackageResource::class;
 
+
+
+
     protected function getHeaderActions(): array
     {
         return [

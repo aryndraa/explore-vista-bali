@@ -16,12 +16,12 @@ class PackagePlace extends Model
         'place_id'
     ];
 
-    public function package(): BelongsTo 
+    public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
     }
 
-    public function places(): BelongsTo
+    public function place(): BelongsTo
     {
         return $this->belongsTo(Place::class);
     }
