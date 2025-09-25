@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Package extends Model
+class Package extends Model implements HasMedia
 {
     /** @use HasFactory<\Database\Factories\PackageFactory> */
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
         'tour_id',
@@ -18,7 +20,8 @@ class Package extends Model
         'description',
         'start_time',
         'price',
-        'notes'
+        'notes',
+        'is_active'
     ];
 
     public function tour(): BelongsTo

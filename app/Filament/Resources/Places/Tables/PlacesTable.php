@@ -20,6 +20,7 @@ class PlacesTable
                     ->searchable(),
 
                 TextColumn::make('packages_count')
+                    ->label('Total Packages')
                     ->counts('packages')
                     ->sortable(),
             ])
