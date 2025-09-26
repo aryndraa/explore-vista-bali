@@ -45,6 +45,8 @@ class PackageForm
                                             ->columnSpanFull()
                                             ->autosize(),
                                         TimePicker::make('start_time')
+                                            ->seconds(false)
+                                            ->suffix(' WITA')
                                             ->required(),
                                         TextInput::make('price')
                                             ->required()
@@ -78,7 +80,8 @@ class PackageForm
                                             ->label('Total Bookings')
                                             ->disabled()
                                             ->placeholder(fn ($record): mixed => $record?->bookings()->count() ?? 0)
-                                            ->hiddenOn(['create', 'edit']),
+                                            ->hiddenOn(['create', 'edit'])
+                                            ->suffix(' Bookings'),
                                     ]),
                             ])->columns(3),
 

@@ -29,10 +29,12 @@ class DestinationsRelationManager extends RelationManager
             ->components([
                 TextInput::make('name')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(255),
 
                 Select::make('place_id')
                     ->label('Location')
+                    ->columnSpanFull()
                     ->relationship('place', 'name')
                     ->searchable()
                     ->preload()

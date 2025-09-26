@@ -36,10 +36,12 @@ class VehiclesTable
                     ->badge(),
                 TextColumn::make('person')
                     ->numeric()
+                    ->suffix(' Person')
                     ->sortable(),
                 TextColumn::make('price_per_day')
                     ->numeric()
                     ->prefix('$')
+                    ->suffix(' / Day')
                     ->sortable(),
             ])
             ->filters([

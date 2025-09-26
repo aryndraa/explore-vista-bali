@@ -26,11 +26,13 @@ class ActivitiesRelationManager extends RelationManager
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
+                    ->required()
+                ->maxLength(255)->columnSpanFull(),
                 TextInput::make('additional_price')
                     ->required()
                     ->numeric(),
                 TimePicker::make('duration')
+                    ->seconds('false')
                     ->required(),
             ]);
     }
@@ -47,7 +49,8 @@ class ActivitiesRelationManager extends RelationManager
                     ->prefix('$')
                     ->sortable(),
                 TextColumn::make('duration')
-                    ->time()
+                    ->time("H:i")
+                    ->suffix(' Hours')
                     ->sortable(),
             ])
             ->filters([
