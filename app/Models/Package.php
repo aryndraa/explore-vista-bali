@@ -29,9 +29,9 @@ class Package extends Model implements HasMedia
         return $this->belongsTo(Tour::class);
     }
 
-    public function places(): HasMany
+    public function destinations(): HasMany
     {
-        return $this->hasMany(PackagePlace::class);
+        return $this->hasMany(PackageDestination::class);
     }
 
     public function features (): HasMany

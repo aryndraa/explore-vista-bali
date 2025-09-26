@@ -16,8 +16,8 @@ class Place extends Model
         'name'
     ];
 
-    public function packages(): HasMany
+    public function packageDestination(): HasMany
     {
-        return $this->hasMany(PackagePlace::class);
+        return $this->hasMany(PackageDestination::class);
     }
 }

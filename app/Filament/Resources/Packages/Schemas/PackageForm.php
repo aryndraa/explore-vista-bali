@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\Packages\Schemas;
 
+use App\Models\Tour;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
@@ -13,13 +15,16 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Schema;
+use Filament\Tables\Columns\TextColumn;
+use Icetalker\FilamentTableRepeater\Forms\Components\TableRepeater;
+use Illuminate\Support\Str;
 
 class PackageForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
-            ->components([
+            ->components(components: [
                 Tabs::make('PackageTabs')
                     ->tabs([
 
@@ -31,7 +36,8 @@ class PackageForm
                                     ->schema([
                                         Select::make('tour_id')
                                             ->relationship('tour', 'name')
-                                            ->required(),
+                                            ->required()
+                                            ->label('Tour Category'),
                                         TextInput::make('name')
                                             ->required(),
                                         Textarea::make('description')
@@ -72,7 +78,7 @@ class PackageForm
                                             ->label('Total Bookings')
                                             ->disabled()
                                             ->placeholder(fn ($record): mixed => $record?->bookings()->count() ?? 0)
-                                            ->hiddenOn('create'),
+                                            ->hiddenOn(['create', 'edit']),
                                     ]),
                             ])->columns(3),
 
@@ -87,7 +93,9 @@ class PackageForm
                                             ->multiple()
                                             ->deletable()
                                             ->imageCropAspectRatio('16:9')
-                                            ->panelLayout('grid'),
+                                            ->panelLayout('grid')
+                                            ->required()
+                                            ->minFiles(3),
                                     ]),
                             ]),
                     ])

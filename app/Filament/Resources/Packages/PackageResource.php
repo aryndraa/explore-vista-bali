@@ -6,6 +6,9 @@ use App\Filament\Resources\Packages\Pages\CreatePackage;
 use App\Filament\Resources\Packages\Pages\EditPackage;
 use App\Filament\Resources\Packages\Pages\ListPackages;
 use App\Filament\Resources\Packages\Pages\ViewPackage;
+use App\Filament\Resources\Packages\RelationManagers\ActivitiesRelationManager;
+use App\Filament\Resources\Packages\RelationManagers\DestinationsRelationManager;
+use App\Filament\Resources\Packages\RelationManagers\FeaturesRelationManager;
 use App\Filament\Resources\Packages\RelationManagers\PlacesRelationManager;
 use App\Filament\Resources\Packages\Schemas\PackageForm;
 use App\Filament\Resources\Packages\Tables\PackagesTable;
@@ -37,7 +40,9 @@ class PackageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            PlacesRelationManager::class
+            DestinationsRelationManager::class,
+            ActivitiesRelationManager::class,
+            FeaturesRelationManager::class,
         ];
     }
 

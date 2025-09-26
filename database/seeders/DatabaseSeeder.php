@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PackageDestination;
 use App\Models\PackageFeature;
 use App\Models\User;
 use App\Models\Vehicle;
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
             PlaceSeeder::class,
             TourSeeder::class,
             PackageSeeder::class,
-            PackagePlaceSeeder::class,
+            PackageDestinationSeeder::class,
             PackageFeatureSeeder::class,
             PackageActivitySeeder::class,
             VehicleSeeder::class,
