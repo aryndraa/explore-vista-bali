@@ -22,7 +22,7 @@
 
     @include('components.partials.header', ['variant' => $variant ?? 'light'])
 
-    <main class="min-h-screen bg-gray-600 pt-16">
+    <main class="min-h-screen pt-16">
         @yield('content')
     </main>
 
