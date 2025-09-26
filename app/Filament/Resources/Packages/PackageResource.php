@@ -18,12 +18,15 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class PackageResource extends Resource
 {
     protected static ?string $model = Package::class;
 
     protected static string|BackedEnum|null $navigationIcon = 'gmdi-beach-access-r';
+
+    protected static string | UnitEnum | null $navigationGroup = 'Resources';
 
     protected static ?string $recordTitleAttribute = 'Package';
 
