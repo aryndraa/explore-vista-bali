@@ -28,6 +28,8 @@ class PackageResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Resources';
 
+    protected static ?string $label = 'Tour Packages';
+
     protected static ?string $recordTitleAttribute = 'Package';
 
     public static function form(Schema $schema): Schema

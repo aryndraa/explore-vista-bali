@@ -16,6 +16,7 @@ class Vehicle extends Model implements HasMedia
         'name',
         'type',
         'person',
-        'price_per_day'
+        'price_per_day',
+        'is_active',
     ];
 }

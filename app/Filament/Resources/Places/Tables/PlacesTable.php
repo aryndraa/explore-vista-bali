@@ -19,9 +19,10 @@ class PlacesTable
                 TextColumn::make('name')
                     ->searchable(),
 
-                TextColumn::make('packages_count')
+                TextColumn::make('package_destination_count')
                     ->label('Total Packages')
-                    ->counts('packages')
+                    ->suffix(' Packages')
+                    ->counts('packageDestination')
                     ->sortable(),
             ])
             ->filters([

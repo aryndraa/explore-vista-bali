@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Vehicles\Schemas;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class VehicleForm
@@ -13,6 +14,9 @@ class VehicleForm
     {
         return $schema
             ->components([
+                Toggle::make('is_active')
+                    ->required()
+                    ->columnSpanFull(),
 
                 TextInput::make('name')
                     ->required(),
@@ -36,6 +40,8 @@ class VehicleForm
                     ->imageCropAspectRatio('16:9')
                     ->columnSpanFull()
                     ->required(),
+
+
             ]);
     }
 }

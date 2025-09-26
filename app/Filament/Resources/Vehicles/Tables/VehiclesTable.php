@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -43,6 +44,8 @@ class VehiclesTable
                     ->prefix('$')
                     ->suffix(' / Day')
                     ->sortable(),
+                ToggleColumn::make('is_active')
+                    ->label('Is Active')
             ])
             ->filters([
                 SelectFilter::make('type')

@@ -23,7 +23,7 @@ class PlaceResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Place';
 
-    protected static ?string $label = 'Tour Places';
+    protected static ?string $label = 'Tour Locations';
 
     protected static string | UnitEnum | null $navigationGroup = 'Categories';
 

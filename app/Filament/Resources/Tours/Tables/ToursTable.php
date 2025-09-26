@@ -21,6 +21,7 @@ class ToursTable
                 TextColumn::make('packages_count')
                     ->counts('packages')
                     ->sortable()
+                    ->suffix(' Packages')
                     ->label('Total Packages')
             ])
             ->filters([
