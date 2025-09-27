@@ -23,7 +23,7 @@
                     Get to know <span class="font-playfair italic">Bali</span> with Explore Vista Bali!
                 </h1>
 
-                <x-wave-button firstTextClasses="text-cst-yellow-400 font-inter font-medium"
+                <x-wave-button href="#" firstTextClasses="text-cst-yellow-400 font-inter font-medium"
                     secondTextClasses="text-black font-playfair font-bold italic"
                     class="text-xl w-fit py-1.5 px-5 bg-transparent border-2 border-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
                     Lets Explore!
@@ -104,7 +104,7 @@
                     <img class="absolute inset-0 w-full h-full object-cover -z-10"
                         src="https://thepointsguy.global.ssl.fastly.net/us/originals/2020/05/GettyImages-1145042281-scaled.jpg"
                         alt="">
-                    <div class="pt-28 pb-16">
+                    <div class="pt-32 pb-20">
                         <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">90+</span>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                 <div
                     class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
                     <img class="absolute inset-0 w-full h-full object-cover -z-10" src="" alt="">
-                    <div class="pt-28 pb-16">
+                    <div class="pt-32 pb-20">
                         <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">20+</span>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                 <div
                     class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
                     <img class="absolute inset-0 w-full h-full object-cover -z-10" src="" alt="">
-                    <div class="pt-28 pb-16">
+                    <div class="pt-32 pb-20">
                         <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">100+</span>
                     </div>
                 </div>
@@ -160,11 +160,11 @@
     </section>
 
     {{-- ? ABOUT SECTION --}}
-    <section class="flex flex-col md:flex-row gap-14 lg:gap-24 sm:gap-20 px-8 py-10 relative overflow-x-hidden">
+    <section class="flex flex-col lg:flex-row gap-10 lg:gap-24 px-8 py-10 relative overflow-x-hidden bg-cst-green-200/40">
         <div class="">
             <div class="flex flex-col mb-4">
                 <p class="font-inter text-gray-600 text-xl">Tours, places, clients</p>
-                <h2 class="font-roboto text-5xl font-bold whitespace-nowrap">
+                <h2 class="font-roboto text-4xl font-bold whitespace-nowrap">
                     Our <i class="font-playfair">Experience</i>
                 </h2>
             </div>
@@ -181,16 +181,93 @@
                 <span class="text-md font-inter font-medium transition-all group-hover:me-6"> More about us </span>
             </a>
         </div>
-        <div class="flex flex-col lg:flex-row gap-5 lg:gap-10">
-            <p class="font-inter text-gray-600 text-xl text-justify">
+        <div class="flex flex-col font-inter text-gray-600 text-xl text-justify lg:flex-row gap-5 lg:gap-10">
+            <p class="">
                 At Explore Vista Bali, we're passionate about helping
                 travellers discover the island with ease. From shuttle services to curated tours, we make every journey
                 smooth, safe, and unforgettable.
             </p>
-            <p class="font-inter text-gray-600 text-xl text-justify">
+            <p class="">
                 More than just getting you from place to place, we're here to share Bali's beauty and culture with genuine
                 hospitality. Our mission is simple, its to create travel experiences that leave lasting memories.
             </p>
+        </div>
+    </section>
+
+    {{-- ? SERVICES SECTION --}}
+    <section class="flex flex-col lg:flex-row gap-12 lg:pr-12 relative overflow-x-hidden bg-cst-green-200/40">
+        <div class="relative flex-7 min-h-80 overflow-hidden">
+            <img class="absolute h-full w-full object-cover object-center"
+                src="https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+        </div>
+
+        <div class="flex-5 pt-0 lg:pt-8 pb-12 px-8 lg:px-0">
+            <div class="flex flex-col mb-12">
+                <p class="font-inter text-gray-600 text-xl">Available services</p>
+                <h2 class="font-roboto text-5xl font-bold whitespace-nowrap">
+                    What <i class="font-playfair">can we do?</i>
+                </h2>
+            </div>
+
+            <div
+                class="space-y-8 mb-8 h-fit [&>div]:flex [&>div]:gap-4 [&_div]:pb-4 [&>div:not(:last-child)]:border-b [&>div:not(:last-child)]:border-gray-500">
+                <div class="">
+                    <div class="!p-2 h-fit aspect-square rounded-full bg-cst-green-400">
+                        <svg class="size-5 text-cst-yellow-400" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3 16V17C3 17.2833 2.90417 17.5208 2.7125 17.7125C2.52083 17.9042 2.28333 18 2 18H1C0.716667 18 0.479167 17.9042 0.2875 17.7125C0.0958333 17.5208 0 17.2833 0 17V9L2.1 3C2.2 2.7 2.37917 2.45833 2.6375 2.275C2.89583 2.09167 3.18333 2 3.5 2H6V0H12V2H14.5C14.8167 2 15.1042 2.09167 15.3625 2.275C15.6208 2.45833 15.8 2.7 15.9 3L18 9V17C18 17.2833 17.9042 17.5208 17.7125 17.7125C17.5208 17.9042 17.2833 18 17 18H16C15.7167 18 15.4792 17.9042 15.2875 17.7125C15.0958 17.5208 15 17.2833 15 17V16H3ZM2.8 7H15.2L14.15 4H3.85L2.8 7ZM4.5 13C4.91667 13 5.27083 12.8542 5.5625 12.5625C5.85417 12.2708 6 11.9167 6 11.5C6 11.0833 5.85417 10.7292 5.5625 10.4375C5.27083 10.1458 4.91667 10 4.5 10C4.08333 10 3.72917 10.1458 3.4375 10.4375C3.14583 10.7292 3 11.0833 3 11.5C3 11.9167 3.14583 12.2708 3.4375 12.5625C3.72917 12.8542 4.08333 13 4.5 13ZM13.5 13C13.9167 13 14.2708 12.8542 14.5625 12.5625C14.8542 12.2708 15 11.9167 15 11.5C15 11.0833 14.8542 10.7292 14.5625 10.4375C14.2708 10.1458 13.9167 10 13.5 10C13.0833 10 12.7292 10.1458 12.4375 10.4375C12.1458 10.7292 12 11.0833 12 11.5C12 11.9167 12.1458 12.2708 12.4375 12.5625C12.7292 12.8542 13.0833 13 13.5 13ZM2 14H16V9H2V14Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="font-inter">
+                        <h4 class="text-2xl font-semibold leading-tight mt-1 mb-4">Shuttle Service</h4>
+                        <p class="text-xl text-gray-600 max-w-2xl">
+                            Reliable and comfortable shuttle service from the airport,
+                            harbor, or point-to-point transfers anywhere in Bali.</p>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="!p-2 w-fit h-fit aspect-square rounded-full bg-cst-green-400">
+                        <svg class="size-5 text-cst-yellow-400" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 23.3L8.65 20H4V15.35L0.699997 12L4 8.65V4H8.65L12 0.699997L15.35 4H20V8.65L23.3 12L20 15.35V20H15.35L12 23.3ZM12 17C13.3833 17 14.5625 16.5125 15.5375 15.5375C16.5125 14.5625 17 13.3833 17 12C17 10.6167 16.5125 9.4375 15.5375 8.4625C14.5625 7.4875 13.3833 7 12 7V17ZM12 20.5L14.5 18H18V14.5L20.5 12L18 9.5V6H14.5L12 3.5L9.5 6H6V9.5L3.5 12L6 14.5V18H9.5L12 20.5Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="font-inter">
+                        <h4 class="text-2xl font-semibold leading-tight mt-1 mb-4">Tours & Activities</h4>
+                        <p class="text-xl text-gray-600 max-w-2xl">A wide range of exciting activities, from cultural
+                            experiences and culinary delights to outdoor adventures.</p>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="!p-2 w-fit h-fit aspect-square rounded-full bg-cst-green-400">
+                        <svg class="size-5 text-cst-yellow-400" viewBox="0 0 22 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.5 13.4167C4.73612 13.4167 4.08681 13.1493 3.55209 12.6146C3.01737 12.0799 2.75001 11.4306 2.75001 10.6667H0.916672V2.41667C0.916672 1.9125 1.09619 1.4809 1.45521 1.12187C1.81424 0.762846 2.24584 0.583332 2.75001 0.583332H15.5833L21.0833 6.08333V10.6667H19.25C19.25 11.4306 18.9826 12.0799 18.4479 12.6146C17.9132 13.1493 17.2639 13.4167 16.5 13.4167C15.7361 13.4167 15.0868 13.1493 14.5521 12.6146C14.0174 12.0799 13.75 11.4306 13.75 10.6667H8.25C8.25 11.4306 7.98264 12.0799 7.44792 12.6146C6.9132 13.1493 6.26389 13.4167 5.5 13.4167ZM13.75 5.16667H17.4167L14.6667 2.41667H13.75V5.16667ZM8.25 5.16667H11.9167V2.41667H8.25V5.16667ZM2.75001 5.16667H6.41667V2.41667H2.75001V5.16667ZM5.5 11.8125C5.82084 11.8125 6.09202 11.7017 6.31355 11.4802C6.53507 11.2587 6.64584 10.9875 6.64584 10.6667C6.64584 10.3458 6.53507 10.0747 6.31355 9.85312C6.09202 9.6316 5.82084 9.52083 5.5 9.52083C5.17917 9.52083 4.90799 9.6316 4.68646 9.85312C4.46494 10.0747 4.35417 10.3458 4.35417 10.6667C4.35417 10.9875 4.46494 11.2587 4.68646 11.4802C4.90799 11.7017 5.17917 11.8125 5.5 11.8125ZM16.5 11.8125C16.8208 11.8125 17.092 11.7017 17.3135 11.4802C17.5351 11.2587 17.6458 10.9875 17.6458 10.6667C17.6458 10.3458 17.5351 10.0747 17.3135 9.85312C17.092 9.6316 16.8208 9.52083 16.5 9.52083C16.1792 9.52083 15.908 9.6316 15.6865 9.85312C15.4649 10.0747 15.3542 10.3458 15.3542 10.6667C15.3542 10.9875 15.4649 11.2587 15.6865 11.4802C15.908 11.7017 16.1792 11.8125 16.5 11.8125ZM2.75001 8.83333H3.48334C3.74306 8.55833 4.04098 8.3368 4.37709 8.16875C4.7132 8.00069 5.0875 7.91667 5.5 7.91667C5.9125 7.91667 6.28681 8.00069 6.62292 8.16875C6.95903 8.3368 7.25695 8.55833 7.51667 8.83333H14.4833C14.7431 8.55833 15.041 8.3368 15.3771 8.16875C15.7132 8.00069 16.0875 7.91667 16.5 7.91667C16.9125 7.91667 17.2868 8.00069 17.6229 8.16875C17.959 8.3368 18.2569 8.55833 18.5167 8.83333H19.25V7H2.75001V8.83333Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="font-inter">
+                        <h4 class="text-2xl font-semibold leading-tight mt-1 mb-4">Vehicle Rental</h4>
+                        <p class="text-xl text-gray-600 max-w-2xl">Discover Bali with our reliable vehicle rentals,
+                            offering comfort, safety, and flexibility for your journey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
+                secondTextClasses="text-black font-playfair font-bold italic"
+                class="text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
+                Book Tours!
+            </x-wave-button>
+
         </div>
     </section>
 
