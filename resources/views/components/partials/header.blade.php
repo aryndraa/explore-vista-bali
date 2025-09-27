@@ -17,7 +17,7 @@
     :class="scrolled ? 'bg-white shadow-lg text-black' :
         '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
-    <div class="mx-auto max-w-screen-2xl px-4 md:px-6">
+    <div class="mx-auto px-4 md:px-6">
         <div class="flex items-center justify-between h-16">
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="text-2xl font-bold font-roboto text-inherit">

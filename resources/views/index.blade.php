@@ -5,9 +5,9 @@
 
     {{-- ? HERO SECTION --}}
     <section class="relative min-h-screen flex items-end px-8 pb-14 text-white">
-        <div class="absolute inset-0 bg-black -z-20">
-            <video autplay loop class="opacity-50 h-full w-full object-cover"
-                src="https://videocdn.cdnpk.net/videos/872ad75a-a3b7-44b7-a293-6092f02fc015/horizontal/previews/clear/large.mp4?token=exp=1758878564~hmac=1858a58741672b4e5e25aec732f053ffbb80ed1b6da74702ccb1efe4d6b3242a">
+        <div class="absolute inset-y-0 -inset-x-20 bg-black -z-20">
+            <video autoplay loop class="opacity-50 h-full w-full object-cover"
+                src="https://videocdn.cdnpk.net/videos/79ab4de0-c5fb-4370-82b0-8c84e204d765/horizontal/previews/clear/large.mp4?token=exp=1758954049~hmac=4865dfd32e61ac0ea52fb0ca690d4dea6909e3a303529ea65a7e415357412fdb">
             </video>
         </div>
 
@@ -85,7 +85,7 @@
 
             <div class="flex flex-col items-start md:items-end">
                 <p class="font-inter text-gray-600 text-lg">Tours, places, clients</p>
-                <h2 class="font-roboto text-4xl font-bold text-end">
+                <h2 class="font-roboto text-4xl font-bold text-end whitespace-nowrap">
                     Our <i class="font-playfair">Experience</i>
                 </h2>
             </div>
@@ -156,6 +156,41 @@
                     <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">clients</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- ? ABOUT SECTION --}}
+    <section class="flex flex-col md:flex-row gap-14 lg:gap-24 sm:gap-20 px-8 py-10 relative overflow-x-hidden">
+        <div class="">
+            <div class="flex flex-col mb-4">
+                <p class="font-inter text-gray-600 text-xl">Tours, places, clients</p>
+                <h2 class="font-roboto text-5xl font-bold whitespace-nowrap">
+                    Our <i class="font-playfair">Experience</i>
+                </h2>
+            </div>
+            <a class="group relative inline-flex items-center overflow-hidden rounded-sm bg-cst-green-400 px-5 py-3 text-cst-yellow-400 focus:ring-3 focus:outline-hidden"
+                href="#">
+                <span class="absolute -end-full transition-all group-hover:end-4">
+                    <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+
+                <span class="text-md font-inter font-medium transition-all group-hover:me-6"> More about us </span>
+            </a>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-5 lg:gap-10">
+            <p class="font-inter text-gray-600 text-xl text-justify">
+                At Explore Vista Bali, we're passionate about helping
+                travellers discover the island with ease. From shuttle services to curated tours, we make every journey
+                smooth, safe, and unforgettable.
+            </p>
+            <p class="font-inter text-gray-600 text-xl text-justify">
+                More than just getting you from place to place, we're here to share Bali's beauty and culture with genuine
+                hospitality. Our mission is simple, its to create travel experiences that leave lasting memories.
+            </p>
         </div>
     </section>
 
