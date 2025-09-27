@@ -271,4 +271,89 @@
         </div>
     </section>
 
+    {{-- ? TOUR PACKAGES & ACTIVITIES SECTION --}}
+    <section class="flex flex-col items-center px-8 py-16 relative overflow-x-hidden">
+
+        <div class="flex items-center sm:gap-16 mb-6">
+            <span class="hidden sm:inline-block h-0.5 w-full bg-gray-400"></span>
+            <div class="flex flex-col text-center w-full">
+                <p class="font-inter text-gray-600 text-md sm:text-xl">Available tour & activity packages</p>
+                <h2 class="font-playfair italic text-4xl sm:text-5xl font-bold whitespace-nowrap">
+                    Choose your journey
+                </h2>
+            </div>
+            <span class="hidden sm:inline-block h-0.5 w-full bg-gray-400"></span>
+        </div>
+
+        <a href="#" class="flex text-lg gap-2 items-center text-cst-green-400 underline mb-14">
+            See all packages <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>
+        </a>
+
+        <div class="flex flex-wrap items-center justify-center gap-8">
+
+            @for ($i = 0; $i < 6; $i++)
+                <div class="-space-y-5">
+                    <div class="relative -z-10">
+                        <span
+                            class="absolute left-2 top-2 py-1 px-2.5 rounded-sm w-fit font-inter font-bold shadow-lg text-md backdrop-blur-[10px] backdrop-saturate-[165%] bg-[rgba(215,215,215,0.2)] border border-[rgba(255,255,255,0.125)]">
+                            Tour</span>
+                        <img class="-z-10 w-full h-56 object-cover object-center"
+                            src="https://plus.unsplash.com/premium_photo-1677829177642-30def98b0963?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
+                    </div>
+                    <div class="bg-gray-200 p-5 rounded-t-2xl z-10">
+                        <h5 class="font-roboto text-2xl font-semibold">Tour Package Title</h5>
+                        <p class="font-inter text-md italic text-gray-500">Kintamani, Bali</p>
+
+                        <p class="font-inter text-lg text-gray-500 my-6 max-w-xs">
+                            At Explore Vista Bali, we're passionate about helping travellers discover the...
+                        </p>
+
+                        <div
+                            class="flex justify-between sm:justify-start gap-2 sm:gap-4 text-lg sm:text-xl font-inter [&_p]:font-semibold mb-4">
+                            <div class="flex items-center gap-1 sm:gap-2 whitespace-nowrap">
+                                <svg class="size-6 text-cst-yellow-600" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.2725 2.5425L13.3375 1.4775C13.015 1.095 12.6625 0.735 12.28 0.42L11.215 1.485C10.0525 0.555 8.59 0 7 0C3.2725 0 0.25 3.0225 0.25 6.75C0.25 10.4775 3.265 13.5 7 13.5C10.735 13.5 13.75 10.4775 13.75 6.75C13.75 5.16 13.195 3.6975 12.2725 2.5425ZM7.75 7.5H6.25V3H7.75V7.5Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <p class="">09:00 AM</p>
+                            </div>
+                            <div class="flex items-center gap-1 sm:gap-2 whitespace-nowrap">
+                                <svg class="size-6 text-cst-yellow-600" viewBox="0 0 22 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.6667 6.08331C16.1884 6.08331 17.4075 4.85498 17.4075 3.33331C17.4075 1.81165 16.1884 0.583313 14.6667 0.583313C13.145 0.583313 11.9167 1.81165 11.9167 3.33331C11.9167 4.85498 13.145 6.08331 14.6667 6.08331ZM7.33335 6.08331C8.85502 6.08331 10.0742 4.85498 10.0742 3.33331C10.0742 1.81165 8.85502 0.583313 7.33335 0.583313C5.81169 0.583313 4.58335 1.81165 4.58335 3.33331C4.58335 4.85498 5.81169 6.08331 7.33335 6.08331ZM7.33335 7.91665C5.19752 7.91665 0.916687 8.98915 0.916687 11.125V13.4166H13.75V11.125C13.75 8.98915 9.46919 7.91665 7.33335 7.91665ZM14.6667 7.91665C14.4009 7.91665 14.0984 7.93498 13.7775 7.96248C14.8409 8.73248 15.5834 9.76831 15.5834 11.125V13.4166H21.0834V11.125C21.0834 8.98915 16.8025 7.91665 14.6667 7.91665Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <p class="">5 people</p>
+                            </div>
+                            <div class="flex items-center gap-1 sm:gap-2 whitespace-nowrap">
+                                <svg class="size-6 text-cst-yellow-600" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.00002 0.666687C4.40002 0.666687 0.666687 4.40002 0.666687 9.00002C0.666687 13.6 4.40002 17.3334 9.00002 17.3334C13.6 17.3334 17.3334 13.6 17.3334 9.00002C17.3334 4.40002 13.6 0.666687 9.00002 0.666687ZM10.175 14.075V15.6667H7.95002V14.0584C6.52502 13.7584 5.31669 12.8417 5.22502 11.225H6.85835C6.94169 12.1 7.54169 12.7834 9.06669 12.7834C10.7 12.7834 11.0667 11.9667 11.0667 11.4584C11.0667 10.7667 10.7 10.1167 8.84169 9.67502C6.77502 9.17502 5.35835 8.32502 5.35835 6.61669C5.35835 5.18335 6.51669 4.25002 7.95002 3.94169V2.33335H10.175V3.95835C11.725 4.33335 12.5 5.50835 12.55 6.78335H10.9167C10.875 5.85835 10.3834 5.22502 9.06669 5.22502C7.81669 5.22502 7.06669 5.79169 7.06669 6.59169C7.06669 7.29169 7.60835 7.75002 9.29169 8.18335C10.975 8.61669 12.775 9.34169 12.775 11.4417C12.7667 12.9667 11.625 13.8 10.175 14.075Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <p class="">$50</p>
+                            </div>
+                        </div>
+
+                        <x-wave-button href="#" firstTextClasses="text-cst-yellow-400 font-inter font-semibold"
+                            secondTextClasses="text-cst-yellow-400 font-playfair font-bold italic"
+                            class="text-xl w-full py-3 text-center bg-cst-green-400 rounded-sm">
+                            Book Tour <span class="ml-4">&rightarrow;</span>
+                        </x-wave-button>
+                    </div>
+                </div>
+            @endfor
+
+        </div>
+
+    </section>
+
 @endsection
