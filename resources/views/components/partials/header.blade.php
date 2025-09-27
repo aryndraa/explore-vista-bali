@@ -2,20 +2,20 @@
     $linksClasses = 'relative hover:text-cst-yellow-400';
 
     $activeClasses =
-        'after:absolute after:-inset-x-2 after:h-3 after:top-1/2 after:-translate-y-1/2 after:rounded-full ' .
+        'after:absolute after:-inset-x-2 after:h-3 after:top-1/2 after:-translate-y-1/2 after:rounded-full after:transition ' .
         ($variant == 'light' ? 'after:bg-cst-green-400' : 'after:bg-cst-yellow-400') .
         ' after:-z-10';
 
+    $activeClassesMobile =
+        'after:absolute after:-inset-x-2 after:h-3 after:top-1/2 after:-translate-y-1/2 after:rounded-full after:transition after:bg-cst-yellow-400 after:-z-10';
+
     $hoverClasses =
-        "'hover:text-cst-yellow-400': !scrolled, 'hover:text-cst-green-400': scrolled, 'after:bg-cst-yellow-400': scrolled";
+        "'hover:text-cst-yellow-400': !scrolled, 'hover:text-cst-green-400 after:bg-cst-yellow-400': scrolled";
 @endphp
 
-<header x-data="{
-    scrolled: false,
-    mobileOpen: false
-}" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)"
-    :class="scrolled ? 'bg-white shadow-lg text-black' : '{{ $variant == 'light' ? 'text-white' : 'text-black' }}'"
-    class="fixed inset-x-0 top-0 z-50 transition-colors duration-300 bg-transparent">
+<header x-data="{ scrolled: false, mobileOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200"
+    :class="scrolled ? 'bg-white shadow-lg text-black' :
+        '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
     <div class="mx-auto max-w-screen-2xl px-4 md:px-6">
         <div class="flex items-center justify-between h-16">
@@ -27,21 +27,21 @@
             {{-- Desktop nav --}}
             <nav class="hidden md:flex items-center gap-6 h-full font-inter">
                 <a href="#"
-                    class="text-inherit {{ request()->routeIs('home') ? "$linksClasses $activeClasses" : $linksClasses }}"
+                    class="text-inherit {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Home</a>
                 <a href="#"
-                    class="text-inherit {{ request()->routeIs('about') ? "$linksClasses $activeClasses" : $linksClasses }}"
+                    class="text-inherit {{ $linksClasses }} {{ request()->routeIs('about') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">About</a>
 
                 {{-- Services dropdown --}}
                 <div class="relative h-full" x-data="{ open: false }" @mouseenter="open = true"
                     @mouseleave="open = false">
                     <button @click="open = !open" aria-expanded="open"
-                        class="flex group items-center h-full gap-1 text-inherit {{ request()->routeIs('service.*') ? "$linksClasses $activeClasses" : $linksClasses }}"
+                        class="flex group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('service.*') ? $activeClasses : '' }}"
                         :class="{ {{ $hoverClasses }} }">
 
                         Services
-                        <svg class="size-6"
+                        <svg class="size-6 ml-1"
                             :class="{
                                 '{{ $variant == 'light' ? 'text-gray-300' : 'text-gray-500' }}': !scrolled,
                                 'text-gray-500': scrolled,
@@ -110,13 +110,13 @@
                 </div>
 
                 <a href="#"
-                    class="text-inherit {{ request()->routeIs('gallery') ? "$linksClasses $activeClasses" : $linksClasses }}"
+                    class="text-inherit {{ $linksClasses }} {{ request()->routeIs('gallery') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Gallery</a>
                 <a href="#"
-                    class="text-inherit {{ request()->routeIs('blog') ? "$linksClasses $activeClasses" : $linksClasses }}"
+                    class="text-inherit {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Blog</a>
                 <a href="#"
-                    class="text-inherit {{ request()->routeIs('contact') ? "$linksClasses $activeClasses" : $linksClasses }}"
+                    class="text-inherit {{ $linksClasses }} {{ request()->routeIs('contact') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Contact</a>
             </nav>
 
@@ -177,10 +177,10 @@
         class="fixed inset-x-0 top-16 bg-white backdrop-blur-sm border-t border-gray-700 md:hidden max-h-[calc(100vh-4rem)] overflow-auto">
         <ul class="p-4 space-y-2 text-black">
             <li><a href="#"
-                    class="block py-2 {{ request()->routeIs('home') ? "$linksClasses $activeClasses" : $linksClasses }}">Home</a>
+                    class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClassesMobile : '' }}">Home</a>
             </li>
             <li><a href="#"
-                    class="block py-2 {{ request()->routeIs('about') ? "$linksClasses $activeClasses" : $linksClasses }}">About</a>
+                    class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('about') ? $activeClassesMobile : '' }}">About</a>
             </li>
 
             {{-- Services accordion (mobile) --}}
@@ -243,15 +243,15 @@
 
             <li>
                 <a href="#"
-                    class="block py-2 {{ request()->routeIs('gallery') ? "$linksClasses $activeClasses" : $linksClasses }}">Gallery</a>
+                    class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('gallery') ? $activeClassesMobile : '' }}">Gallery</a>
             </li>
             <li>
                 <a href="#"
-                    class="block py-2 {{ request()->routeIs('blog') ? "$linksClasses $activeClasses" : $linksClasses }}">Blog</a>
+                    class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClassesMobile : '' }}">Blog</a>
             </li>
             <li>
                 <a href="#"
-                    class="block py-2 {{ request()->routeIs('contact') ? "$linksClasses $activeClasses" : $linksClasses }}">Contact</a>
+                    class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('contact') ? $activeClassesMobile : '' }}">Contact</a>
             </li>
         </ul>
     </div>
