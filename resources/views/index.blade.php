@@ -3,9 +3,10 @@
 @section('title', 'Explore Vista Bali')
 @section('content')
 
-    <div class="relative min-h-screen flex items-end px-8 pb-14 text-white">
+    {{-- ? HERO SECTION --}}
+    <section class="relative min-h-screen flex items-end px-8 pb-14 text-white">
         <div class="absolute inset-0 bg-black -z-20">
-            <video autoplay loop class="opacity-50 h-full w-full object-cover"
+            <video autplay loop class="opacity-50 h-full w-full object-cover"
                 src="https://videocdn.cdnpk.net/videos/872ad75a-a3b7-44b7-a293-6092f02fc015/horizontal/previews/clear/large.mp4?token=exp=1758878564~hmac=1858a58741672b4e5e25aec732f053ffbb80ed1b6da74702ccb1efe4d6b3242a">
             </video>
         </div>
@@ -72,5 +73,90 @@
                 </div>
             </div>
         </div>
+    </section>
 
-    @endsection
+    {{-- ? EXPERIENCE SECTION --}}
+    <section class="px-8 py-10 relative overflow-x-hidden">
+        <div class="flex flex-col-reverse md:flex-row gap-5 lg:gap-0 justify-between md:items-center w-full mb-8">
+            <p class="text-lg font-inter font-normal md:max-w-md lg:max-w-lg">
+                Explore Vista Bali is trusted by travelers worldwide, delivering seamless tours and unforgettable
+                experiences across the island.
+            </p>
+
+            <div class="flex flex-col items-start md:items-end">
+                <p class="font-inter text-gray-600 text-lg">Tours, places, clients</p>
+                <h2 class="font-roboto text-4xl font-bold text-end">
+                    Our <i class="font-playfair">Experience</i>
+                </h2>
+            </div>
+        </div>
+
+        <img class="hidden -z-10 lg:block absolute -left-28 rotate-45 w-80 opacity-30"
+            src="{{ asset('img/decoration_left.png') }}" alt="left flower decoration">
+        <img class="hidden -z-10 lg:block absolute -right-28 w-80 opacity-30" src="{{ asset('img/decoration_right.png') }}"
+            alt="right flower decoration">
+
+        <div class="flex flex-col lg:px-14 md:flex-row gap-4 lg:gap-6 items-center justify-center">
+
+            <div class="flex-1 w-full md:max-w-80">
+                <div
+                    class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
+                    <img class="absolute inset-0 w-full h-full object-cover -z-10"
+                        src="https://thepointsguy.global.ssl.fastly.net/us/originals/2020/05/GettyImages-1145042281-scaled.jpg"
+                        alt="">
+                    <div class="pt-28 pb-16">
+                        <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">90+</span>
+                    </div>
+                </div>
+                <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
+                    <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.91667 18.3333L18.1667 10.0833L15.7917 7.75L9.91667 13.625L7.54167 11.25L5.16667 13.625L9.91667 18.3333ZM0 30V3.33333C0 2.41667 0.326389 1.63194 0.979167 0.979167C1.63194 0.326389 2.41667 0 3.33333 0H20C20.9167 0 21.7014 0.326389 22.3542 0.979167C23.0069 1.63194 23.3333 2.41667 23.3333 3.33333V30L11.6667 25L0 30ZM3.33333 24.9167L11.6667 21.3333L20 24.9167V3.33333H3.33333V24.9167Z"
+                            fill="#CAA638" />
+                    </svg>
+                    <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">tours</p>
+                </div>
+            </div>
+
+            <div class="flex-1 w-full md:max-w-80">
+                <div
+                    class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
+                    <img class="absolute inset-0 w-full h-full object-cover -z-10" src="" alt="">
+                    <div class="pt-28 pb-16">
+                        <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">20+</span>
+                    </div>
+                </div>
+                <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
+                    <svg class="size-5 text-cst-yellow-400" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2.25 29.5C1.69444 29.7222 1.18056 29.6597 0.708333 29.3125C0.236111 28.9653 0 28.5 0 27.9167V4.58333C0 4.22222 0.104167 3.90278 0.3125 3.625C0.520833 3.34722 0.805556 3.13889 1.16667 3L10 0L20 3.5L27.75 0.5C28.3056 0.277778 28.8194 0.340278 29.2917 0.6875C29.7639 1.03472 30 1.5 30 2.08333V16.125C29.5833 15.4861 29.0903 14.9028 28.5208 14.375C27.9514 13.8472 27.3333 13.3889 26.6667 13V4.5L21.6667 6.41667V11.6667C21.0833 11.6667 20.5139 11.7153 19.9583 11.8125C19.4028 11.9097 18.8611 12.0556 18.3333 12.25V6.41667L11.6667 4.08333V25.875L2.25 29.5ZM3.33333 25.5L8.33333 23.5833V4.08333L3.33333 5.75V25.5ZM21.6667 25C22.6111 25 23.3958 24.7222 24.0208 24.1667C24.6458 23.6111 24.9722 22.7778 25 21.6667C25.0278 20.7222 24.7153 19.9306 24.0625 19.2917C23.4097 18.6528 22.6111 18.3333 21.6667 18.3333C20.7222 18.3333 19.9306 18.6528 19.2917 19.2917C18.6528 19.9306 18.3333 20.7222 18.3333 21.6667C18.3333 22.6111 18.6528 23.4028 19.2917 24.0417C19.9306 24.6806 20.7222 25 21.6667 25ZM21.6667 28.3333C19.8333 28.3333 18.2639 27.6806 16.9583 26.375C15.6528 25.0694 15 23.5 15 21.6667C15 19.8333 15.6528 18.2639 16.9583 16.9583C18.2639 15.6528 19.8333 15 21.6667 15C23.5 15 25.0694 15.6528 26.375 16.9583C27.6806 18.2639 28.3333 19.8333 28.3333 21.6667C28.3333 22.3056 28.2569 22.9097 28.1042 23.4792C27.9514 24.0486 27.7222 24.5833 27.4167 25.0833L31.6667 29.3333L29.3333 31.6667L25.0833 27.4167C24.5833 27.7222 24.0486 27.9514 23.4792 28.1042C22.9097 28.2569 22.3056 28.3333 21.6667 28.3333Z"
+                            fill="currentColor" />
+                    </svg>
+                    <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">places</p>
+                </div>
+            </div>
+
+            <div class="flex-1 w-full md:max-w-80">
+                <div
+                    class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
+                    <img class="absolute inset-0 w-full h-full object-cover -z-10" src="" alt="">
+                    <div class="pt-28 pb-16">
+                        <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">100+</span>
+                    </div>
+                </div>
+                <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
+                    <svg class="size-5 text-cst-yellow-400" viewBox="0 0 37 28" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M-5.11408e-05 27.3334V22.6667C-5.11408e-05 21.7222 0.243004 20.8542 0.729116 20.0625C1.21523 19.2709 1.86106 18.6667 2.66662 18.25C4.38884 17.3889 6.13884 16.7431 7.91662 16.3125C9.69439 15.882 11.4999 15.6667 13.3333 15.6667C15.1666 15.6667 16.9722 15.882 18.7499 16.3125C20.5277 16.7431 22.2777 17.3889 23.9999 18.25C24.8055 18.6667 25.4513 19.2709 25.9374 20.0625C26.4236 20.8542 26.6666 21.7222 26.6666 22.6667V27.3334H-5.11408e-05ZM29.9999 27.3334V22.3334C29.9999 21.1111 29.6597 19.9375 28.9791 18.8125C28.2986 17.6875 27.3333 16.7222 26.0833 15.9167C27.4999 16.0834 28.8333 16.3681 30.0833 16.7709C31.3333 17.1736 32.4999 17.6667 33.5833 18.25C34.5833 18.8056 35.3472 19.4236 35.8749 20.1042C36.4027 20.7847 36.6666 21.5278 36.6666 22.3334V27.3334H29.9999ZM13.3333 14C11.4999 14 9.93051 13.3472 8.62495 12.0417C7.31939 10.7361 6.66662 9.16669 6.66662 7.33335C6.66662 5.50002 7.31939 3.93058 8.62495 2.62502C9.93051 1.31946 11.4999 0.666687 13.3333 0.666687C15.1666 0.666687 16.7361 1.31946 18.0416 2.62502C19.3472 3.93058 19.9999 5.50002 19.9999 7.33335C19.9999 9.16669 19.3472 10.7361 18.0416 12.0417C16.7361 13.3472 15.1666 14 13.3333 14ZM29.9999 7.33335C29.9999 9.16669 29.3472 10.7361 28.0416 12.0417C26.7361 13.3472 25.1666 14 23.3333 14C23.0277 14 22.6388 13.9653 22.1666 13.8959C21.6944 13.8264 21.3055 13.75 20.9999 13.6667C21.7499 12.7778 22.3263 11.7917 22.7291 10.7084C23.1319 9.62502 23.3333 8.50002 23.3333 7.33335C23.3333 6.16669 23.1319 5.04169 22.7291 3.95835C22.3263 2.87502 21.7499 1.88891 20.9999 1.00002C21.3888 0.861131 21.7777 0.770854 22.1666 0.729187C22.5555 0.68752 22.9444 0.666687 23.3333 0.666687C25.1666 0.666687 26.7361 1.31946 28.0416 2.62502C29.3472 3.93058 29.9999 5.50002 29.9999 7.33335ZM3.33328 24H23.3333V22.6667C23.3333 22.3611 23.2569 22.0834 23.1041 21.8334C22.9513 21.5834 22.7499 21.3889 22.4999 21.25C20.9999 20.5 19.4861 19.9375 17.9583 19.5625C16.4305 19.1875 14.8888 19 13.3333 19C11.7777 19 10.2361 19.1875 8.70828 19.5625C7.1805 19.9375 5.66662 20.5 4.16662 21.25C3.91662 21.3889 3.71523 21.5834 3.56245 21.8334C3.40967 22.0834 3.33328 22.3611 3.33328 22.6667V24ZM13.3333 10.6667C14.2499 10.6667 15.0347 10.3403 15.6874 9.68752C16.3402 9.03474 16.6666 8.25002 16.6666 7.33335C16.6666 6.41669 16.3402 5.63197 15.6874 4.97919C15.0347 4.32641 14.2499 4.00002 13.3333 4.00002C12.4166 4.00002 11.6319 4.32641 10.9791 4.97919C10.3263 5.63197 9.99995 6.41669 9.99995 7.33335C9.99995 8.25002 10.3263 9.03474 10.9791 9.68752C11.6319 10.3403 12.4166 10.6667 13.3333 10.6667Z"
+                            fill="currentColor" />
+                    </svg>
+                    <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@endsection
