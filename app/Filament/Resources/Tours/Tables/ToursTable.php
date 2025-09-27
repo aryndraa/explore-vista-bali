@@ -22,7 +22,7 @@ class ToursTable
                     ->counts('packages')
                     ->sortable()
                     ->suffix(' Packages')
-                    ->label('Total Packages')
+                    ->label('Total Tour Packages')
             ])
             ->filters([
                 TrashedFilter::make()

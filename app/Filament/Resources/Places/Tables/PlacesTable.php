@@ -20,7 +20,7 @@ class PlacesTable
                     ->searchable(),
 
                 TextColumn::make('package_destination_count')
-                    ->label('Total Packages')
+                    ->label('Total Tour Packages')
                     ->suffix(' Packages')
                     ->counts('packageDestination')
                     ->sortable(),
