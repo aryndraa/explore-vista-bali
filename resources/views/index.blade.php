@@ -362,7 +362,7 @@
             <div class="mb-10 sm:mb-16">
                 <p class="font-inter text-gray-300 text-md sm:text-xl mb-2">Testimonials / Comments</p>
                 <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg">
-                    what our people <i class="font-playfair">says about us.</i>
+                    What our people <i class="font-playfair">says about us.</i>
                 </h2>
             </div>
 
@@ -532,35 +532,74 @@
             </script>
         </div>
 
-        {{-- <div class="">
-            ? Testimonial Cards
-            <div class="flex gap-8 mb-8">
-                <div class="bg-white px-6 py-8 rounded-md rounded-tr-[5rem] sm:max-w-xs">
-                    <svg class="w-14 aspect-auto text-gray-300 mb-8" viewBox="0 0 63 57" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M63 35.625C63 47.4347 55.4484 57 46.125 57H45C42.5109 57 40.5 54.4528 40.5 51.3C40.5 48.1472 42.5109 45.6 45 45.6H46.125C50.4703 45.6 54 41.1291 54 35.625V34.2H45C40.0359 34.2 36 29.0878 36 22.8V11.4C36 5.11219 40.0359 0 45 0H54C58.9641 0 63 5.11219 63 11.4V35.625ZM27 35.625C27 47.4347 19.4484 57 10.125 57H9C6.51094 57 4.5 54.4528 4.5 51.3C4.5 48.1472 6.51094 45.6 9 45.6H10.125C14.4703 45.6 18 41.1291 18 35.625V34.2H9C4.03594 34.2 0 29.0878 0 22.8V11.4C0 5.11219 4.03594 0 9 0H18C22.9641 0 27 5.11219 27 11.4V35.625Z"
-                            fill="currentColor" />
-                    </svg>
-                    <p class="text-black font-inter font-medium text-xl mb-16">
-                        This service is great! I love it, I would recommend this to my relatives.
-                    </p>
-                    <div class="font-inter pt-4 border-t-2 border-gray-400 w-full text-black">
-                        <p class="font-semibold text-lg">Jackson Harry</p>
-                        <a href="#" target="_blank"
-                            class="text-gray-500 text-md italic hover:underline">@loremipsum</a>
+    </section>
+
+    {{-- ? GALLERY SECTION --}}
+    <section class="flex flex-col items-center px-4 sm:px-8 py-20 relative overflow-x-hidden bg-cst-green-800 text-white">
+        <span class="absolute top-0 inset-x-8 h-px bg-cst-green-200/40"></span>
+
+        <div class="mb-10 sm:mb-16">
+            <p class="font-inter text-gray-300 text-md sm:text-xl mb-2 text-center">Gallery / Pictures</p>
+            <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg text-center">
+                Our <i class="font-playfair">Captured Story</i>
+            </h2>
+        </div>
+
+        <div class="flex flex-wrap gap-6">
+
+            @for ($i = 0; $i < 4; $i++)
+                <a href="#"
+                    class="group {{ $i > 2 ? 'hidden sm:inline-block' : 'inline-block' }} relative flex-3 h-64 sm:h-80 lg:h-96 text-white min-w-xs font-inter">
+                    <div class="relative flex h-full items-end transform
+                bg-center bg-cover transition-transform group-hover:-translate-y-2"
+                        style="background-image: url('https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+
+                        <!-- front content -->
+                        <div
+                            class="absolute inset-0 flex gap-2 items-end p-4 sm:p-6
+                   transition-opacity duration-300 group-hover:opacity-0 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="size-4 sm:size-8" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                            <h2 class="mt-6 text-xl font-medium sm:text-2xl">Kintamani, Ubud</h2>
+                        </div>
+
+                        <!-- back content -->
+                        <div
+                            class="absolute inset-0 p-4 sm:p-6 opacity-0 bg-black/60 transition-opacity duration-300
+                   group-hover:opacity-100 z-10">
+                            <h3 class="mt-4 text-xl font-semibold text-cst-yellow-400 sm:text-2xl">Kintamani, Ubud</h3>
+                            <p class="mt-4 text-sm font-light sm:text-base">
+                                This image taken place at Kintamani, Ubud. Explore our tour packages or activities and find
+                                the
+                                perfect way to
+                                experience Bali.
+                            </p>
+                            <p class="mt-10 font-semibold italic">View Gallery &rightarrow;</p>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </a>
+            @endfor
 
-            ? Carousel navigation
-            <div class="flex gap-2 [&>span]:w-4 [&>span]:h-4 [&>span]:rounded-full">
-                <span class="bg-cst-yellow-400"></span>
-                <span class="bg-gray-400"></span>
-                <span class="bg-gray-400"></span>
-            </div>
-        </div> --}}
+        </div>
 
+        <a href="#"
+            class="group mt-10 relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-transparent border-3 border-cst-yellow-400 py-2.5 px-5 text-cst-yellow-400 focus:ring-3 focus:outline-hidden">
+            <span class="absolute -end-full transition-all lg:group-hover:end-4">
+                <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </span>
+
+            <span class="text-sm lg:text-xl italic font-inter font-medium transition-all lg:group-hover:me-6">
+                View all pictures
+            </span>
+        </a>
     </section>
 
 @endsection

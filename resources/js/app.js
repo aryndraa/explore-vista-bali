@@ -1,6 +1,24 @@
 import './bootstrap';
 window.Alpine = Alpine;
 
+//? PRIMARY CODE ==========================
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual'; // or 'auto'
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const pos = sessionStorage.getItem("scrollPos");
+    if (pos) {
+        window.scrollTo(0, parseInt(pos));
+        sessionStorage.removeItem("scrollPos");
+    }
+});
+
+window.addEventListener("beforeunload", () => {
+    sessionStorage.setItem("scrollPos", window.scrollY);
+});
+//? PRIMARY CODE ==========================
+
 var animatedHoverBtn = document.querySelectorAll("[data-hover-animation='wave']");
 
 animatedHoverBtn.forEach((btn) => {
