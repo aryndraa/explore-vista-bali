@@ -273,16 +273,15 @@
 
     {{-- ? TOUR PACKAGES & ACTIVITIES SECTION --}}
     <section class="flex flex-col items-center px-8 py-16 relative overflow-x-hidden">
-
-        <div class="flex items-center sm:gap-16 mb-6">
-            <span class="hidden sm:inline-block h-0.5 w-full bg-gray-400"></span>
+        <div class="flex items-center sm:gap-16 mb-6 w-full">
+            <span class="hidden sm:inline-block h-0.5 w-full bg-gray-300"></span>
             <div class="flex flex-col text-center w-full">
                 <p class="font-inter text-gray-600 text-md sm:text-xl">Available tour & activity packages</p>
                 <h2 class="font-playfair italic text-4xl sm:text-5xl font-bold whitespace-nowrap">
                     Choose your journey
                 </h2>
             </div>
-            <span class="hidden sm:inline-block h-0.5 w-full bg-gray-400"></span>
+            <span class="hidden sm:inline-block h-0.5 w-full bg-gray-300"></span>
         </div>
 
         <a href="#" class="flex text-lg gap-2 items-center text-cst-green-400 underline mb-14">
@@ -292,10 +291,10 @@
             </svg>
         </a>
 
-        <div class="flex flex-wrap items-center justify-center gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
             @for ($i = 0; $i < 6; $i++)
-                <div class="-space-y-5">
+                <div class="-space-y-5 {{ $i > 2 ? 'hidden md:inline-block' : '' }}">
                     <div class="relative -z-10">
                         <span
                             class="absolute left-2 top-2 py-1 px-2.5 rounded-sm w-fit font-inter font-bold shadow-lg text-md backdrop-blur-[10px] backdrop-saturate-[165%] bg-[rgba(215,215,215,0.2)] border border-[rgba(255,255,255,0.125)]">
@@ -308,12 +307,12 @@
                         <h5 class="font-roboto text-2xl font-semibold">Tour Package Title</h5>
                         <p class="font-inter text-md italic text-gray-500">Kintamani, Bali</p>
 
-                        <p class="font-inter text-lg text-gray-500 my-6 max-w-xs">
+                        <p class="font-inter text-lg text-gray-500 my-4 max-w-xs">
                             At Explore Vista Bali, we're passionate about helping travellers discover the...
                         </p>
 
                         <div
-                            class="flex justify-between sm:justify-start gap-2 sm:gap-4 text-lg sm:text-xl font-inter [&_p]:font-semibold mb-4">
+                            class="flex flex-wrap justify-between sm:justify-start gap-2 sm:gap-4 text-lg sm:text-xl font-inter [&_p]:font-semibold mb-4">
                             <div class="flex items-center gap-1 sm:gap-2 whitespace-nowrap">
                                 <svg class="size-6 text-cst-yellow-600" viewBox="0 0 14 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -353,6 +352,214 @@
             @endfor
 
         </div>
+    </section>
+
+    {{-- ? TESTIMONIAL SECTION --}}
+    <section
+        class="flex flex-col sm:flex-row gap-14 sm:gap-10 lg:gap-28 items-center justify-between px-4 sm:px-8 py-24 relative overflow-x-hidden bg-cst-green-800 text-white">
+
+        <div class="px-4 sm:px-0">
+            <div class="mb-10 sm:mb-16">
+                <p class="font-inter text-gray-300 text-md sm:text-xl mb-2">Testimonials / Comments</p>
+                <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg">
+                    what our people <i class="font-playfair">says about us.</i>
+                </h2>
+            </div>
+
+            <div class="flex flex-wrap gap-3 mb-12">
+                <a href="#"
+                    class="flex items-center gap-3 whitespace-nowrap font-inter font-semibold text-md sm:text-xl py-2.5 px-5 bg-cst-yellow-400 w-fit rounded-md text-black hover:scale-105 transition">
+                    <svg class="size-6 text-black" viewBox="0 0 19 17" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 6H12V4H4V6ZM4 10H9V8H4V10ZM14 17V14H11V12H14V9H16V12H19V14H16V17H14ZM0 17V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H14C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2V7.075C15.8333 7.04167 15.6667 7.02083 15.5 7.0125C15.3333 7.00417 15.1667 7 15 7C13.3167 7 11.8958 7.58333 10.7375 8.75C9.57917 9.91667 9 11.3333 9 13C9 13.1667 9.00417 13.3333 9.0125 13.5C9.02083 13.6667 9.04167 13.8333 9.075 14H3L0 17Z"
+                            fill="currentColor" />
+                    </svg> Comment
+                </a>
+
+                <a class="group relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-transparent border-3 border-cst-yellow-400 py-2.5 px-5 text-cst-yellow-400 focus:ring-3 focus:outline-hidden"
+                    href="#">
+                    <span class="absolute -end-full transition-all lg:group-hover:end-4">
+                        <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </span>
+
+                    <span class="text-sm lg:text-xl italic font-inter font-medium transition-all lg:group-hover:me-6">
+                        View all comments
+                    </span>
+                </a>
+            </div>
+
+            <div class="flex gap-2">
+                <a href="#" class="p-2 bg-cst-green-200 rounded-full flex-none">
+                    <svg class="size-6 text-cst-green-400" viewBox="0 0 22 22" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.2683 5.77736C8.23565 5.76781 5.77133 8.22258 5.76178 11.2552C5.75223 14.2879 8.207 16.7522 11.2396 16.7617C14.2723 16.7713 16.7366 14.3165 16.7462 11.2839C16.7557 8.25123 14.3009 5.78691 11.2683 5.77736ZM11.2396 7.70679C13.2073 7.69724 14.8072 9.28759 14.8167 11.2552C14.8263 13.2229 13.2359 14.8228 11.2683 14.8323C9.30066 14.8419 7.70076 13.2515 7.69121 11.2839C7.68166 9.31624 9.27201 7.71634 11.2396 7.70679ZM15.7003 5.55289C15.7003 4.84607 16.2734 4.27297 16.9802 4.27297C17.687 4.27297 18.2601 4.84607 18.2601 5.55289C18.2601 6.25972 17.687 6.83281 16.9802 6.83281C16.2734 6.83281 15.7003 6.25972 15.7003 5.55289ZM21.8945 6.85192C21.8133 5.1374 21.4217 3.61869 20.1656 2.36742C18.9144 1.11616 17.3957 0.724538 15.6812 0.638574C13.9141 0.538281 8.61772 0.538281 6.85066 0.638574C5.14092 0.719763 3.62221 1.11138 2.36617 2.36265C1.11013 3.61391 0.723287 5.13262 0.637322 6.84714C0.53703 8.61419 0.53703 13.9106 0.637322 15.6776C0.718511 17.3922 1.11013 18.9109 2.36617 20.1621C3.62221 21.4134 5.13614 21.805 6.85066 21.891C8.61772 21.9913 13.9141 21.9913 15.6812 21.891C17.3957 21.8098 18.9144 21.4182 20.1656 20.1621C21.4169 18.9109 21.8085 17.3922 21.8945 15.6776C21.9948 13.9106 21.9948 8.61897 21.8945 6.85192ZM19.6117 17.5736C19.2391 18.5097 18.518 19.2308 17.5772 19.6081C16.1683 20.1669 12.8252 20.038 11.2683 20.038C9.71138 20.038 6.36353 20.1621 4.95944 19.6081C4.02338 19.2356 3.30223 18.5145 2.92494 17.5736C2.36617 16.1648 2.49512 12.8217 2.49512 11.2648C2.49512 9.70786 2.37095 6.36001 2.92494 4.95592C3.29745 4.01985 4.0186 3.29871 4.95944 2.92142C6.36831 2.36264 9.71138 2.49159 11.2683 2.49159C12.8252 2.49159 16.1731 2.36742 17.5772 2.92142C18.5132 3.29393 19.2344 4.01508 19.6117 4.95592C20.1704 6.36478 20.0415 9.70786 20.0415 11.2648C20.0415 12.8217 20.1704 16.1695 19.6117 17.5736Z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+                <a href="#" class="p-2 bg-cst-green-200 rounded-full flex-none">
+                    <svg class="size-6 text-cst-green-400" viewBox="0 0 23 22" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.205 11.2647C22.205 5.35323 17.4139 0.562134 11.5024 0.562134C5.59087 0.562134 0.799774 5.35323 0.799774 11.2647C0.799774 16.2816 4.25722 20.4958 8.91871 21.6538V14.5341H6.7113V11.2647H8.91871V9.85585C8.91871 6.21445 10.5659 4.52545 14.1446 4.52545C14.8219 4.52545 15.9925 4.65923 16.4733 4.79301V7.75295C16.2224 7.72787 15.7834 7.71115 15.2358 7.71115C13.4799 7.71115 12.8026 8.37588 12.8026 10.1025V11.2647H16.2977L15.6956 14.5341H12.7984V21.8879C18.0995 21.2483 22.205 16.7373 22.205 11.2647Z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+                <a href="#" class="p-2 bg-cst-green-200 rounded-full flex-none">
+                    <svg class="size-6 text-cst-green-400" viewBox="0 0 22 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.8913 0.562134H20.1751L13.0029 8.7577L21.4403 19.9115H14.8355L9.65858 13.1485L3.74214 19.9115H0.453681L8.12366 11.1438L0.0350647 0.562134H6.80734L11.4819 6.7437L16.8913 0.562134ZM15.7378 17.9486H17.5565L5.81662 2.42265H3.86307L15.7378 17.9486Z"
+                            fill="currentColor" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div x-data="carousel()" x-init="init()" class="relative w-full sm:max-w-sm lg:max-w-3xl">
+
+            {{-- viewport --}}
+            <div x-ref="viewport" class="overflow-hidden w-full">
+
+                <!-- left shadow -->
+                <div
+                    class="pointer-events-none absolute -left-6 top-0 h-full w-10 bg-gradient-to-r from-[#16352d] to-transparent z-10">
+                </div>
+
+                <!-- right shadow -->
+                <div
+                    class="pointer-events-none absolute -right-6 top-0 h-full w-10 bg-gradient-to-l from-[#16352d] to-transparent z-10">
+                </div>
+
+                <div x-ref="track" class="flex transition-transform duration-500 ease-out"
+                    :style="`transform: translateX(${translate}px)`">
+
+                    @for ($i = 0; $i < 6; $i++)
+                        <div class="w-full lg:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-white px-6 py-8 pt-20 rounded-md rounded-tr-[5rem]">
+                                <svg class="w-14 aspect-auto text-gray-300 mb-8" viewBox="0 0 63 57" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M63 35.625C63 47.4347 55.4484 57 46.125 57H45C42.5109 57 40.5 54.4528 40.5 51.3C40.5 48.1472 42.5109 45.6 45 45.6H46.125C50.4703 45.6 54 41.1291 54 35.625V34.2H45C40.0359 34.2 36 29.0878 36 22.8V11.4C36 5.11219 40.0359 0 45 0H54C58.9641 0 63 5.11219 63 11.4V35.625ZM27 35.625C27 47.4347 19.4484 57 10.125 57H9C6.51094 57 4.5 54.4528 4.5 51.3C4.5 48.1472 6.51094 45.6 9 45.6H10.125C14.4703 45.6 18 41.1291 18 35.625V34.2H9C4.03594 34.2 0 29.0878 0 22.8V11.4C0 5.11219 4.03594 0 9 0H18C22.9641 0 27 5.11219 27 11.4V35.625Z"
+                                        fill="currentColor" />
+                                </svg>
+                                <p class="text-black font-inter font-medium text-xl mb-16">
+                                    {{ $i + 1 }}. This service is great! I love it, I would recommend this to my
+                                    relatives.
+                                </p>
+                                <div class="font-inter pt-4 border-t-2 border-gray-400 w-full text-black">
+                                    <p class="font-semibold text-lg">Jackson Harry</p>
+                                    <a href="#" target="_blank"
+                                        class="text-gray-500 text-md italic hover:underline">@loremipsum</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+
+                </div>
+
+            </div>
+
+            {{-- controls --}}
+            <div class="mt-10 flex items-center justify-center gap-4">
+                <button @click="prev()" :disabled="page === 0"
+                    class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+
+                <div class="flex items-center gap-2 [&>span]:w-4 [&>span]:h-4 [&>span]:rounded-full">
+                    <template x-for="i in totalPages" :key="i">
+                        <span @click="goTo(i-1)" :class="(i - 1) === page ? 'bg-cst-yellow-400' : 'bg-gray-400'"
+                            class="cursor-pointer"></span>
+                    </template>
+                </div>
+
+                <button @click="next()" :disabled="page >= totalPages - 1"
+                    class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+
+            <script>
+                function carousel() {
+                    return {
+                        page: 0,
+                        perPage: 2,
+                        translate: 0,
+                        totalPages: 1,
+                        init() {
+                            this.update();
+                            window.addEventListener('resize', () => this.update());
+                        },
+                        update() {
+                            this.perPage = window.innerWidth < 1200 ? 1 : 2;
+                            const vp = this.$refs.viewport;
+                            const count = this.$refs.track.children.length;
+                            this.totalPages = Math.ceil(count / this.perPage);
+
+                            if (this.page > this.totalPages - 1) this.page = this.totalPages - 1;
+                            this.translate = -this.page * vp.clientWidth;
+                        },
+                        next() {
+                            if (this.page < this.totalPages - 1) {
+                                this.page++;
+                                this.update();
+                            }
+                        },
+                        prev() {
+                            if (this.page > 0) {
+                                this.page--;
+                                this.update();
+                            }
+                        },
+                        goTo(i) {
+                            this.page = i;
+                            this.update();
+                        }
+                    }
+                }
+            </script>
+        </div>
+
+        {{-- <div class="">
+            ? Testimonial Cards
+            <div class="flex gap-8 mb-8">
+                <div class="bg-white px-6 py-8 rounded-md rounded-tr-[5rem] sm:max-w-xs">
+                    <svg class="w-14 aspect-auto text-gray-300 mb-8" viewBox="0 0 63 57" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M63 35.625C63 47.4347 55.4484 57 46.125 57H45C42.5109 57 40.5 54.4528 40.5 51.3C40.5 48.1472 42.5109 45.6 45 45.6H46.125C50.4703 45.6 54 41.1291 54 35.625V34.2H45C40.0359 34.2 36 29.0878 36 22.8V11.4C36 5.11219 40.0359 0 45 0H54C58.9641 0 63 5.11219 63 11.4V35.625ZM27 35.625C27 47.4347 19.4484 57 10.125 57H9C6.51094 57 4.5 54.4528 4.5 51.3C4.5 48.1472 6.51094 45.6 9 45.6H10.125C14.4703 45.6 18 41.1291 18 35.625V34.2H9C4.03594 34.2 0 29.0878 0 22.8V11.4C0 5.11219 4.03594 0 9 0H18C22.9641 0 27 5.11219 27 11.4V35.625Z"
+                            fill="currentColor" />
+                    </svg>
+                    <p class="text-black font-inter font-medium text-xl mb-16">
+                        This service is great! I love it, I would recommend this to my relatives.
+                    </p>
+                    <div class="font-inter pt-4 border-t-2 border-gray-400 w-full text-black">
+                        <p class="font-semibold text-lg">Jackson Harry</p>
+                        <a href="#" target="_blank"
+                            class="text-gray-500 text-md italic hover:underline">@loremipsum</a>
+                    </div>
+                </div>
+            </div>
+
+            ? Carousel navigation
+            <div class="flex gap-2 [&>span]:w-4 [&>span]:h-4 [&>span]:rounded-full">
+                <span class="bg-cst-yellow-400"></span>
+                <span class="bg-gray-400"></span>
+                <span class="bg-gray-400"></span>
+            </div>
+        </div> --}}
 
     </section>
 
