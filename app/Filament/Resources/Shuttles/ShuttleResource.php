@@ -6,6 +6,7 @@ use App\Filament\Resources\Shuttles\Pages\CreateShuttle;
 use App\Filament\Resources\Shuttles\Pages\EditShuttle;
 use App\Filament\Resources\Shuttles\Pages\ListShuttles;
 use App\Filament\Resources\Shuttles\Pages\ViewShuttle;
+use App\Filament\Resources\Shuttles\RelationManagers\VehiclesRelationManager;
 use App\Filament\Resources\Shuttles\Schemas\ShuttleForm;
 use App\Filament\Resources\Shuttles\Tables\ShuttlesTable;
 use App\Models\Shuttle;
@@ -19,7 +20,11 @@ class ShuttleResource extends Resource
 {
     protected static ?string $model = Shuttle::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'gmdi-car-crash';
+
+    protected static string | \UnitEnum | null $navigationGroup = 'Workspace';
+
+    protected static ?string $label = "Shuttle Manager";
 
     protected static ?string $recordTitleAttribute = 'Shuttle';
 
@@ -36,7 +41,7 @@ class ShuttleResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            VehiclesRelationManager::class
         ];
     }
 
