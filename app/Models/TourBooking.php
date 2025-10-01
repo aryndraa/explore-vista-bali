@@ -44,6 +44,7 @@ class TourBooking extends Model
         'customer_name',
         'customer_phone',
         'customer_email',
+        'address',
         'booking_date',
         'people_amount',
         'status',

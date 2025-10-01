@@ -5,6 +5,7 @@ namespace App\Filament\Resources\TourBookings\Schemas;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
@@ -36,6 +37,10 @@ class TourBookingForm
                     Section::make([
                         TextInput::make('customer_name')
                             ->required()
+                            ->columnSpanFull()
+                            ->disabled(),
+                        Textarea::make('address')
+                            ->autosize()
                             ->columnSpanFull()
                             ->disabled(),
                         TextInput::make('customer_phone')
