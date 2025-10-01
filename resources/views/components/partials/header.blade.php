@@ -1,5 +1,5 @@
 @php
-    $linksClasses = 'relative hover:text-cst-yellow-400';
+    $linksClasses = 'relative';
 
     $activeClasses =
         'after:absolute after:-inset-x-2 after:h-3 after:top-1/2 after:-translate-y-1/2 after:rounded-full after:transition ' .
@@ -26,10 +26,10 @@
 
             {{-- Desktop nav --}}
             <nav class="hidden lg:flex items-center gap-6 h-full font-inter">
-                <a href="#"
+                <a href="{{ route('home') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Home</a>
-                <a href="#"
+                <a href="{{ route('about') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('about') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">About</a>
 
@@ -176,10 +176,10 @@
         x-transition:leave-end="opacity-0 -translate-y-2"
         class="fixed inset-x-0 top-16 bg-white backdrop-blur-sm border-t border-gray-700 md:hidden max-h-[calc(100vh-4rem)] overflow-auto">
         <ul class="p-4 space-y-2 text-black">
-            <li><a href="#"
+            <li><a href="{{ route('home') }}"
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClassesMobile : '' }}">Home</a>
             </li>
-            <li><a href="#"
+            <li><a href="{{ route('about') }}"
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('about') ? $activeClassesMobile : '' }}">About</a>
             </li>
 

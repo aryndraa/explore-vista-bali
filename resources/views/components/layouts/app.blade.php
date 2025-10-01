@@ -18,7 +18,7 @@
     @livewireStyles
 </head>
 
-<body class="antialiased bg-gray-50 text-gray-800 overflow-x-hidden">
+<body class="antialiased bg-gray-50 text-gray-800 overflow-x-hidden font-inter">
 
     @include('components.partials.header', ['variant' => $variant ?? 'light'])
 
