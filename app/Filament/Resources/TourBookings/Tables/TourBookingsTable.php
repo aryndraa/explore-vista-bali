@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
@@ -62,17 +63,6 @@ class TourBookingsTable
                     ->searchable()
                     ->preload()
                     ->label('Package'),
-
-                SelectFilter::make('status')
-                    ->options([
-                        'pending'   => 'Pending',
-                        'confirmed' => 'Confirmed',
-                        'cancelled' => 'Cancelled',
-                        'completed' => 'Completed',
-                        'expired'   => 'Expired',
-                        'ongoing'   => 'Ongoing',
-                    ])
-                    ->label('Status'),
 
                 Filter::make('booking_date')
                     ->form([

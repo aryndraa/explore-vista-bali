@@ -19,11 +19,21 @@ class ShuttleBookingResource extends Resource
 {
     protected static ?string $model = ShuttleBooking::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = 'gmdi-airport-shuttle-r';
 
     protected static ?string $recordTitleAttribute = 'customer_name';
 
     protected static string | UnitEnum | null $navigationGroup = 'Workspace';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return (string) ShuttleBooking::where('status', 'pending')->count();
+    }
+
+    public static function getNavigationBadgeColor(): ?string
+    {
+        return 'primary';
+    }
 
     public static function form(Schema $schema): Schema
     {
