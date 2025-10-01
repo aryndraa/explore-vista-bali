@@ -17,7 +17,7 @@
     :class="scrolled ? 'bg-white shadow-lg text-black' :
         '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
-    <div class="mx-auto px-4 md:px-6">
+    <div class="mx-auto px-8 container">
         <div class="flex items-center justify-between h-16">
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="text-2xl font-bold font-roboto text-inherit">
@@ -25,7 +25,7 @@
             </a>
 
             {{-- Desktop nav --}}
-            <nav class="hidden md:flex items-center gap-6 h-full font-inter">
+            <nav class="hidden lg:flex items-center gap-6 h-full font-inter">
                 <a href="#"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Home</a>

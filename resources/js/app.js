@@ -1,7 +1,7 @@
 import './bootstrap';
 window.Alpine = Alpine;
 
-//? PRIMARY CODE ==========================
+//? TEMPORARY CODE ==========================
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual'; // or 'auto'
 }
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("beforeunload", () => {
     sessionStorage.setItem("scrollPos", window.scrollY);
 });
-//? PRIMARY CODE ==========================
+//? TERMPORARY CODE ==========================
 
 var animatedHoverBtn = document.querySelectorAll("[data-hover-animation='wave']");
 
