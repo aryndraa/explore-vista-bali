@@ -15,14 +15,14 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-
+    
 class ShuttleResource extends Resource
 {
     protected static ?string $model = Shuttle::class;
 
     protected static string|BackedEnum|null $navigationIcon = 'gmdi-car-crash';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Workspace';
+    protected static string | \UnitEnum | null $navigationGroup = 'Resources';
 
     protected static ?string $label = "Shuttle Manager";
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int $id
@@ -61,4 +62,9 @@ class ShuttleBooking extends Model
         'package_id',
         'status',
     ];
+
+    public function shuttle(): BelongsTo
+    {
+        return $this->belongsTo(Shuttle::class);
+    }
 }

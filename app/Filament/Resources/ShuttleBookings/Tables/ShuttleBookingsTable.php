@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\TourBookings\Tables;
+namespace App\Filament\Resources\ShuttleBookings\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
-class TourBookingsTable
+class ShuttleBookingsTable
 {
     public static function configure(Table $table): Table
     {
@@ -20,14 +21,12 @@ class TourBookingsTable
             ->columns([
                 TextColumn::make('customer_name')
                     ->searchable(),
-                TextColumn::make('package.name')
-                    ->searchable(),
+                TextColumn::make('shuttle.name'),
                 TextColumn::make('booking_date')
                     ->date()
                     ->sortable(),
-                TextColumn::make('people_amount')
-                    ->numeric()
-                    ->suffix(' Person')
+                TextColumn::make('pickup_time')
+                    ->time()
                     ->sortable(),
                 TextColumn::make('status')
                     ->badge()
@@ -41,7 +40,7 @@ class TourBookingsTable
                         'ongoing'   => 'primary',
                         default     => 'gray',
                     })
-                    ->tooltip(fn ($state) => match ($state) {
+                      ->tooltip(fn ($state) => match ($state) {
                         'pending'   => 'Waiting for payment or confirmation.',
                         'confirmed' => 'Booking has been confirmed and paid.',
                         'cancelled' => 'Booking has been cancelled.',
@@ -49,34 +48,17 @@ class TourBookingsTable
                         'expired'   => 'Booking expired due to timeout.',
                         'ongoing'   => 'The trip is currently in progress.',
                         default     => 'Unknown status.',
-                    })
-                    ->searchable(),
-                TextColumn::make('created_at')
-                    ->date()
-                    ->label('Created at')
-                    ->sortable()
+                    }),
             ])
             ->filters([
-                SelectFilter::make('package')
-                    ->relationship('package', 'name')
-                    ->searchable()
-                    ->preload()
-                    ->label('Package'),
+                SelectFilter::make('shuttle')
+                    ->relationship('shuttle', 'name')
+                    ->label('Shuttle Vehicle')
+                    ->placeholder('Select Shuttle Vehicle'),
 
-                SelectFilter::make('status')
-                    ->options([
-                        'pending'   => 'Pending',
-                        'confirmed' => 'Confirmed',
-                        'cancelled' => 'Cancelled',
-                        'completed' => 'Completed',
-                        'expired'   => 'Expired',
-                        'ongoing'   => 'Ongoing',
-                    ])
-                    ->label('Status'),
-
-                Filter::make('booking_date')
+                  Filter::make('booking_date')
                     ->form([
-                         Section::make([
+                        Section::make([
                             DatePicker::make('from')->label('From Date'),
                             DatePicker::make('until')->label('Until Date'),
                         ])
@@ -105,7 +87,7 @@ class TourBookingsTable
 
                 Filter::make('created_at')
                     ->form([
-                          Section::make([
+                        Section::make([
                             DatePicker::make('from')->label('From Date'),
                             DatePicker::make('until')->label('Until Date'),
                         ])
