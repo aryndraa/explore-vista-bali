@@ -58,4 +58,9 @@ class Vehicle extends Model implements HasMedia
     {
         return $this->hasMany(ShuttleBooking::class);
     }
+
+    public function rentals(): HasMany
+    {
+        return $this->hasMany(VehicleRental::class);
+    }
 }

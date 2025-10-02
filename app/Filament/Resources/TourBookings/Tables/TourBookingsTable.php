@@ -50,8 +50,7 @@ class TourBookingsTable
                         'expired'   => 'Booking expired due to timeout.',
                         'ongoing'   => 'The trip is currently in progress.',
                         default     => 'Unknown status.',
-                    })
-                    ->searchable(),
+                    }),
                 TextColumn::make('created_at')
                     ->date()
                     ->label('Created at')
