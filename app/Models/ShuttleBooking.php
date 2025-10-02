@@ -67,4 +67,9 @@ class ShuttleBooking extends Model
     {
         return $this->belongsTo(Shuttle::class);
     }
+
+    public function vehicle(): BelongsTo
+    {
+        return $this->belongsTo(Vehicle::class);
+    }
 }

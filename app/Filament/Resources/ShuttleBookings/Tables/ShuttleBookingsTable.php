@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ShuttleBookings\Tables;
 
+use Dom\Text;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -28,6 +29,7 @@ class ShuttleBookingsTable
                 TextColumn::make('pickup_time')
                     ->time()
                     ->sortable(),
+                TextColumn::make('vehicle.name'),
                 TextColumn::make('status')
                     ->badge()
                     ->formatStateUsing(fn ($state) => ucfirst($state))
@@ -55,6 +57,13 @@ class ShuttleBookingsTable
                     ->relationship('shuttle', 'name')
                     ->label('Shuttle Vehicle')
                     ->placeholder('Select Shuttle Vehicle'),
+
+                SelectFilter::make('vehicle')
+                    ->preload()
+                    ->searchable()
+                    ->relationship('vehicle', 'name')
+                    ->label('Vehicle')
+                    ->placeholder('Select Vehicle'),
 
                   Filter::make('booking_date')
                     ->form([

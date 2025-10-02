@@ -49,4 +49,9 @@ class Shuttle extends Model implements HasMedia
     {
         return $this->hasMany(ShuttleVehicle::class);
     }
+
+    public function shuttleBookings(): HasMany
+    {
+        return $this->hasMany(ShuttleBooking::class);
+    }
 }
