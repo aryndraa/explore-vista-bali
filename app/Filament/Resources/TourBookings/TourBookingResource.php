@@ -5,6 +5,7 @@ namespace App\Filament\Resources\TourBookings;
 use App\Filament\Resources\TourBookings\Pages\CreateTourBooking;
 use App\Filament\Resources\TourBookings\Pages\EditTourBooking;
 use App\Filament\Resources\TourBookings\Pages\ListTourBookings;
+use App\Filament\Resources\TourBookings\Pages\ViewTourBooking;
 use App\Filament\Resources\TourBookings\Schemas\TourBookingForm;
 use App\Filament\Resources\TourBookings\Tables\TourBookingsTable;
 use App\Models\TourBooking;
@@ -59,6 +60,7 @@ class TourBookingResource extends Resource
             'index' => ListTourBookings::route('/'),
             'create' => CreateTourBooking::route('/create'),
             'edit' => EditTourBooking::route('/{record}/edit'),
+            'view' => ViewTourBooking::route('/{record}'),
         ];
     }
 }

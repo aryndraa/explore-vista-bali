@@ -2,11 +2,14 @@
 
 namespace App\Filament\Resources\TourBookings\Schemas;
 
+use Filament\Actions\Action;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
+use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -33,31 +36,63 @@ class TourBookingForm
                             ->disablePlaceholderSelection()
                             ->columnSpanFull()
                             ->columnSpanFull(),
-                    ]),
+
+                        Select::make('agent_id')
+                            ->relationship('agent', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->label('Handled by Agent')
+                            ->nullable(),
+
+                          Actions::make([
+                            Action::make('sendEmail')
+                                ->visible(fn ($record) => filled($record?->agent_id))
+                                ->label('Send email to agent')
+                                ->icon('heroicon-o-envelope')
+                                ->requiresConfirmation()
+                                ->action(function ($record, $livewire) {
+                                    if (! $record->agent) {
+                                        Notification::make()
+                                            ->title('Gagal')
+                                            ->body('Tidak ada agent yang dipilih.')
+                                            ->danger()
+                                            ->send();
+
+                                        return;
+                                    }
+
+                                    \Mail::to($record->agent->email)->send(
+                                        new \App\Mail\AgentAssigned($record)
+                                    );
+
+                                    Notification::make()
+                                        ->title('Sukses')
+                                        ->body('Email berhasil dikirim ke ' . $record->agent->name)
+                                        ->success()
+                                        ->send();
+                                }),
+                            ])
+                            ->hiddenOn(['create', 'edit']),
+                    ]), 
                     Section::make([
                         TextInput::make('customer_name')
                             ->required()
-                            ->columnSpanFull()
-                            ->disabled(),
+                            ->columnSpanFull(),
                         Textarea::make('address')
                             ->autosize()
-                            ->columnSpanFull()
-                            ->disabled(),
+                            ->required()
+                            ->columnSpanFull(),
                         TextInput::make('customer_phone')
                             ->tel()
-                            ->required()
-                            ->disabled(),
+                            ->required(),
                         TextInput::make('customer_email')
                             ->email()
-                            ->required()
-                            ->disabled(),
+                            ->required(),
                         DatePicker::make('booking_date')
-                            ->required()
-                            ->disabled(),
+                            ->required(),
                         TextInput::make('people_amount')
                             ->required()
-                            ->numeric()
-                            ->disabled(),
+                            ->numeric(),
                     ])
                     ->columns(2),
                 ])
@@ -65,15 +100,21 @@ class TourBookingForm
 
 
                 Section::make([
-                    TextInput::make('name')
+                    Select::make('name')
                         ->label('Package')
-                        ->disabled(),
-                    SpatieMediaLibraryFileUpload::make('image')
-                        ->label(" ")
-                        ->collection('packages')
-                        ->disabled()
+                        ->relationship('package', 'name')
+                        ->preload()
+                        ->searchable()
+                        ->required(),
+                    
+                    Group::make([
+                            SpatieMediaLibraryFileUpload::make('image')
+                            ->label("Package Image")
+                            ->hiddenOn(['create','edit'])
+                            ->collection('packages'),
+                        ])
+                        ->relationship('package'),
                 ])
-                ->relationship('package')
                 ->columnSpan(2)
             ])
             ->columns(5);

@@ -48,10 +48,16 @@ class TourBooking extends Model
         'booking_date',
         'people_amount',
         'status',
+        'agent_id'
     ];
 
     public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
+    }
+
+    public function agent(): BelongsTo
+    {
+        return $this->belongsTo(Agent::class);
     }
 }

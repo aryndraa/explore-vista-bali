@@ -17,4 +17,9 @@ class Agent extends Model implements HasMedia
         'email',
         'phone',
     ];
+
+    public function tourBooking()
+    {
+        return $this->hasMany(TourBooking::class);
+    }
 }

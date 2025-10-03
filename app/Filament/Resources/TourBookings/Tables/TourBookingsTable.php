@@ -5,6 +5,7 @@ namespace App\Filament\Resources\TourBookings\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DatePicker;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs\Tab;
@@ -123,7 +124,8 @@ class TourBookingsTable
             ])
             ->filtersFormWidth('lg')
             ->recordActions([
-                EditAction::make(),
+                ViewAction::make(),
+                EditAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
