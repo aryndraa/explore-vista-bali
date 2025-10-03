@@ -62,7 +62,7 @@
                         x-transition:leave-end="opacity-0 -translate-y-2" x-cloak
                         class="absolute overflow-hidden -left-2 w-max bg-white text-gray-700 shadow-lg ring-1 ring-black/5">
                         <li>
-                            <a href="{{ route('services.tour-package') }}"
+                            <a href="{{ route('services.available-packages') }}"
                                 class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
                                 <div class="bg-gray-100 p-2 rounded-md flex-none">
                                     <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 24 24"
@@ -195,7 +195,8 @@
                 </button>
                 <ul x-show="open" x-transition x-cloak class="mt-2 space-y-2">
                     <li>
-                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-gray-700">
+                        <a href="{{ route('services.available-packages') }}"
+                            class="flex gap-3 p-2 rounded-md hover:bg-gray-700">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">

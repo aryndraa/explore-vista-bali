@@ -45,7 +45,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('services.tour-package') }}" class="block transition-colors">
+                            <a href="{{ route('services.available-packages') }}" class="block transition-colors">
                                 Tour Packages
                             </a>
                         </li>
