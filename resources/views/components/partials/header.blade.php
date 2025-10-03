@@ -37,7 +37,7 @@
                 <div class="relative h-full" x-data="{ open: false }" @mouseenter="open = true"
                     @mouseleave="open = false">
                     <button @click="open = !open" aria-expanded="open"
-                        class="flex group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('service.*') ? $activeClasses : '' }}"
+                        class="flex group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('services.*') ? $activeClasses : '' }}"
                         :class="{ {{ $hoverClasses }} }">
 
                         Services
@@ -62,7 +62,8 @@
                         x-transition:leave-end="opacity-0 -translate-y-2" x-cloak
                         class="absolute overflow-hidden -left-2 w-max bg-white text-gray-700 shadow-lg ring-1 ring-black/5">
                         <li>
-                            <a href="#" class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
+                            <a href="{{ route('services.tour-package') }}"
+                                class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
                                 <div class="bg-gray-100 p-2 rounded-md flex-none">
                                     <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 24 24"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
