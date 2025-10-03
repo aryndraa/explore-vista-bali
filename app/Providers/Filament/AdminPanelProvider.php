@@ -2,10 +2,15 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\Agents\AgentResource;
+use App\Filament\Resources\Vehicles\VehicleResource;
+use App\Models\Agent;
+use Filament\Actions\Action;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationGroup;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
@@ -30,6 +35,12 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('Explore Vista Bali')
+            ->userMenuItems([
+                'agent' => MenuItem::make()
+                    ->label('Travel Agents')
+                    ->icon('gmdi-supervised-user-circle-r')
+                    ->url(fn (): string => AgentResource::getUrl('index'))
+            ])
             ->colors([
                 'primary' => '#052e16',
             ])
