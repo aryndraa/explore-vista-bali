@@ -1,7 +1,8 @@
-<div x-data="filterDropdown({ title: '{{ $title }}', options: @js($options) })" class="overflow-hidden rounded-sm border border-gray-300" x-cloak>
+<div x-data="filterDropdown({ title: '{{ $title }}', options: @js($options) })" class="overflow-hidden rounded-sm" x-cloak>
     <!-- Summary -->
     <button @click="open = !open"
-        class="cursor-pointer flex w-full items-center justify-between gap-2 p-4 text-gray-900 transition" type="button">
+        class="cursor-pointer flex w-full items-center justify-between gap-2 p-4 text-gray-900 transition border border-gray-300 shadow-sm"
+        type="button">
         <span class="text-sm font-medium" x-text="title"></span>
 
         <span class="transition-transform duration-300" :class="{ '-rotate-180': open }">

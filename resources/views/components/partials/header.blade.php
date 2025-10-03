@@ -145,7 +145,7 @@
                 </a>
 
                 {{-- Mobile toggle --}}
-                <button @click="mobileOpen = !mobileOpen" class="md:hidden"
+                <button @click="mobileOpen = !mobileOpen" class="lg:hidden"
                     :class="{
                         'text-white': !scrolled,
                         'text-black': scrolled
