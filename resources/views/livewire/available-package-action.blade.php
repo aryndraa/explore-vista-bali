@@ -118,11 +118,13 @@
             <div class="lg:col-span-3">
                 <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">8 Tours available</p>
                 <ul class="grid gap-4 sm:gap-5 lg:gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
+
                     @for ($i = 0; $i < 6; $i++)
                         <li>
-                            <x-tour-card :$i />
+                            <x-package-card packageType="tour" :$i />
                         </li>
                     @endfor
+
                 </ul>
             </div>
         </div>

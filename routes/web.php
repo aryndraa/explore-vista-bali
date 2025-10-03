@@ -9,6 +9,8 @@ Route::name('services.')
     ->group(function () {
         Route::get('/available-packages', fn() => view('services.available-package'))
             ->name('available-packages');
+        Route::get('/package-detail', fn() => view('services.package-detail'))
+            ->name('package-detail');
     });
 
 Route::get('/gallery', fn() => view('gallery'))->name('gallery');

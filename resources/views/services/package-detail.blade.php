@@ -1,6 +1,6 @@
 @extends('components.layouts.app', ['variant' => 'light'])
 
-@section('title', 'Available Packages - Explore Vista Bali')
+@section('title', 'Package Detail - Explore Vista Bali')
 @section('content')
 
     {{-- ? TITLE SECTION --}}
@@ -10,7 +10,11 @@
         <div class="container mx-auto flex justify-center items-end px-8 pt-16 pb-10 min-h-60 w-full text-white">
 
             <div class="flex flex-col items-center text-center">
-                <nav aria-label="Breadcrumb" class="text-cst-yellow-400 mb-2">
+                <h1 class="font-roboto font-semibold text-3xl sm:text-4xl mb-4">
+                    Ubud Tour
+                </h1>
+
+                <nav aria-label="Breadcrumb" class="text-cst-yellow-400">
                     <ol class="flex items-center gap-1 text-sm [&_a]:cursor-pointer">
                         <li>
                             <a href="{{ route('home') }}" class="block transition-colors" aria-label="Home">
@@ -49,17 +53,25 @@
                                 Tour Packages
                             </a>
                         </li>
+
+                        <li class="rtl:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </li>
+
+                        <li>
+                            <p class="block transition-colors">
+                                This Package
+                            </p>
+                        </li>
                     </ol>
                 </nav>
-
-                <h1 class="font-roboto font-semibold text-3xl sm:text-4xl">Available tours and
-                    activities</h1>
             </div>
 
         </div>
     </section>
-
-    {{-- ? TOUR LISTS SECTION --}}
-    <livewire:available-package-action />
 
 @endsection
