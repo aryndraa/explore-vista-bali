@@ -62,12 +62,12 @@ class TourBookingForm
                                     }
 
                                     \Mail::to($record->agent->email)->send(
-                                        new \App\Mail\AgentAssigned($record)
+                                        new \App\Mail\TourBookingAssigned($record)
                                     );
 
                                     Notification::make()
                                         ->title('Sukses')
-                                        ->body('Email berhasil dikirim ke ' . $record->agent->name)
+                                        ->body('Email succesfully send to ' . $record->agent->name)
                                         ->success()
                                         ->send();
                                 }),
@@ -100,7 +100,7 @@ class TourBookingForm
 
 
                 Section::make([
-                    Select::make('name')
+                    Select::make('package_id')
                         ->label('Package')
                         ->relationship('package', 'name')
                         ->preload()

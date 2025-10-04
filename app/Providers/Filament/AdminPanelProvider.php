@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\AgentCalendar;
 use App\Filament\Resources\Agents\AgentResource;
 use App\Filament\Resources\Vehicles\VehicleResource;
 use App\Models\Agent;
@@ -39,7 +40,12 @@ class AdminPanelProvider extends PanelProvider
                 'agent' => MenuItem::make()
                     ->label('Travel Agents')
                     ->icon('gmdi-supervised-user-circle-r')
-                    ->url(fn (): string => AgentResource::getUrl('index'))
+                    ->url(fn (): string => AgentResource::getUrl('index')),
+
+                'date' => MenuItem::make()
+                    ->label('Booking Date')
+                    ->icon('gmdi-date-range-r')
+                    ->url(fn (): string => AgentCalendar::getUrl()),
             ])
             ->colors([
                 'primary' => '#052e16',
@@ -68,6 +74,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->collapsibleNavigationGroups(false)
+            ->darkMode(false)
             ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }

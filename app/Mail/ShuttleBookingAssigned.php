@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Models\TourBooking;
+use App\Models\ShuttleBooking;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class AgentAssigned extends Mailable
+class ShuttleBookingAssigned extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -19,7 +19,7 @@ class AgentAssigned extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(TourBooking $booking)
+    public function __construct(ShuttleBooking $booking)
     {
         $this->booking = $booking;
     }
@@ -30,7 +30,7 @@ class AgentAssigned extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Agent Assigned',
+            subject: 'Shuttle Booking Assigned',
         );
     }
 
@@ -40,7 +40,7 @@ class AgentAssigned extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.agent.assigned',
+            view: 'view.name',
         );
     }
 

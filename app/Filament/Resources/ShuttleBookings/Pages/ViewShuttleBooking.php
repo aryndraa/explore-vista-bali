@@ -3,19 +3,17 @@
 namespace App\Filament\Resources\ShuttleBookings\Pages;
 
 use App\Filament\Resources\ShuttleBookings\ShuttleBookingResource;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\ViewAction;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditShuttleBooking extends EditRecord
+class ViewShuttleBooking extends ViewRecord
 {
     protected static string $resource = ShuttleBookingResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
-            DeleteAction::make(),
+            EditAction::make(),
         ];
     }
 }

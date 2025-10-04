@@ -61,6 +61,7 @@ class ShuttleBooking extends Model
         'vehicle_id',
         'package_id',
         'status',
+        'agent_id'
     ];
 
     public function shuttle(): BelongsTo
@@ -71,5 +72,10 @@ class ShuttleBooking extends Model
     public function vehicle(): BelongsTo
     {
         return $this->belongsTo(Vehicle::class);
+    }
+
+    public function agent(): BelongsTo
+    {
+        return $this->belongsTo(Agent::class);
     }
 }

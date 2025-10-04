@@ -5,6 +5,7 @@ namespace App\Filament\Resources\ShuttleBookings;
 use App\Filament\Resources\ShuttleBookings\Pages\CreateShuttleBooking;
 use App\Filament\Resources\ShuttleBookings\Pages\EditShuttleBooking;
 use App\Filament\Resources\ShuttleBookings\Pages\ListShuttleBookings;
+use App\Filament\Resources\ShuttleBookings\Pages\ViewShuttleBooking;
 use App\Filament\Resources\ShuttleBookings\Schemas\ShuttleBookingForm;
 use App\Filament\Resources\ShuttleBookings\Tables\ShuttleBookingsTable;
 use App\Models\ShuttleBooking;
@@ -58,6 +59,7 @@ class ShuttleBookingResource extends Resource
             'index' => ListShuttleBookings::route('/'),
             'create' => CreateShuttleBooking::route('/create'),
             'edit' => EditShuttleBooking::route('/{record}/edit'),
+            'view' => ViewShuttleBooking::route('/{record}'),
         ];
     }
 }

@@ -2,11 +2,14 @@
 
 namespace App\Filament\Resources\ShuttleBookings\Schemas;
 
+use Filament\Actions\Action;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TimePicker;
+use Filament\Notifications\Notification;
+use Filament\Schemas\Components\Actions;
 use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -30,8 +33,44 @@ class ShuttleBookingForm
                                 ->required()
                                 ->native(false)
                                 ->disablePlaceholderSelection()
-                                ->columnSpanFull()
                                 ->columnSpanFull(),
+
+                        Select::make('agent_id')
+                            ->relationship('agent', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->label('Handled by Agent')
+                            ->nullable(),
+
+                        Actions::make([
+                        Action::make('sendEmail')
+                            ->visible(fn ($record) => filled($record?->agent_id))
+                            ->label('Send email to agent')
+                            ->icon('heroicon-o-envelope')
+                            ->requiresConfirmation()
+                            ->action(function ($record, $livewire) {
+                                if (! $record->agent) {
+                                    Notification::make()
+                                        ->title('Gagal')
+                                        ->body('Tidak ada agent yang dipilih.')
+                                        ->danger()
+                                        ->send();
+
+                                    return;
+                                }
+
+                                \Mail::to($record->agent->email)->send(
+                                    new \App\Mail\ShuttleBookingAssigned($record)
+                                );
+
+                                Notification::make()
+                                    ->title('Sukses')
+                                    ->body('Email succesfully send to  ' . $record->agent->name)
+                                    ->success()
+                                    ->send();
+                            }),
+                        ])
+                        ->hiddenOn(['create', 'edit']),
                     ]),
 
                     Section::make([
@@ -47,16 +86,15 @@ class ShuttleBookingForm
                             ->required()
                             ->numeric(),
                     ])
-                    ->disabled(),
                 ]),
 
                 Group::make([
                     Section::make([
-                        TextInput::make('name')
+                        Select::make('shuttle_id')
                             ->label('Shuttle Package')
-                            ->disabled()
-                    ])
-                    ->relationship('shuttle'),
+                            ->relationship('shuttle', 'name')
+                            ->required()
+                    ]),
 
                     Section::make([
                         DatePicker::make('booking_date')
@@ -74,25 +112,29 @@ class ShuttleBookingForm
                             ->required()    
                             ->columnSpanFull(),
                     ])
-                    ->disabled()
                     ->columns(2),
 
                     Section::make([
-                        TextInput::make('name')
-                            ->required(),
-
-                        SpatieMediaLibraryFileUpload::make('image')
-                            ->label('Vehicle Image')
-                            ->collection('vehicles') 
-                            ->image()
-                            ->maxFiles(1)
-                            ->imageCropAspectRatio('16:9')
-                            ->columnSpanFull()
+                        Select::make('vehicle_id')
+                            ->relationship('vehicle', 'name')
+                            ->preload()
+                            ->searchable()
                             ->required(),
                         
+                            Group::make([
+                                SpatieMediaLibraryFileUpload::make('image')
+                                    ->label('Vehicle Image')
+                                    ->collection('vehicles') 
+                                    ->image()
+                                    ->maxFiles(1)
+                                    ->imageCropAspectRatio('16:9')
+                                    ->columnSpanFull()
+                                    ->hiddenOn(['create','edit'])   
+                                    ->required(),
+                            ])
+                            ->relationship('vehicle'),
+                            
                     ])
-                    ->relationship('vehicle')
-                    ->disabled()
                 ])
 
             ]);
