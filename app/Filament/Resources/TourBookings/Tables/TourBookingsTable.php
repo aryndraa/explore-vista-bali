@@ -54,7 +54,7 @@ class TourBookingsTable
                     }),
                 TextColumn::make('created_at')
                     ->date()
-                    ->label('Created at')
+                    ->label('Requested At')
                     ->sortable()
             ])
             ->filters([

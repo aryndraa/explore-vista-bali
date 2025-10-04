@@ -28,7 +28,8 @@ class ShuttleBookingsTable
                     ->date()
                     ->sortable(),
                 TextColumn::make('pickup_time')
-                    ->time()
+                    ->time('H:i')
+                    ->suffix(' WITA')
                     ->sortable(),
                 TextColumn::make('vehicle.name'),
                 TextColumn::make('status')
