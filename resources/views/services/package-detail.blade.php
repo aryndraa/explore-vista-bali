@@ -206,14 +206,6 @@
         </div>
     </section>
 
-    {{-- How it works:
-
-    1. Semua items di-render dalam satu track panjang menggunakan flexbox
-    2. Track dibagi per halaman (4 items per page di desktop, 1 di mobile)
-    3. Container parent menggunakan overflow-hidden untuk menyembunyikan items di luar viewport
-    4. translateX menggeser track berdasarkan currentIndex
-    5. Transisi CSS menganimasikan pergerakan dengan smooth --}}
-
     {{-- ? PACKAGE DETAIL SECTION --}}
     <section class="bg-gray-200/80">
         <div
@@ -232,19 +224,48 @@
                     suspendisse tempor urna leo ipsum arcu. Sodales vel erat vitae dictum morbi pretium varius imperdiet
                     ante.
                 </p>
-                <h4 class="mb-2">Destinations</h4>
-                <ul class="list-disc pl-5 mb-6">
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem, ipsum dolor.</li>
-                </ul>
-                <h4 class="mb-2">Included</h4>
+
+                @if (request('type') === 'tour')
+                    <h4 class="mb-2">Destinations</h4>
+                    <ol class="list-decimal pl-5">
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                    </ol>
+                @elseif (request('type') === 'activity')
+                    <h4 class="mb-2">Prices list</h4>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y-2 divide-gray-200 shadow-lg">
+                            <thead class="ltr:text-left rtl:text-right bg-cst-green-200/70">
+                                <tr class="*:font-medium *:text-gray-900">
+                                    <th class="px-3 py-2 whitespace-nowrap">Activities</th>
+                                    <th class="px-3 py-2 whitespace-nowrap">Duration</th>
+                                    <th class="px-3 py-2 whitespace-nowrap">Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-gray-200 bg-gray-100 *:even:bg-gray-50">
+
+                                @for ($i = 0; $i < 7; $i++)
+                                    <tr class="*:text-gray-900 *:first:font-medium">
+                                        <td class="px-3 py-2 whitespace-nowrap">Lorem, ipsum dolor.</td>
+                                        <td class="px-3 py-2 whitespace-nowrap">20 Minutes</td>
+                                        <td class="px-3 py-2 whitespace-nowrap">$0</td>
+                                    </tr>
+                                @endfor
+
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
+
+                <h4 class="mb-2 mt-6">Included</h4>
                 <ul class="space-y-2 mb-6">
                     @for ($i = 0; $i < 4; $i++)
                         <li class="flex items-start gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6 text-green-600 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6 text-green-600 shrink-0">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
@@ -256,8 +277,8 @@
                 <ul class="space-y-2">
                     @for ($i = 0; $i < 2; $i++)
                         <li class="flex items-start gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6 text-red-600 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="size-6 text-red-600 shrink-0">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>

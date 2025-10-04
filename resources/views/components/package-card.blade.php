@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <x-wave-button href="{{ route('services.package-detail', ['id' => $id]) }}"
+        <x-wave-button href="{{ route('services.package-detail', ['id' => $id, 'type' => $packageType]) }}"
             firstTextClasses="text-cst-yellow-400 font-inter font-semibold"
             secondTextClasses="text-cst-yellow-400 font-playfair font-bold italic"
             class="text-lg w-full py-2 text-center bg-cst-green-400 rounded-sm">
