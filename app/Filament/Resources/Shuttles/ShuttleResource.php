@@ -28,6 +28,9 @@ class ShuttleResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'Shuttle';
 
+    protected static ?int $navigationSort = 3;
+
+
     public static function form(Schema $schema): Schema
     {
         return ShuttleForm::configure($schema);

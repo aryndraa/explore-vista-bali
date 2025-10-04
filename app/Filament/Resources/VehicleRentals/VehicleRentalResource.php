@@ -26,6 +26,9 @@ class VehicleRentalResource extends Resource
 
     protected static string | UnitEnum | null $navigationGroup = 'Workspace';
 
+    protected static ?int $navigationSort = 3;
+
+
     public static function getNavigationBadge(): ?string
     {
         return (string) VehicleRental::where('status', 'pending')->count();

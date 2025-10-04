@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use BackedEnum;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Pages\Dashboard as BaseDashboard;
@@ -17,6 +18,8 @@ class Dashboard extends BaseDashboard
     use BaseDashboard\Concerns\HasFiltersForm;
 
     use InteractsWithPageFilters;
+
+    protected static string|BackedEnum|null $navigationIcon = 'gmdi-home-r';
 
     protected function getHeaderWidgets(): array
     {

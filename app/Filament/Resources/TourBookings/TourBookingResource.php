@@ -27,6 +27,8 @@ class TourBookingResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'customer_name';
 
+    protected static ?int $navigationSort = 1;
+
     public static function getNavigationBadge(): ?string
     {
         return (string) TourBooking::where('status', 'pending')->count();
