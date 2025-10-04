@@ -21,7 +21,7 @@ class PlaceResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = 'gmdi-place';
 
-    protected static ?string $recordTitleAttribute = 'Place';
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?string $label = 'Tour Locations';
 

@@ -23,7 +23,7 @@ class TourResource extends Resource
 
     protected static ?string $label = 'Tour Category';
 
-    protected static ?string $recordTitleAttribute = 'Tour';
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static string | UnitEnum | null $navigationGroup = 'Categories';
 

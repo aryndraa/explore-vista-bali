@@ -30,7 +30,7 @@ class PackageResource extends Resource
 
     protected static ?string $label = 'Tour Packages';
 
-    protected static ?string $recordTitleAttribute = 'Package';
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Schema $schema): Schema
     {

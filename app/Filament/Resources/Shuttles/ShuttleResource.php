@@ -26,7 +26,7 @@ class ShuttleResource extends Resource
 
     protected static ?string $label = "Shuttle Manager";
 
-    protected static ?string $recordTitleAttribute = 'Shuttle';
+    protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?int $navigationSort = 3;
 
