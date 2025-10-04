@@ -75,16 +75,23 @@
     </section>
 
     {{-- ? PHOTOS SECTION --}}
+
+    @php
+        //? EXAMPLE
+        $sampleImage = 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400';
+        $carouselItems = [
+            ['id' => 1, 'image' => $sampleImage, 'title' => 'Slide 1'],
+            ['id' => 2, 'image' => $sampleImage, 'title' => 'Slide 2'],
+            ['id' => 3, 'image' => $sampleImage, 'title' => 'Slide 3'],
+            ['id' => 4, 'image' => $sampleImage, 'title' => 'Slide 4'],
+            ['id' => 5, 'image' => $sampleImage, 'title' => 'Slide 5'],
+            ['id' => 6, 'image' => $sampleImage, 'title' => 'Slide 6'],
+        ];
+    @endphp
+
     <section x-data="{
         currentIndex: 0,
-        items: [
-            { id: 1, image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400', title: 'Slide 1' },
-            { id: 2, image: 'https://images.unsplash.com/photo-1488590088505-98d2b5aba04b?w=400', title: 'Slide 2' },
-            { id: 3, image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400', title: 'Slide 3' },
-            { id: 4, image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400', title: 'Slide 4' },
-            { id: 5, image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400', title: 'Slide 5' },
-            { id: 6, image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400', title: 'Slide 6' }
-        ],
+        items: @js($carouselItems),
         itemsPerPage: 4,
         init() {
             this.updateItemsPerPage();
@@ -124,8 +131,16 @@
             }
         },
         get translateX() {
-            const gapPercentage = this.itemsPerPage === 1 ? 0 : 0;
-            return -(this.currentIndex * (100 + gapPercentage));
+            return this.currentIndex * -100;
+        },
+        get translateStyle() {
+            if (this.itemsPerPage === 1) {
+                return `transform: translateX(${this.translateX}%)`;
+            }
+    
+            const gapRem = 1.5; // gap-6 = 1.5rem
+            const gapOffset = this.currentIndex * gapRem;
+            return `transform: translateX(calc(${this.translateX}% - ${gapOffset}rem))`;
         }
     }" class="container mx-auto px-8 py-16">
 
@@ -136,8 +151,8 @@
             <div class="relative mb-12 overflow-hidden">
 
                 <!-- Sliding Track -->
-                <div class="flex transition-transform duration-500 ease-out"
-                    :style="`transform: translateX(${translateX}%)`">
+                <div class="relative max-h-[70vh] md:max-h-none flex transition-transform duration-500 ease-out sm:gap-6"
+                    :style="translateStyle">
 
                     <!-- Each Page Group -->
                     <template x-for="pageIndex in totalPages" :key="'page-' + pageIndex">
@@ -147,7 +162,7 @@
                                 x-for="(item, idx) in items.slice((pageIndex - 1) * itemsPerPage, pageIndex * itemsPerPage)"
                                 :key="item.id">
                                 <div
-                                    class="w-full aspect-[3/4] bg-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                                    class="w-full md:w-auto md:h-full aspect-[3/4] bg-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
                                     <img :src="item.image" :alt="item.title"
                                         class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
                                 </div>
@@ -190,6 +205,14 @@
             </div>
         </div>
     </section>
+
+    {{-- How it works:
+
+    1. Semua items di-render dalam satu track panjang menggunakan flexbox
+    2. Track dibagi per halaman (4 items per page di desktop, 1 di mobile)
+    3. Container parent menggunakan overflow-hidden untuk menyembunyikan items di luar viewport
+    4. translateX menggeser track berdasarkan currentIndex
+    5. Transisi CSS menganimasikan pergerakan dengan smooth --}}
 
     {{-- ? PACKAGE DETAIL SECTION --}}
     <section class="bg-gray-200/80">
