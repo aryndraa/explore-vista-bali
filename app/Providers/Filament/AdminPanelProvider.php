@@ -67,6 +67,7 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->sidebarCollapsibleOnDesktop()
             ->collapsibleNavigationGroups(true)
             ->darkMode(false)
             ->viteTheme('resources/css/filament/admin/theme.css');
