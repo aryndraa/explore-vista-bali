@@ -1,13 +1,12 @@
-@props(['id' => 1, 'packageType' => 'tour', 'i'])
+@props(['id' => 1, 'packageType' => 'tour', 'img', 'i'])
 
-<div class="-space-y-5 group overflow-hidden">
+<div class="-space-y-5 group overflow-hidden isolate">
     <div class="cursor-pointer relative -z-10">
         <span
             class="absolute capitalize left-2 top-2 py-1 px-2.5 rounded-sm w-fit font-inter font-bold shadow-lg text-md backdrop-blur-[10px] backdrop-saturate-[165%] bg-[rgba(215,215,215,0.2)] border border-[rgba(255,255,255,0.125)] z-10">
             {{ in_array($packageType, ['tour', 'activity']) ? $packageType : '' }}</span>
         <img class="-z-10 w-full max-h-50 object-cover object-center transition group-hover:scale-105"
-            src="https://plus.unsplash.com/premium_photo-1677829177642-30def98b0963?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="">
+            src="{{ $img }}" alt="">
     </div>
     <div class="bg-gray-200 p-5 rounded-t-xl z-10">
         <h5 class="font-roboto text-xl font-semibold">Tour Package Title</h5>

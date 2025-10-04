@@ -13,18 +13,19 @@
         "'hover:text-cst-yellow-400': !scrolled, 'hover:text-cst-green-400 after:bg-cst-yellow-400': scrolled";
 @endphp
 
-<header x-data="{ scrolled: false, mobileOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200"
+<header x-data="{ scrolled: false, mobileOpen: false, mobileAccordionOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200"
     :class="scrolled ? 'bg-white shadow-lg text-black' :
         '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
     <div class="mx-auto px-8 container">
         <div class="flex items-center justify-between h-16">
-            {{-- Logo --}}
+
+            {{-- ? Logo --}}
             <a href="{{ route('home') }}" class="text-2xl font-bold font-roboto text-inherit">
                 LOGO
             </a>
 
-            {{-- Desktop nav --}}
+            {{-- ? Desktop nav --}}
             <nav class="hidden lg:flex items-center gap-6 h-full font-inter">
                 <a href="{{ route('home') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClasses : '' }}"
@@ -144,7 +145,7 @@
                     </svg>
                 </a>
 
-                {{-- Mobile toggle --}}
+                {{-- ? Mobile toggle --}}
                 <button @click="mobileOpen = !mobileOpen" class="lg:hidden"
                     :class="{
                         'text-white': !scrolled,
@@ -160,43 +161,52 @@
                     </svg>
 
                     {{-- Close --}}
-                    <svg x-show="mobileOpen" x-cloak class="size-6" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
+                    <svg x-show="mobileOpen, mobileAccordionOpen = false" x-cloak class="size-6" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
+
         </div>
     </div>
 
-    {{-- Mobile overlay --}}
+    {{-- ? Mobile overlay --}}
     <div x-show="mobileOpen" x-cloak x-transition:enter="transition ease-out duration-200"
         x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
         x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-2"
-        class="fixed inset-x-0 top-16 bg-white backdrop-blur-sm border-t border-gray-700 md:hidden max-h-[calc(100vh-4rem)] overflow-auto">
-        <ul class="p-4 text-black">
-            <li><a href="{{ route('home') }}"
+        class="container mx-auto fixed min-w-[17rem] left-1/2 -translate-x-1/2 top-16 bg-white backdrop-blur-sm border-t border-gray-700 lg:hidden max-h-[calc(100vh-4rem)] overflow-auto shadow-md">
+        <ul class="p-4 px-8 text-black text-right">
+            <li>
+                <a href="{{ route('home') }}"
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClassesMobile : '' }}">Home</a>
             </li>
-            <li><a href="{{ route('about') }}"
+            <li>
+                <a href="{{ route('about') }}"
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('about') ? $activeClassesMobile : '' }}">About</a>
             </li>
 
             {{-- Services accordion (mobile) --}}
-            <li x-data="{ open: false }">
-                <button @click="open = !open" class="flex justify-between items-center w-full py-2">
-                    <span>Services</span>
-                    <svg :class="{ 'rotate-180': open }" class="w-5 h-5 text-gray-500 transform transition-transform"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <li class="ml-auto w-fit">
+                <button @click="mobileAccordionOpen = !mobileAccordionOpen"
+                    class="flex ml-auto w-fit justify-between items-center py-2">
+                    <svg :class="{ 'rotate-180': mobileAccordionOpen }"
+                        class="w-5 h-5 text-gray-500 transform transition-transform" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
+
+                    <span
+                        class="ml-4 relative {{ request()->routeIs('services.*') ? $activeClassesMobile : '' }}">Services</span>
+
                 </button>
-                <ul x-show="open" x-transition x-cloak class="mt-2 space-y-2">
+
+                <ul x-show="mobileAccordionOpen" x-transition x-cloak class="mt-2 space-y-2 text-start">
                     <li>
                         <a href="{{ route('services.available-packages') }}"
-                            class="flex gap-3 p-2 rounded-md hover:bg-gray-700">
+                            class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 24 24"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +221,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-gray-700">
+                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 15 20"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +236,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-gray-700">
+                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960"
                                     width="30" class="fill-cst-green-400">
@@ -257,7 +267,7 @@
             </li>
 
             {{-- Mobile actions --}}
-            <li class="flex sm:hidden items-center justify-center h-fit gap-4">
+            <li class="flex sm:hidden items-center justify-end h-fit gap-4">
                 <a href="#" class="text-cst-green-400">
                     <svg class="size-5" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"

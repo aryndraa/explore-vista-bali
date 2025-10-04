@@ -1,5 +1,5 @@
 <button
-    {{ $attributes->merge(['class' => 'py-1 px-5 bg-green-600 text-white font-inter font-semibold flex items-center justify-center gap-2 text-md cursor-pointer hover:bg-green-700 transition']) }}>
+    {{ $attributes->merge(['class' => 'py-1 px-5 bg-green-600 text-white font-inter font-semibold flex items-center justify-center gap-2 text-md cursor-pointer hover:bg-green-700 transition rounded-md']) }}>
     <svg xmlns="http://www.w3.org/2000/svg" class="size-9" fill="none" viewBox="0 0 48 48" id="whatsapp">
         {{-- <rect width="48" height="48" fill="#0DC143" rx="24"></rect> --}}
         <path fill="#fff"

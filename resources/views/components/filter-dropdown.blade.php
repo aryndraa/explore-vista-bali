@@ -1,7 +1,7 @@
 <div x-data="filterDropdown({ title: '{{ $title }}', options: @js($options) })" class="overflow-hidden rounded-sm" x-cloak>
     <!-- Summary -->
     <button @click="open = !open"
-        class="cursor-pointer flex w-full items-center justify-between gap-2 p-4 text-gray-900 transition border border-gray-300 shadow-sm"
+        class="cursor-pointer flex w-full items-center justify-between gap-2 p-4 text-gray-900 transition bg-gray-100 border border-gray-300 shadow-sm"
         type="button">
         <span class="text-sm font-medium" x-text="title"></span>
 
@@ -14,7 +14,7 @@
     </button>
 
     <!-- Dropdown content -->
-    <div x-show="open" x-collapse class="border-t border-gray-200 bg-white">
+    <div x-show="open" x-collapse class="border-t border-gray-200 bg-gray-100">
         <header class="flex items-center justify-between p-4">
             <span class="text-sm text-gray-700" x-text="selected.length + ' Selected'"></span>
 

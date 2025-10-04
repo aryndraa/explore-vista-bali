@@ -1,6 +1,6 @@
 <section class="container mx-auto">
 
-    <div class="px-4 py-8 sm:px-6 sm:py-12 lg:px-8" x-data="{ filterOpen: false }">
+    <div class="py-8 sm:py-12 px-8" x-data="{ filterOpen: false }">
         <!-- Mobile Filter Button -->
         <div class="block lg:hidden mb-6">
             <button @click="filterOpen = true"
@@ -86,7 +86,7 @@
             <!-- Desktop Sidebar Filter -->
             <div class="hidden lg:block lg:col-span-1 sticky top-20">
                 <div
-                    class="space-y-4 bg-gray-100 px-6 py-12 shadow-xl min-h-[85vh] max-h-[35rem]  overflow-y-scroll [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-gray-100">
+                    class="space-y-4 bg-gray-200 px-6 py-12 shadow-xl min-h-[85vh] max-h-[35rem] overflow-y-scroll [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-gray-200">
 
                     <h3 class="font-playfair text-4xl font-medium mb-8 italic">Filters</h3>
 
@@ -121,7 +121,9 @@
 
                     @for ($i = 0; $i < 6; $i++)
                         <li>
-                            <x-package-card packageType="tour" :$i />
+                            <x-package-card
+                                img="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                packageType="tour" :$i />
                         </li>
                     @endfor
 
