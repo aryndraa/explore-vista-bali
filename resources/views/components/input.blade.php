@@ -18,7 +18,7 @@
         </label>
     @endif
 
-    <div class="flex gap-4 items-center w-full">
+    <div class="flex gap-3 items-center w-full">
         {{ $slot }}
 
         <input type="{{ $type }}" id="{{ $id }}" name="{{ $name }}" value="{{ $value }}"
@@ -26,7 +26,7 @@
             @if ($type === 'tel') pattern="^\+?[0-9\s\-().]{7,20}$" @endif
             {{ $attributes->except(['class', 'id', 'name', 'value', 'required']) }}
             class="bg-transparent w-full text-xl text-black font-medium
-                   placeholder:text-gray-400/80 placeholder:italic
+                   placeholder:text-gray-400/60 placeholder:italic
                    focus:outline-0">
     </div>
 </div>

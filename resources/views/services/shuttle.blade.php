@@ -42,7 +42,8 @@
                         </p>
                     </div>
 
-                    <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
+                    <x-wave-button href="{{ route('services.shuttle-form', ['type' => 'harbor']) }}"
+                        firstTextClasses="text-black font-inter font-semibold"
                         secondTextClasses="text-black font-playfair font-bold italic"
                         class="text-md w-full py-1.5 px-5 rounded-sm bg-cst-yellow-400">
                         Choose Service
@@ -74,7 +75,8 @@
                         </p>
                     </div>
 
-                    <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
+                    <x-wave-button href="{{ route('services.shuttle-form', ['type' => 'airport']) }}"
+                        firstTextClasses="text-black font-inter font-semibold"
                         secondTextClasses="text-black font-playfair font-bold italic"
                         class="text-md w-full py-1.5 px-5 rounded-sm bg-cst-yellow-400">
                         Choose Service
@@ -106,7 +108,8 @@
                         </p>
                     </div>
 
-                    <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
+                    <x-wave-button href="{{ route('services.shuttle-form', ['type' => 'custom-point']) }}"
+                        firstTextClasses="text-black font-inter font-semibold"
                         secondTextClasses="text-black font-playfair font-bold italic"
                         class="text-md w-full py-1.5 px-5 rounded-sm bg-cst-yellow-400">
                         Choose Service
