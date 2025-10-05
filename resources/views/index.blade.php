@@ -439,7 +439,8 @@
             class="flex flex-col items-center px-4 sm:px-8 py-14 sm:py-20 relative overflow-x-hidden text-white container mx-auto">
 
             <span class="absolute top-0 inset-x-8 h-px bg-cst-green-200/40"></span>
-            <div class="mb-10 sm:mb-16">
+
+            <div class="mb-10 sm:mb-16"k>
                 <p class="font-inter text-gray-300 text-md sm:text-xl mb-2 text-center">Gallery / Pictures</p>
                 <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg text-center">
                     Our <i class="font-playfair">Captured Story</i>
