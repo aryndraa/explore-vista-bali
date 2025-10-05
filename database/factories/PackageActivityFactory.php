@@ -20,7 +20,7 @@ class PackageActivityFactory extends Factory
         return [
             'package_id' => Package::query()->inRandomOrder()->first()->id,
             'name' => $this->faker->sentence(),
-            'duration' => $this->faker->numberBetween(1, 8),
+            'duration' => $this->faker->time(),
             'additional_price' => $this->faker->randomFloat(2, 0),
         ];
     }

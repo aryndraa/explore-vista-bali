@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\PackagePlace;
+use App\Models\VehicleRental;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PackagePlaceSeeder extends Seeder
+class VehicleRentalSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        PackagePlace::factory()->count(10)->create();
+        VehicleRental::factory()->count(20)->create();
     }
 }

@@ -7,9 +7,9 @@ use App\Models\Place;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PackagePlace>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PackageDestination>
  */
-class PackagePlaceFactory extends Factory
+class PackageDestinationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,6 +21,7 @@ class PackagePlaceFactory extends Factory
         return [
             'package_id' => Package::query()->inRandomOrder()->first()->id,
             'place_id'   => Place::query()->inRandomOrder()->first()->id,
+            "name"       => $this->faker->name(),
         ];
     }
 }

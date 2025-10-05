@@ -22,9 +22,10 @@ class TourBookingFactory extends Factory
             'customer_name'  => $this->faker->name(),
             'customer_phone' => $this->faker->phoneNumber(),
             'customer_email' => $this->faker->safeEmail(),
+            'address'        => $this->faker->address(),
             'booking_date'   => $this->faker->date(),
             'people_amount'  => $this->faker->numberBetween(1, 10),
-            'status'         => $this->faker->randomElement(['pending', 'confirmed', 'cancelled'])
+            'status'         => $this->faker->randomElement(['pending', 'confirmed', 'cancelled', 'completed', 'ongoing', 'expired']),
         ];
     }
 }

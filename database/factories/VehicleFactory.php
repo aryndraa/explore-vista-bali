@@ -18,9 +18,10 @@ class VehicleFactory extends Factory
     {
         return [
             'name'          => $this->faker->word(),
-            'type'          => $this->faker->randomElement(['car', 'bike']),
+            'type'          => $this->faker->randomElement(['car', 'motorcycle', 'bike']),
             'person'        => $this->faker->numberBetween(1, 7),
             'price_per_day' => $this->faker->randomFloat(2, 50, 500),
+            'is_active'     => $this->faker->boolean(),
         ];
     }
 }

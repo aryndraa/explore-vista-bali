@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property-read \App\Models\Package|null $package
+ * @property-read \App\Models\Place|null $place
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PackagePlace newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PackagePlace newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|PackagePlace query()
+ * @mixin \Eloquent
+ */
 class PackagePlace extends Model
 {
     /** @use HasFactory<\Database\Factories\PackagePlaceFactory> */
@@ -16,12 +24,12 @@ class PackagePlace extends Model
         'place_id'
     ];
 
-    public function package(): BelongsTo 
+    public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);
     }
 
-    public function places(): BelongsTo
+    public function place(): BelongsTo
     {
         return $this->belongsTo(Place::class);
     }

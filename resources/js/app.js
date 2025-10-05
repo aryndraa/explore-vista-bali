@@ -49,3 +49,5 @@ animatedHoverBtn.forEach((btn) => {
         lower.appendChild(createElement());
     });
 });
+import "./bootstrap";
+import { Calendar } from "fullcalendar";
