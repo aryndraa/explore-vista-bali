@@ -79,7 +79,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
+                            <a href="{{ route('services.shuttle') }}"
+                                class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
                                 <div class="bg-gray-100 p-2 rounded-md flex-none">
                                     <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 15 20"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +222,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
+                        <a href="{{ route('services.shuttle') }}"
+                            class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 15 20"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
