@@ -16,6 +16,9 @@ Route::name('services.')
             ->name('shuttle');
         Route::get('/shuttle-form', fn() => view('services.shuttle-form'))
             ->name('shuttle-form');
+
+        Route::get('/vehicle-rent', fn() => view('services.vehicle-rent'))
+            ->name('vehicle-rent');
     });
 
 Route::get('/gallery', fn() => view('gallery'))->name('gallery');

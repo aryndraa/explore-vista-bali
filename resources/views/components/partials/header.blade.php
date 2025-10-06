@@ -95,7 +95,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
+                            <a fref="{{ route('services.vehicle-rent') }}"
+                                class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
                                 <div class="bg-gray-100 p-2 rounded-md flex-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960"
                                         width="30" class="fill-cst-green-400">
@@ -238,7 +239,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
+                        <a href="{{ route('services.vehicle-rent') }}"
+                            class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960"
                                     width="30" class="fill-cst-green-400">

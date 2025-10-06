@@ -45,21 +45,22 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('services.available-packages') }}" class="block transition-colors">
-                                Tour Packages
+                            <a href="{{ route('services.vehicle-rent') }}" class="block transition-colors">
+                                Vehicle Rental
                             </a>
                         </li>
                     </ol>
                 </nav>
 
-                <h1 class="font-roboto font-semibold text-3xl sm:text-4xl">Available tours and
-                    activities</h1>
+                <h1 class="font-roboto font-semibold text-3xl sm:text-4xl">
+                    Find a <i class="font-playfair">vehicle</i> for your needs
+                </h1>
             </div>
 
         </div>
     </section>
 
-    {{-- ? TOUR LIST SECTION --}}
-    <livewire:available-package-action />
+    {{-- ? VEHICLE LIST SECTION --}}
+    <livewire:vehicle-rent-action />
 
 @endsection
