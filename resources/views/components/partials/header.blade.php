@@ -95,7 +95,7 @@
                             </a>
                         </li>
                         <li>
-                            <a fref="{{ route('services.vehicle-rent') }}"
+                            <a href="{{ route('services.vehicle-rent') }}"
                                 class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
                                 <div class="bg-gray-100 p-2 rounded-md flex-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960"
