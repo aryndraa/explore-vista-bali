@@ -35,10 +35,10 @@
 
                     <div class="flex-1 flex flex-col justify-center">
                         <h4 class="font-semibold text-xl mb-1 text-center">
-                            Harbour
+                            Harbor
                         </h4>
                         <p class="text-base mb-6 text-center">
-                            We'll pick you up at the harbour
+                            We'll pick you up at the harbor
                         </p>
                     </div>
 

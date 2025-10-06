@@ -14,9 +14,28 @@
             {{-- Selected Shuttle Type --}}
             <div class="flex-5 relative">
                 <span class="flex justify-between items-center px-4 py-2 w-full bg-cst-green-200 text-black">
-                    <p class="font-inter italic font-bold text-2xl">Point-to-point</p>
+                    @php
+                        $shuttleType = '';
+                        switch (request('type')) {
+                            case 'airport':
+                                $shuttleType = 'Airport';
+                                break;
+                            case 'harbor':
+                                $shuttleType = 'Harbor';
+                                break;
+                            case 'custom-point':
+                                $shuttleType = 'Point-to-point';
+                                break;
+                            default:
+                                redirect(route('shuttle'));
+                                break;
+                        }
+                    @endphp
+                    <p class="font-inter italic font-bold text-2xl">
+                        {{ $shuttleType }}
+                    </p>
                     <a href="{{ route('services.shuttle') }}"
-                        class="font-inter bg-black text-white px-4 py-1 transition hover:scale-105">
+                        class="rounded-sm font-inter bg-black text-white px-4 py-1 transition hover:scale-105">
                         Change
                     </a>
                 </span>
@@ -64,7 +83,12 @@
 
                     {{-- ? right side: from, to --}}
                     <div class="flex-1">
-                        <x-input id="location-start" name="location_start" label="From" type="text"
+                        @php
+                            $fromLabel = in_array($shuttleType, ['Airport', 'Harbor'])
+                                ? "From ($shuttleType location)"
+                                : 'From';
+                        @endphp
+                        <x-input id="location-start" name="location_start" label="{{ $fromLabel }}" type="text"
                             placeholder="Please give accurate location" class="rounded-sm" required>
                             <svg class="size-8 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
                                 fill="currentColor">
@@ -88,7 +112,6 @@
                 </div>
             </div>
 
-
         </section>
 
         {{-- ? VEHICLE SELECTION --}}
@@ -106,7 +129,7 @@
                 class="grid mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 max-w-sm sm:max-w-none w-full">
 
                 @for ($i = 0; $i < 3; $i++)
-                    <button x-on:click="selectedVehicle = {{ $i }}"
+                    <button type="button" x-on:click="selectedVehicle = {{ $i }}"
                         class="flex flex-col -space-y-4 cursor-pointer rounded-lg transition-all ring-offset-cst-green-800 ring-cst-yellow-400"
                         :class="selectedVehicle === {{ $i }} ? 'ring-3 ring-offset-6' : 'ring-0'">
                         <img class="w-full h-48 object-cover object-center"
