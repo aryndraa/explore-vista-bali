@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\AgentCalendar;
 use App\Filament\Pages\Dashboard;
 use App\Filament\Resources\Agents\AgentResource;
+use App\Filament\Resources\Galleries\GalleryResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -39,6 +40,11 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Booking Date')
                     ->icon('gmdi-date-range-r')
                     ->url(fn (): string => AgentCalendar::getUrl()),
+
+                'gallery' => MenuItem::make()
+                    ->label('Galleries')
+                    ->icon('gmdi-image-o')
+                    ->url(fn (): string => GalleryResource::getUrl('index')),
             ])
             ->colors([
                 'primary' => '#052e16',

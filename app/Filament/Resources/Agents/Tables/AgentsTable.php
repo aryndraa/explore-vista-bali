@@ -15,12 +15,12 @@ class AgentsTable
     {
         return $table
             ->columns([
-                SpatieMediaLibraryImageColumn::make('cover')
-                    ->label('Photo Profile')
-                    ->collection('profile')
-                    ->limit(1)
-                    ->height(60)
-                    ->rounded(),
+            SpatieMediaLibraryImageColumn::make('cover')
+                ->label('Photo Profile')
+                ->collection('profile')
+                ->limit(1)
+                ->height(60)
+                ->rounded(),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('email')
