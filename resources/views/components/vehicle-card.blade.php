@@ -9,7 +9,7 @@
 
 <div class="group">
     {{-- ? Image part --}}
-    <div class="relative overflow-hidden">
+    <div class="relative overflow-hidden h-60">
         {{-- Top shadow for text contrast --}}
         <div
             class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 to-transparent pointer-events-none z-10">
@@ -42,7 +42,8 @@
                 {{ $label }}
             </p>
         </span>
-        <img class="relative w-full h-full bg-cover bg-center group-hover:scale-105 transition -z-10"
+
+        <img class="relative w-full h-full object-cover object-center group-hover:scale-105 transition -z-10"
             src="{{ $img }}" alt="">
     </div>
     {{-- ? Text part --}}

@@ -119,7 +119,7 @@
                 <a href="#"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Blog</a>
-                <a href="#"
+                <a href="{{ route('contact') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('contact') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Contact</a>
             </nav>
@@ -266,7 +266,7 @@
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClassesMobile : '' }}">Blog</a>
             </li>
             <li class="mb-5">
-                <a href="#"
+                <a href="{{ route('contact') }}"
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('contact') ? $activeClassesMobile : '' }}">Contact</a>
             </li>
 

@@ -164,7 +164,7 @@
         <span class="block w-full h-px bg-cst-green-200/40"></span>
 
         {{-- ? SUBMIT BUTTON --}}
-        <x-whatsapp-button class="mx-auto text-xl py-3">
+        <x-whatsapp-button class="mx-auto text-xl py-3 w-fit">
             Confirm via Whatsapp
         </x-whatsapp-button>
 

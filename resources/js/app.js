@@ -2,21 +2,21 @@ import './bootstrap';
 window.Alpine = Alpine;
 
 //? TEMPORARY CODE ==========================
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual'; // or 'auto'
-}
+// if ('scrollRestoration' in history) {
+//     history.scrollRestoration = 'manual'; // or 'auto'
+// }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const pos = sessionStorage.getItem("scrollPos");
-    if (pos) {
-        window.scrollTo(0, parseInt(pos));
-        sessionStorage.removeItem("scrollPos");
-    }
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     const pos = sessionStorage.getItem("scrollPos");
+//     if (pos) {
+//         window.scrollTo(0, parseInt(pos));
+//         sessionStorage.removeItem("scrollPos");
+//     }
+// });
 
-window.addEventListener("beforeunload", () => {
-    sessionStorage.setItem("scrollPos", window.scrollY);
-});
+// window.addEventListener("beforeunload", () => {
+//     sessionStorage.setItem("scrollPos", window.scrollY);
+// });
 //? TERMPORARY CODE ==========================
 
 var animatedHoverBtn = document.querySelectorAll("[data-hover-animation='wave']");
