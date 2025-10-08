@@ -1,5 +1,17 @@
 @extends('components.layouts.app', ['variant' => 'light'])
 
+{{-- SEO --}}
+@section('title', 'Explore Vista Bali - Tours, Activities & Shuttle Services')
+@section('meta_description', 'Explore Bali effortlessly with Explore Vista Bali. Choose from private tours, thrilling
+    activities, and reliable shuttle services across the island.')
+@section('meta_keywords', 'Bali tours, Bali travel, Bali activities, Bali shuttle, Bali private car, Bali transport,
+    Bali adventures')
+@section('og_title', 'Explore Vista Bali - Discover the Island Your Way')
+@section('og_description', 'From scenic tours to exciting adventures — Explore Vista Bali helps you experience the
+    island like never before.')
+    {{-- @section('og_image', asset('images/landing-og.jpg')) --}}
+@section('og_type', 'website')
+
 @section('title', 'Explore Vista Bali')
 @section('content')
 
@@ -374,7 +386,7 @@
 
                 {{-- controls --}}
                 <div class="mt-10 flex items-center justify-center gap-4">
-                    <button @click="prev()" :disabled="page === 0"
+                    <button aria-label="previous button for carousel navigation" @click="prev()" :disabled="page === 0"
                         class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                             stroke="currentColor" class="size-6">
@@ -383,11 +395,13 @@
                     </button>
                     <div class="flex items-center gap-2 [&>span]:w-4 [&>span]:h-4 [&>span]:rounded-full">
                         <template x-for="i in totalPages" :key="i">
-                            <span @click="goTo(i-1)" :class="(i - 1) === page ? 'bg-cst-yellow-400' : 'bg-gray-400'"
-                                class="cursor-pointer transition-colors hover:opacity-80"></span>
+                            <span @click="goTo(i - 1)" :class="(i - 1) === page ? 'bg-cst-yellow-400' : 'bg-gray-400'"
+                                class="cursor-pointer transition-colors hover:opacity-80">
+                            </span>
                         </template>
                     </div>
-                    <button @click="next()" :disabled="page >= totalPages - 1"
+                    <button aria-label="next button for carousel navigation" @click="next()"
+                        :disabled="page >= totalPages - 1"
                         class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                             stroke="currentColor" class="size-6">
@@ -736,10 +750,10 @@
             </div>
             <div class="">
                 <x-input class="mb-4" label="Full name" type="text" placeholder="Jacob Holden" name="fullname"
-                    id="fullname" required />
+                    id="index-fullname" required />
                 <div class="flex flex-col sm:flex-row w-full gap-4 mb-4">
                     <x-input label="Phone number" type="number" placeholder="+112223334444" name="phone"
-                        id="phone" required>
+                        id="index-phone" required autocomplete>
                         <svg class="size-5 text-cst-green-400" viewBox="0 0 18 18" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -748,7 +762,7 @@
                         </svg>
                     </x-input>
                     <x-input label="Email (optional)" type="email" placeholder="test@example.com" name="email"
-                        id="email">
+                        id="index-email" autocomplete>
                         <svg class="size-5 text-cst-green-400" viewBox="0 0 20 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -758,8 +772,8 @@
                     </x-input>
                 </div>
                 <x-textarea class="mb-4" label="Message" placeholder="Type your message here" name="message"
-                    id="message" required rows="3" />
-                <x-whatsapp-button class="w-full">Send message via Whatsapp</x-whatsapp-button>
+                    id="index-message" required rows="3" />
+                <x-whatsapp-button class="w-full text-xl py-3">Send message via Whatsapp</x-whatsapp-button>
             </div>
 
         </div>

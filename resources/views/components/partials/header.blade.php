@@ -37,7 +37,7 @@
                 {{-- Services dropdown --}}
                 <div class="relative h-full" x-data="{ open: false }" @mouseenter="open = true"
                     @mouseleave="open = false">
-                    <span aria-expanded="open"
+                    <span
                         class="flex cursor-default group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('services.*') ? $activeClasses : '' }}"
                         :class="{ {{ $hoverClasses }} }">
 
@@ -127,7 +127,8 @@
 
             {{-- Right actions --}}
             <div class="flex items-center gap-4">
-                <a href="#" class="hidden p-2 sm:inline-block hover:scale-110 transition"
+                <a href="#" aria-label="Know more about us by calling this number"
+                    class="hidden p-2 sm:inline-block hover:scale-110 transition"
                     :class="{
                         'text-cst-green-400': scrolled,
                         '{{ $variant == 'dark' ? 'text-cst-green-400' : 'text-cst-green-200' }}': !scrolled

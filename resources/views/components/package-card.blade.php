@@ -9,8 +9,8 @@
             src="{{ $img }}" alt="">
     </div>
     <div class="bg-gray-200 p-5 rounded-t-xl z-10">
-        <h5 class="font-roboto text-xl font-semibold">Tour Package Title</h5>
-        <p class="font-inter text-md italic text-gray-500">Kintamani, Bali</p>
+        <h4 class="font-roboto text-xl font-semibold">Tour Package Title</h4>
+        <p class="font-inter text-md italic text-gray-600">Kintamani, Bali</p>
 
         <p class="font-inter text-md text-gray-500 my-4 max-w-xs">
             At Explore Vista Bali, we're passionate about helping travellers discover the...
