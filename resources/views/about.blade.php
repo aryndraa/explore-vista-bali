@@ -1,5 +1,20 @@
 @extends('components.layouts.app', ['variant' => 'light'])
 
+{{-- SEO --}}
+@section('meta_description',
+    'Learn more about Explore Vista Bali, a trusted travel company offering authentic Bali
+    experiences through guided tours, private shuttles, and activities across the island.')
+@section('meta_keywords',
+    'about Explore Vista Bali, Bali travel company, Bali tour agency, Bali local guide, Bali
+    tourism service')
+@section('og_title', 'About Explore Vista Bali')
+@section('og_description',
+    'Get to know Explore Vista Bali — our story, vision, and mission to bring you the best Bali
+    experiences through tours and transport services.')
+@section('og_image', asset('images/about-og.jpg'))
+@section('og_type', 'article')
+{{-- SEO END --}}
+
 @section('title', 'About - Explore Vista Bali')
 @section('content')
 
@@ -93,7 +108,7 @@
                     </svg>
 
                     <h4 class="font-inter font-semibold text-xl mb-3">Deliver Comfort and Safety</h4>
-                    <p class="font-inter text-gray-500 text-md">Provide reliable shuttle and tour services with a focus on
+                    <p class="font-inter text-gray-600 text-md">Provide reliable shuttle and tour services with a focus on
                         comfort, punctuality, and safety.</p>
                 </div>
                 <div class="p-5 bg-gray-200 rounded-lg">
@@ -105,7 +120,7 @@
                     </svg>
 
                     <h4 class="font-inter font-semibold text-xl mb-3">Showcase Authentic Bali</h4>
-                    <p class="font-inter text-gray-500 text-md">Curate travel experiences that highlight the island’s
+                    <p class="font-inter text-gray-600 text-md">Curate travel experiences that highlight the island’s
                         culture,
                         nature, and traditions.</p>
                 </div>
@@ -118,7 +133,7 @@
                     </svg>
 
                     <h4 class="font-inter font-semibold text-xl mb-3">Deliver Comfort and Safety</h4>
-                    <p class="font-inter text-gray-500 text-md">Provide reliable shuttle and tour services with a focus on
+                    <p class="font-inter text-gray-600 text-md">Provide reliable shuttle and tour services with a focus on
                         comfort, punctuality, and safety.</p>
                 </div>
             </div>
@@ -147,7 +162,7 @@
                             fill="currentColor" />
                     </svg>
                     <h4 class="font-inter font-semibold text-xl mb-3">Enhance Travel Convenience</h4>
-                    <p class="font-inter text-gray-500 text-md">Make it easy for visitors to book, plan, and enjoy their
+                    <p class="font-inter text-gray-600 text-md">Make it easy for visitors to book, plan, and enjoy their
                         Bali trips.</p>
                 </div>
                 <div class="p-5 bg-gray-200 rounded-lg">
@@ -158,7 +173,7 @@
                             fill="currentColor" />
                     </svg>
                     <h4 class="font-inter font-semibold text-xl mb-3">Promote Proper Tourism</h4>
-                    <p class="font-inter text-gray-500 text-md">Support local communities and preserve the island’s natural
+                    <p class="font-inter text-gray-600 text-md">Support local communities and preserve the island’s natural
                         beauty through responsible practices.</p>
                 </div>
                 <div class="p-5 bg-gray-200 rounded-lg">
@@ -169,7 +184,7 @@
                             fill="currentColor" />
                     </svg>
                     <h4 class="font-inter font-semibold text-xl mb-3">Build Lasting Relationships</h4>
-                    <p class="font-inter text-gray-500 text-md">Create trust and loyalty by exceeding expectations and
+                    <p class="font-inter text-gray-600 text-md">Create trust and loyalty by exceeding expectations and
                         fostering repeat visits.</p>
                 </div>
             </div>
@@ -446,7 +461,7 @@
         </div>
 
         <div class="inline-block mx-auto w-full">
-            <iframe
+            <iframe title="Google Maps location embedding"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.0855362930492!2d115.23143447485441!3d-8.683415891364811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b0e5e80db%3A0xad78f1ff66b638d2!2sSMK%20TI%20Global%20Denpasar!5e0!3m2!1sid!2sid!4v1758849596637!5m2!1sid!2sid"
                 class="mx-auto min-w-full md:min-w-2/3 min-h-[25rem]" style="border:0;" allowfullscreen=""
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

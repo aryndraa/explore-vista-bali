@@ -2,15 +2,19 @@
 
 {{-- SEO --}}
 @section('title', 'Explore Vista Bali - Tours, Activities & Shuttle Services')
-@section('meta_description', 'Explore Bali effortlessly with Explore Vista Bali. Choose from private tours, thrilling
+@section('meta_description',
+    'Explore Bali effortlessly with Explore Vista Bali. Choose from private tours, thrilling
     activities, and reliable shuttle services across the island.')
-@section('meta_keywords', 'Bali tours, Bali travel, Bali activities, Bali shuttle, Bali private car, Bali transport,
+@section('meta_keywords',
+    'Bali tours, Bali travel, Bali activities, Bali shuttle, Bali private car, Bali transport,
     Bali adventures')
 @section('og_title', 'Explore Vista Bali - Discover the Island Your Way')
-@section('og_description', 'From scenic tours to exciting adventures — Explore Vista Bali helps you experience the
+@section('og_description',
+    'From scenic tours to exciting adventures — Explore Vista Bali helps you experience the
     island like never before.')
     {{-- @section('og_image', asset('images/landing-og.jpg')) --}}
 @section('og_type', 'website')
+{{-- SEO END --}}
 
 @section('title', 'Explore Vista Bali')
 @section('content')
