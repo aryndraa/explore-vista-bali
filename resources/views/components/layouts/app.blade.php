@@ -18,7 +18,6 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="@yield('og_type', 'website')">
 
-
     {{-- ? Favicon --}}
     {{-- <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"> --}}
 

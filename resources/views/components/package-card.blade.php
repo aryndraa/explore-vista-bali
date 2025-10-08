@@ -12,7 +12,7 @@
         <h4 class="font-roboto text-xl font-semibold">Tour Package Title</h4>
         <p class="font-inter text-md italic text-gray-600">Kintamani, Bali</p>
 
-        <p class="font-inter text-md text-gray-500 my-4 max-w-xs">
+        <p class="font-inter text-md text-gray-600 my-4 max-w-xs">
             At Explore Vista Bali, we're passionate about helping travellers discover the...
         </p>
 

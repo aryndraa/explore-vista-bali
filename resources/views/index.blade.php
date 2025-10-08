@@ -1,7 +1,7 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'Explore Vista Bali - Tours, Activities & Shuttle Services')
 
 {{-- SEO --}}
-@section('title', 'Explore Vista Bali - Tours, Activities & Shuttle Services')
 @section('meta_description',
     'Explore Bali effortlessly with Explore Vista Bali. Choose from private tours, thrilling
     activities, and reliable shuttle services across the island.')
