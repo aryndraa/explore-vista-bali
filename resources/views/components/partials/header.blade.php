@@ -37,15 +37,16 @@
                 {{-- Services dropdown --}}
                 <div class="relative h-full" x-data="{ open: false }" @mouseenter="open = true"
                     @mouseleave="open = false">
-                    <button @click="open = !open" aria-expanded="open"
-                        class="flex group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('services.*') ? $activeClasses : '' }}"
+                    <span aria-expanded="open"
+                        class="flex cursor-default group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('services.*') ? $activeClasses : '' }}"
                         :class="{ {{ $hoverClasses }} }">
 
                         Services
                         <svg class="size-6 ml-1"
                             :class="{
-                                '{{ $variant == 'light' ? 'text-gray-300' : 'text-gray-500' }}': !scrolled,
-                                'text-gray-500': scrolled,
+                                '{{ $variant == 'light' ? 'text-gray-300 group-hover:text-cst-yellow-400' : 'text-gray-500' }}':
+                                    !scrolled,
+                                'text-gray-500 group-hover:text-cst-green-400': scrolled,
                             }"
                             fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -53,7 +54,7 @@
                                 clip-rule="evenodd" />
                         </svg>
 
-                    </button>
+                    </span>
 
                     <ul x-show="open" x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="opacity-0 -translate-y-2"
@@ -192,7 +193,7 @@
 
             {{-- Services accordion (mobile) --}}
             <li class="ml-auto w-fit">
-                <button @click="mobileAccordionOpen = !mobileAccordionOpen"
+                <button aria-label="Services dropdown" @click="mobileAccordionOpen = !mobileAccordionOpen"
                     class="flex ml-auto w-fit justify-between items-center py-2">
                     <svg :class="{ 'rotate-180': mobileAccordionOpen }"
                         class="w-5 h-5 text-gray-500 transform transition-transform" viewBox="0 0 24 24"
