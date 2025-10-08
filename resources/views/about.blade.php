@@ -1,4 +1,5 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'About - Explore Vista Bali')
 
 {{-- SEO --}}
 @section('meta_description',
@@ -15,7 +16,6 @@
 @section('og_type', 'article')
 {{-- SEO END --}}
 
-@section('title', 'About - Explore Vista Bali')
 @section('content')
 
     {{-- ? TITLE SECTION --}}

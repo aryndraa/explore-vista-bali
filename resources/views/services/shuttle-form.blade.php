@@ -58,9 +58,9 @@
 
                 <div class="flex flex-col gap-4 md:flex-row mb-6">
                     <x-input id="phone" name="phone" label="Phone number" placeholder="ex: +11 222 333 4444"
-                        type="tel" class="rounded-sm" required />
+                        type="tel" class="rounded-sm" required autocomplete />
                     <x-input id="email" name="email" label="Email" placeholder="ex: test@example.com" type="email"
-                        class="rounded-sm" required />
+                        class="rounded-sm" required autocomplete />
                 </div>
 
                 <div class="flex mb-6">

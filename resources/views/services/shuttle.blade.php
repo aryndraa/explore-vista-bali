@@ -1,6 +1,20 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'Shuttle Services - Explore Vista Bali')
 
-@section('title', 'Shuttle - Explore Vista Bali')
+{{-- SEO --}}
+@section('meta_description',
+    'Choose your preferred shuttle service with Explore Vista Bali — from airport transfers to
+    harbor pickups and point-to-point rides anywhere on the island.')
+@section('meta_keywords',
+    'Bali shuttle, Bali airport transfer, Bali harbor transfer, Bali point to point, Bali
+    transport, Bali private car, Explore Vista Bali')
+@section('og_title', 'Bali Shuttle & Transfer Services | Explore Vista Bali')
+@section('og_description',
+    'Reliable and comfortable shuttle options across Bali — airport, harbor, and private
+    transfers. Book your ride easily with Explore Vista Bali.')
+    {{-- @section('og_image', asset('images/shuttle-og.jpg')) --}}
+@section('og_type', 'website')
+{{-- SEO END --}}
 
 @section('main-class', 'bg-cst-green-800')
 @section('content')

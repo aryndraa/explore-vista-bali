@@ -1,18 +1,21 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'Available Packages - Explore Vista Bali')
 
 {{-- SEO --}}
-@section('meta_description', 'Discover the best Bali tour packages with Explore Vista Bali. Choose from full-day,
+@section('meta_description',
+    'Discover the best Bali tour packages with Explore Vista Bali. Choose from full-day,
     half-day, and activity-based tours to explore the island your way.')
-@section('meta_keywords', 'Bali tour packages, Bali full-day tour, Bali half-day tour, Bali activities, Bali
+@section('meta_keywords',
+    'Bali tour packages, Bali full-day tour, Bali half-day tour, Bali activities, Bali
     sightseeing, Bali adventure tour, Explore Vista Bali')
 @section('og_title', 'Available Bali Tour Packages | Explore Vista Bali')
-@section('og_description', 'Explore Bali with our curated tour packages — from scenic landscapes to cultural adventures.
+@section('og_description',
+    'Explore Bali with our curated tour packages — from scenic landscapes to cultural adventures.
     Book your perfect Bali experience today.')
     {{-- @section('og_image', asset('images/packages-og.jpg')) --}}
 @section('og_type', 'website')
 {{-- SEO END --}}
 
-@section('title', 'Available Packages - Explore Vista Bali')
 @section('content')
 
     {{-- ? TITLE SECTION --}}
