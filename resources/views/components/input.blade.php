@@ -15,7 +15,7 @@
 
     {{-- Label --}}
     @if ($label)
-        <label for="{{ $id ?? $name }}" class="text-sm text-gray-500 mb-2">
+        <label for="{{ $id ?? $name }}" class="text-sm text-gray-600 mb-2">
             {{ $label }}
             @if ($required)
                 <span class="text-red-400">*</span>

@@ -1,6 +1,15 @@
 @extends('components.layouts.app', ['variant' => 'light'])
 
-@section('title', 'Package Detail - Explore Vista Bali')
+{{-- SEO --}}
+{{-- @section('title', '{{ $package->name }} | Explore Vista Bali')
+@section('meta_description', 'Experience {{ $package->name }} with Explore Vista Bali. {{ Str::limit(strip_tags($package->short_description), 150) }} Book now for an unforgettable Bali adventure.')
+@section('meta_keywords', 'Bali tour, {{ $package->name }}, Bali travel package, Bali private tour, Bali adventure, Explore Vista Bali')
+@section('og_title', '{{ $package->name }} | Explore Vista Bali')
+@section('og_description', '{{ Str::limit(strip_tags($package->short_description), 150) }}')
+@section('og_image', asset($package->featured_image ?? 'images/og-default.jpg'))
+@section('og_type', 'article') --}}
+{{-- SEO END --}}
+
 @section('content')
 
     {{-- ? TITLE SECTION --}}
@@ -176,7 +185,7 @@
             <!-- Navigation Buttons -->
             <div class="flex items-center justify-center gap-6">
                 <!-- Previous Button -->
-                <button @click="prev" :disabled="!canGoPrev"
+                <button aria-label="previous button for carousel navigation" @click="prev" :disabled="!canGoPrev"
                     :class="canGoPrev ? 'bg-white hover:bg-gray-50 cursor-pointer' : 'bg-gray-100 cursor-not-allowed'"
                     class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
                     <svg class="w-5 h-5" :class="canGoPrev ? 'text-gray-700' : 'text-gray-400'" fill="none"
@@ -188,14 +197,15 @@
                 <!-- Page Indicators -->
                 <div class="flex items-center justify-center gap-2">
                     <template x-for="i in totalPages" :key="i">
-                        <button @click="currentIndex = i - 1" class="transition-all duration-300 rounded-full"
+                        <button aria-label="dots for carousel navigation" @click="currentIndex = i - 1"
+                            class="transition-all duration-300 rounded-full"
                             :class="currentIndex === i - 1 ? 'bg-emerald-700 w-8 h-2' : 'bg-gray-300 hover:bg-gray-400 w-2 h-2'">
                         </button>
                     </template>
                 </div>
 
                 <!-- Next Button -->
-                <button @click="next" :disabled="!canGoNext"
+                <button aria-label="previous button for carousel navigation" @click="next" :disabled="!canGoNext"
                     :class="canGoNext ? 'bg-emerald-700 hover:bg-emerald-800 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'"
                     class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,7 +236,7 @@
                 </p>
 
                 @if (request('type') === 'tour')
-                    <h4 class="mb-2">Destinations</h4>
+                    <h3 class="mb-2">Destinations</h3>
                     <ol class="list-decimal pl-5">
                         <li>Lorem ipsum dolor sit.</li>
                         <li>Lorem ipsum dolor sit.</li>
@@ -234,7 +244,7 @@
                         <li>Lorem, ipsum dolor.</li>
                     </ol>
                 @elseif (request('type') === 'activity')
-                    <h4 class="mb-2">Prices list</h4>
+                    <h3 class="mb-2">Prices list</h3>
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y-2 divide-gray-200 shadow-lg">
                             <thead class="ltr:text-left rtl:text-right bg-cst-green-200/70">
@@ -260,7 +270,7 @@
                     </div>
                 @endif
 
-                <h4 class="mb-2 mt-6">Included</h4>
+                <h3 class="mb-2 mt-6">Included</h3>
                 <ul class="space-y-2 mb-6">
                     @for ($i = 0; $i < 4; $i++)
                         <li class="flex items-start gap-2">
@@ -273,7 +283,7 @@
                         </li>
                     @endfor
                 </ul>
-                <h4 class="mb-2">Excluded</h4>
+                <h3 class="mb-2">Excluded</h3>
                 <ul class="space-y-2">
                     @for ($i = 0; $i < 2; $i++)
                         <li class="flex items-start gap-2">
