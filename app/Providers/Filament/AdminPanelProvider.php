@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\AgentCalendar;
 use App\Filament\Pages\Dashboard;
 use App\Filament\Resources\Agents\AgentResource;
+use App\Filament\Resources\Blogs\BlogResource;
 use App\Filament\Resources\Galleries\GalleryResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -45,6 +46,11 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Galleries')
                     ->icon('gmdi-image-o')
                     ->url(fn (): string => GalleryResource::getUrl('index')),
+
+                'blog' => MenuItem::make()
+                    ->label('Blogs')
+                    ->icon('gmdi-article-o')
+                    ->url(fn (): string => BlogResource::getUrl('index')),
             ])
             ->colors([
                 'primary' => '#052e16',

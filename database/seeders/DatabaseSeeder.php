@@ -32,7 +32,8 @@ class DatabaseSeeder extends Seeder
             ShuttleBookingSeeder::class,
             GallerySeeder::class,
             VehicleRentalSeeder::class,
-            AgentSeeder::class
+            AgentSeeder::class,
+            BlogSeeder::class,
         ]);
     }
 }

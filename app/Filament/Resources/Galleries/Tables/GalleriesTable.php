@@ -28,7 +28,7 @@ class GalleriesTable
                         ->label('Picture')
                         ->collection('picture')
                         ->limit(1)
-                        ->height(300),
+                        ->height(200),
                 ])
             ])
             ->contentGrid([
