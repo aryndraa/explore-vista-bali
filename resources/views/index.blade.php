@@ -317,7 +317,7 @@
 
                 {{-- ? buttons --}}
                 <div class="flex flex-wrap gap-3 mb-12">
-                    <a href="#"
+                    <a href="{{ route('contact') }}#comment-form"
                         class="flex items-center gap-3 whitespace-nowrap font-inter font-semibold text-sm sm:text-xl py-2.5 px-5 bg-cst-yellow-400 w-fit rounded-md text-black hover:scale-105 transition">
                         <svg class="size-6 text-black" viewBox="0 0 19 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

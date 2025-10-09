@@ -205,7 +205,7 @@
     </section>
 
     {{-- ? COMMENT FORM SECTION --}}
-    <section class="container mx-auto px-8 py-20">
+    <section id="comment-form" class="container mx-auto px-8 py-20">
 
         <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-8">
             Maybe leave <i class="font-playfair">a comment</i> for us?
