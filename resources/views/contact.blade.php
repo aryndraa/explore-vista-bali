@@ -1,6 +1,21 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'Contact Us - Explore Vista Bali')
 
-@section('title', 'About - Explore Vista Bali')
+{{-- SEO --}}
+@section('meta_description',
+    'Get in touch with Explore Vista Bali for tour bookings, shuttle services, or travel
+    inquiries. We’re here to help make your Bali experience effortless.')
+@section('meta_keywords',
+    'contact Explore Vista Bali, Bali tours contact, Bali shuttle inquiry, Bali travel booking,
+    Bali transport service, Bali tour help')
+@section('og_title', 'Contact Explore Vista Bali')
+@section('og_description',
+    'Have questions or need help planning your Bali trip? Contact Explore Vista Bali today —
+    we’re happy to assist you with tours, transfers, and more.')
+    {{-- @section('og_image', asset('images/contact-og.jpg')) --}}
+@section('og_type', 'website')
+{{-- SEO END --}}
+
 @section('content')
 
     {{-- ? TITLE SECTION --}}
@@ -84,7 +99,7 @@
                     </x-input>
                 </div>
                 <x-textarea class="bg-transparent shadow-none!" label="Message" placeholder="Type your message here"
-                    name="message" id="message" required rows="3" />
+                    name="message" id="contact-message" required rows="3" />
 
                 <x-whatsapp-button class="w-fit mx-auto md:mx-0">Send message via Whatsapp</x-whatsapp-button>
             </div>

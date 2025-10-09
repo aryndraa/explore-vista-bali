@@ -1,6 +1,22 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'Vehicle Rental - Explore Vista Bali')
 
-@section('title', 'Available Packages - Explore Vista Bali')
+{{-- SEO --}}
+@section('meta_description',
+    'Rent a private car or van with Explore Vista Bali. Enjoy flexible schedules, professional
+    drivers, and comfortable rides to explore the island your way.')
+@section('meta_keywords',
+    'Bali car rental, Bali private car, Bali transport, Bali driver service, Bali van rental, Bali
+    vehicle hire, Explore Vista Bali')
+@section('og_title', 'Bali Car & Vehicle Rental | Explore Vista Bali')
+@section('og_description',
+    'Discover Bali at your own pace with our reliable car and van rental services. Comfortable
+    rides with friendly drivers for every destination.')
+    {{-- @section('og_image', asset('images/vehicle-rental-og.jpg')) --}}
+@section('og_type', 'website')
+{{-- SEO END --}}
+
+
 @section('content')
 
     {{-- ? TITLE SECTION --}}

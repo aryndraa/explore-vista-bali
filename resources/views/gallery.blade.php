@@ -1,6 +1,22 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'Travel Gallery - Explore Vista Bali')
 
-@section('title', 'Gallery - Explore Vista Bali')
+{{-- SEO --}}
+@section('meta_description',
+    'Browse our Bali travel gallery and discover stunning destinations, happy guests, and
+    unforgettable moments captured by Explore Vista Bali.')
+@section('meta_keywords',
+    'Bali gallery, Bali travel photos, Bali destinations, Bali tours, Explore Vista Bali, Bali
+    vacation, Bali tourism')
+@section('og_title', 'Bali Travel Gallery | Explore Vista Bali')
+@section('og_description',
+    'See the beauty of Bali through our lens — explore photos of tours, destinations, and
+    experiences with Explore Vista Bali.')
+    {{-- @section('og_image', asset('images/gallery-og.jpg')) --}}
+@section('og_type', 'website')
+{{-- SEO END --}}
+
+
 @section('content')
 
     {{-- ? TITLE SECTION --}}

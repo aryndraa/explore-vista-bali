@@ -87,6 +87,7 @@
             </div>
         </div>
         {{-- svg --}}
-        <x-whatsapp-button href="#" class="p-0! h-fit rounded-full!" iconClass="size-12" />
+        <x-whatsapp-button href="#" aria-label="Whatsapp contact page" class="p-0! h-fit rounded-full!"
+            iconClass="size-12" />
     </div>
 </div>
