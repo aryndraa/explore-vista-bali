@@ -32,8 +32,6 @@
             @if ($type === 'tel') pattern="^\+?[0-9\s\-().]{7,20}$" @endif
             {{ $attributes->except(['class', 'id', 'name', 'value', 'required']) }}
             class="bg-transparent w-full text-xl text-black font-medium
-                   placeholder:text-gray-400/60 placeholder:italic
-                   border-b-2 border-gray-400/50 focus:border-cst-yellow-400
-                   transition-colors duration-200 focus:outline-none">
+                   placeholder:text-gray-400/60 placeholder:italic focus:border-cst-yellow-400 transition-colors duration-200 focus:outline-none">
     </div>
 </div>
