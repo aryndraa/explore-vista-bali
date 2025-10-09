@@ -61,7 +61,7 @@
             </div>
 
             <div class="">
-                <p class="font-inter text-sm text-center max-w-sm md:max-w-lg">
+                <p class="font-inter text-md text-center max-w-sm md:max-w-lg">
                     Get in touch with us for bookings, inquiries, or custom travel plans in Bali. We’re here to make your
                     journey seamless.
                 </p>

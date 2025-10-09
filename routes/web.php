@@ -23,3 +23,4 @@ Route::name('services.')
 
 Route::get('/gallery', fn() => view('gallery'))->name('gallery');
 Route::get('/contact', fn() => view('contact'))->name('contact');
+Route::get('/comments', fn() => view('comment'))->name('comment');

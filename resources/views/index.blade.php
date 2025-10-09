@@ -327,7 +327,7 @@
                         </svg> Comment
                     </a>
                     <a class="group relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-transparent border-3 border-cst-yellow-400 py-2.5 px-5 text-cst-yellow-400 focus:ring-3 focus:outline-hidden"
-                        href="#">
+                        href="{{ route('comment') }}">
                         <span class="absolute -end-full transition-all lg:group-hover:end-4">
                             <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">

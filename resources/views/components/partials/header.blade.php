@@ -143,11 +143,11 @@
                     <!-- Tooltip -->
                     <span
                         class="absolute left-1/2 -translate-x-1/2 -bottom-8 bg-cst-green-400 text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
-                        Our Number
+                        Call Us
                     </span>
                 </a>
 
-                <a href="#" aria-label="Know more about us by calling this number"
+                <a href="{{ route('comment') }}" aria-label="Know more about us by calling this number"
                     class="group relative hidden p-2 sm:inline-block hover:scale-110 transition"
                     :class="{
                         'text-cst-green-400': scrolled,

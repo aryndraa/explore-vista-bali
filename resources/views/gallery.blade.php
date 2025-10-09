@@ -60,7 +60,7 @@
             </div>
 
             <div class="">
-                <p class="font-inter text-sm text-center md:text-end max-w-sm ">
+                <p class="font-inter text-md text-center md:text-end max-w-md">
                     Explore our gallery and discover unforgettable moments from Bali tours, activities, and journeys
                 </p>
             </div>
