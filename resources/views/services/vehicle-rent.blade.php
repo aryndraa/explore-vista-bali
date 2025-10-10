@@ -1,20 +1,21 @@
 @extends('components.layouts.app', ['variant' => 'light'])
-@section('title', 'Available Packages - Explore Vista Bali')
+@section('title', 'Vehicle Rental - Explore Vista Bali')
 
 {{-- SEO --}}
 @section('meta_description',
-    'Discover the best Bali tour packages with Explore Vista Bali. Choose from full-day,
-    half-day, and activity-based tours to explore the island your way.')
+    'Rent a private car or van with Explore Vista Bali. Enjoy flexible schedules, professional
+    drivers, and comfortable rides to explore the island your way.')
 @section('meta_keywords',
-    'Bali tour packages, Bali full-day tour, Bali half-day tour, Bali activities, Bali
-    sightseeing, Bali adventure tour, Explore Vista Bali')
-@section('og_title', 'Available Bali Tour Packages | Explore Vista Bali')
+    'Bali car rental, Bali private car, Bali transport, Bali driver service, Bali van rental, Bali
+    vehicle hire, Explore Vista Bali')
+@section('og_title', 'Bali Car & Vehicle Rental | Explore Vista Bali')
 @section('og_description',
-    'Explore Bali with our curated tour packages — from scenic landscapes to cultural adventures.
-    Book your perfect Bali experience today.')
-    {{-- @section('og_image', asset('images/packages-og.jpg')) --}}
+    'Discover Bali at your own pace with our reliable car and van rental services. Comfortable
+    rides with friendly drivers for every destination.')
+    {{-- @section('og_image', asset('images/vehicle-rental-og.jpg')) --}}
 @section('og_type', 'website')
 {{-- SEO END --}}
+
 
 @section('content')
 
@@ -60,21 +61,22 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('services.available-packages') }}" class="block transition-colors">
-                                Tour Packages
+                            <a href="{{ route('services.vehicle-rent') }}" class="block transition-colors">
+                                Vehicle Rental
                             </a>
                         </li>
                     </ol>
                 </nav>
 
-                <h1 class="font-roboto font-semibold text-3xl sm:text-4xl">Available tours and
-                    activities</h1>
+                <h1 class="font-roboto font-semibold text-3xl sm:text-4xl">
+                    Find a <i class="font-playfair">vehicle</i> for your needs
+                </h1>
             </div>
 
         </div>
     </section>
 
-    {{-- ? TOUR LIST SECTION --}}
-    <livewire:available-package-action />
+    {{-- ? VEHICLE LIST SECTION --}}
+    <livewire:vehicle-rent-action />
 
 @endsection

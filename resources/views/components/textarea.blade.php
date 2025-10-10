@@ -1,18 +1,25 @@
 @props([
+    'id' => null,
     'label' => '',
-    'type' => 'text',
     'placeholder' => '',
+    'rows' => 3,
+    'required' => false,
 ])
 
-<div {{ $attributes->merge([
-    'class' => 'flex flex-1 flex-col p-4 bg-gray-100 font-inter shadow-sm',
-]) }}>
-    <label class="text-sm text-gray-500 mb-2">{{ $label }}</label>
+<div {{ $attributes->class(['flex flex-col p-4 bg-gray-100 font-inter shadow-sm flex-1']) }}>
+    @if ($label)
+        <label for="{{ $id }}" class="text-sm text-gray-500 mb-2 block">
+            {{ $label }}
+            @if ($required)
+                <span class="text-red-500">*</span>
+            @endif
+        </label>
+    @endif
 
-    <div class="flex gap-4 items-center w-full">
-        {{ $slot }}
-
-        <textarea placeholder="{{ $placeholder }}" {{ $attributes->only(['name', 'id', 'required', 'value', 'rows', 'cols']) }}
-            class="bg-none w-full pb-1 border-b-2 border-b-gray-400/50 text-xl text-black font-medium placeholder:text-gray-400/50 placeholder:italic focus:outline-0"></textarea>
-    </div>
+    <textarea id="{{ $id }}" name="{{ $attributes->get('name') }}" rows="{{ $rows }}"
+        placeholder="{{ $placeholder }}" @if ($required) required @endif
+        {{ $attributes->except(['id', 'class', 'name', 'rows', 'placeholder', 'required']) }}
+        class="w-full border-b-2 border-gray-400/50 bg-transparent text-xl text-black font-medium
+               placeholder:text-gray-400/50 placeholder:italic focus:outline-none focus:border-cst-yellow-400
+               transition duration-200 pb-1"></textarea>
 </div>

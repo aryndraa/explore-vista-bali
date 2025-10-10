@@ -2,7 +2,7 @@
     <div class="py-10 px-5 lg:grid lg:grid-cols-5 font-inter container mx-auto">
 
         <div class="relative block md:px-6 mb-6 lg:mb-0 lg:col-span-2 lg:h-full">
-            <iframe
+            <iframe title="Google Maps location embedding"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.0855362930492!2d115.23143447485441!3d-8.683415891364811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b0e5e80db%3A0xad78f1ff66b638d2!2sSMK%20TI%20Global%20Denpasar!5e0!3m2!1sid!2sid!4v1758849596637!5m2!1sid!2sid"
                 class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>

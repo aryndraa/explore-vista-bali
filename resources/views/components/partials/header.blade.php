@@ -37,15 +37,16 @@
                 {{-- Services dropdown --}}
                 <div class="relative h-full" x-data="{ open: false }" @mouseenter="open = true"
                     @mouseleave="open = false">
-                    <button @click="open = !open" aria-expanded="open"
-                        class="flex group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('services.*') ? $activeClasses : '' }}"
+                    <span
+                        class="flex cursor-default group items-center h-full text-inherit {{ $linksClasses }} {{ request()->routeIs('services.*') ? $activeClasses : '' }}"
                         :class="{ {{ $hoverClasses }} }">
 
                         Services
                         <svg class="size-6 ml-1"
                             :class="{
-                                '{{ $variant == 'light' ? 'text-gray-300' : 'text-gray-500' }}': !scrolled,
-                                'text-gray-500': scrolled,
+                                '{{ $variant == 'light' ? 'text-gray-300 group-hover:text-cst-yellow-400' : 'text-gray-500' }}':
+                                    !scrolled,
+                                'text-gray-500 group-hover:text-cst-green-400': scrolled,
                             }"
                             fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -53,7 +54,7 @@
                                 clip-rule="evenodd" />
                         </svg>
 
-                    </button>
+                    </span>
 
                     <ul x-show="open" x-transition:enter="transition ease-out duration-200"
                         x-transition:enter-start="opacity-0 -translate-y-2"
@@ -79,7 +80,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
+                            <a href="{{ route('services.shuttle') }}"
+                                class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
                                 <div class="bg-gray-100 p-2 rounded-md flex-none">
                                     <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 15 20"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +96,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
+                            <a href="{{ route('services.vehicle-rent') }}"
+                                class="flex gap-3 px-4 py-3 hover:bg-cst-green-200/40 transition">
                                 <div class="bg-gray-100 p-2 rounded-md flex-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960"
                                         width="30" class="fill-cst-green-400">
@@ -117,27 +120,54 @@
                 <a href="#"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Blog</a>
-                <a href="#"
+                <a href="{{ route('contact') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('contact') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Contact</a>
             </nav>
 
             {{-- Right actions --}}
-            <div class="flex items-center gap-4">
-                <a class="hidden sm:inline-block"
+            <div class="flex items-center">
+
+                <a href="#" aria-label="Know more about us by calling this number"
+                    class="group relative hidden p-2 sm:inline-block hover:scale-110 transition"
                     :class="{
                         'text-cst-green-400': scrolled,
                         '{{ $variant == 'dark' ? 'text-cst-green-400' : 'text-cst-green-200' }}': !scrolled
-                    }"
-                    href="#">
+                    }">
                     <svg class="size-5" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M0 3.14286C0 2.30932 0.331122 1.50992 0.920522 0.920522C1.50992 0.331122 2.30932 0 3.14286 0H4.58019C5.48114 0 6.26686 0.613905 6.48581 1.48762L7.64343 6.12124C7.73724 6.49628 7.71829 6.89067 7.58896 7.255C7.45963 7.61932 7.22567 7.93738 6.91638 8.16933L5.56181 9.18552C5.42038 9.29133 5.39 9.44638 5.42981 9.55429C6.02106 11.1622 6.95472 12.6225 8.16613 13.8339C9.37755 15.0453 10.8378 15.9789 12.4457 16.5702C12.5536 16.61 12.7076 16.5796 12.8145 16.4382L13.8307 15.0836C14.0626 14.7743 14.3807 14.5404 14.745 14.411C15.1093 14.2817 15.5037 14.2628 15.8788 14.3566L20.5124 15.5142C21.3861 15.7331 22 16.5189 22 17.4209V18.8571C22 19.6907 21.6689 20.4901 21.0795 21.0795C20.4901 21.6689 19.6907 22 18.8571 22H16.5C7.38781 22 0 14.6122 0 5.5V3.14286Z"
                             fill="currentColor" />
                     </svg>
+
+                    <!-- Tooltip -->
+                    <span
+                        class="absolute left-1/2 -translate-x-1/2 -bottom-8 bg-cst-green-400 text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
+                        Call Us
+                    </span>
                 </a>
+
+                <a href="{{ route('comment') }}" aria-label="Know more about us by calling this number"
+                    class="group relative hidden p-2 sm:inline-block hover:scale-110 transition"
+                    :class="{
+                        'text-cst-green-400': scrolled,
+                        '{{ $variant == 'dark' ? 'text-cst-green-400' : 'text-cst-green-200' }}': !scrolled
+                    }">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 -960 960 960" fill="currentColor">
+                        <path
+                            d="M240-400h480v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80Zm-80 400q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720L720-240H160Z" />
+                    </svg>
+
+                    <!-- Tooltip -->
+                    <span
+                        class="absolute left-1/2 -translate-x-1/2 -bottom-8 bg-cst-green-400 text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
+                        View Comments
+                    </span>
+                </a>
+
+
                 <a href="#"
-                    class="hidden sm:inline-flex items-center gap-2 rounded-md font-bold font-inter bg-cst-yellow-400 px-3 py-2 text-black">
+                    class="hidden sm:inline-flex ml-2 items-center gap-2 rounded-md font-bold font-inter bg-cst-yellow-400 px-3 py-2 text-black">
                     Book Tour
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                         stroke-width="3" stroke="currentColor">
@@ -190,7 +220,7 @@
 
             {{-- Services accordion (mobile) --}}
             <li class="ml-auto w-fit">
-                <button @click="mobileAccordionOpen = !mobileAccordionOpen"
+                <button aria-label="Services dropdown" @click="mobileAccordionOpen = !mobileAccordionOpen"
                     class="flex ml-auto w-fit justify-between items-center py-2">
                     <svg :class="{ 'rotate-180': mobileAccordionOpen }"
                         class="w-5 h-5 text-gray-500 transform transition-transform" viewBox="0 0 24 24"
@@ -221,7 +251,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
+                        <a href="{{ route('services.shuttle') }}"
+                            class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg class="fill-cst-green-400" width="30" height="30" viewBox="0 0 15 20"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,7 +267,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
+                        <a href="{{ route('services.vehicle-rent') }}"
+                            class="flex gap-3 p-2 rounded-md hover:bg-cst-green-200/40 transition">
                             <div class="bg-gray-100 p-2 rounded-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960"
                                     width="30" class="fill-cst-green-400">
@@ -262,7 +294,7 @@
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClassesMobile : '' }}">Blog</a>
             </li>
             <li class="mb-5">
-                <a href="#"
+                <a href="{{ route('contact') }}"
                     class="inline-block py-2 {{ $linksClasses }} {{ request()->routeIs('contact') ? $activeClassesMobile : '' }}">Contact</a>
             </li>
 

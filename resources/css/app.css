@@ -20,3 +20,8 @@
     --color-cst-yellow-600: #CAA638;
     --color-cst-yellow-400: #F9D549;
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}

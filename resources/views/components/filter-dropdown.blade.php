@@ -24,13 +24,13 @@
             </button>
         </header>
 
-        <ul class="space-y-2 border-t border-gray-200 p-4">
-            <template x-for="option in options" :key="option.id">
-
+        <ul class="space-y-2 border-t border-gray-200 p-4" x-data="{ uniquePrefix: $id('filter') }">
+            <template x-for="(option, index) in options" :key="option.id">
                 <li>
                     <label class="inline-flex items-center gap-2 cursor-pointer">
-                        <input type="checkbox" :id="option.id" :value="option.id" x-model="selected"
-                            class="sr-only" />
+                        <input type="checkbox" :id="`${uniquePrefix}-${option.id}-${index}`" :value="option.id"
+                            x-model="selected" class="sr-only" />
+
                         <span
                             class="w-5 h-5 border-2 rounded-sm flex items-center justify-center border-cst-yellow-400 transition-colors"
                             :class="selected.includes(option.id) ? 'bg-cst-yellow-400' : ''">
@@ -41,12 +41,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                             </svg>
                         </span>
+
                         <span class="text-md font-medium text-gray-700" x-text="option.label"></span>
                     </label>
                 </li>
-
             </template>
         </ul>
+
     </div>
 </div>
 

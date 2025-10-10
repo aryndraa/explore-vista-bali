@@ -1,4 +1,20 @@
 @extends('components.layouts.app', ['variant' => 'light'])
+@section('title', 'Explore Vista Bali - Tours, Activities & Shuttle Services')
+
+{{-- SEO --}}
+@section('meta_description',
+    'Explore Bali effortlessly with Explore Vista Bali. Choose from private tours, thrilling
+    activities, and reliable shuttle services across the island.')
+@section('meta_keywords',
+    'Bali tours, Bali travel, Bali activities, Bali shuttle, Bali private car, Bali transport,
+    Bali adventures')
+@section('og_title', 'Explore Vista Bali - Discover the Island Your Way')
+@section('og_description',
+    'From scenic tours to exciting adventures — Explore Vista Bali helps you experience the
+    island like never before.')
+    {{-- @section('og_image', asset('images/landing-og.jpg')) --}}
+@section('og_type', 'website')
+{{-- SEO END --}}
 
 @section('title', 'Explore Vista Bali')
 @section('content')
@@ -24,7 +40,8 @@
                     Get to know <span class="font-playfair italic">Bali</span> with Explore Vista Bali!
                 </h1>
 
-                <x-wave-button href="#" firstTextClasses="text-cst-yellow-400 font-inter font-medium"
+                <x-wave-button href="{{ route('services.available-packages') }}"
+                    firstTextClasses="text-cst-yellow-400 font-inter font-medium"
                     secondTextClasses="text-black font-playfair font-bold italic"
                     class="text-xl w-fit py-1.5 px-5 bg-transparent border-2 border-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
                     Lets Explore!
@@ -147,7 +164,7 @@
                     </h2>
                 </div>
                 <a class="group relative inline-flex items-center overflow-hidden rounded-sm bg-cst-green-400 px-5 py-3 text-cst-yellow-400 focus:ring-3 focus:outline-hidden"
-                    href="#">
+                    href="{{ route('about') }}">
                     <span class="absolute -end-full transition-all group-hover:end-4">
                         <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -274,7 +291,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full container mx-auto sm:px-8">
 
             @for ($i = 0; $i < 6; $i++)
-                <div class="{{ $i > 2 ? 'hidden md:block' : '' }}">
+                <div class="{{ $i > 2 ? 'hidden sm:block' : '' }}">
                     <x-package-card
                         img="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         packageType="tour" :$i />
@@ -288,29 +305,29 @@
     {{-- ? TESTIMONIAL SECTION --}}
     <section class="bg-cst-green-800">
         <div
-            class="flex flex-col sm:flex-row gap-14 sm:gap-10 items-center justify-between px-4 sm:px-8 py-24 relative overflow-x-hidden text-white container mx-auto">
+            class="flex flex-col md:flex-row gap-14 items-center justify-between px-4 sm:px-8 py-24 relative overflow-x-hidden text-white container mx-auto">
 
-            <div class="flex-1 px-4 sm:px-0">
-                <div class="mb-10 sm:mb-16">
+            <div class="px-4 sm:px-0 w-full md:w-5/12">
+                <div class="mb-6 md:mb-16">
                     <p class="font-inter text-gray-300 text-md sm:text-xl mb-2">Testimonials / Comments</p>
-                    <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg">
+                    <h2 class="font-roboto text-4xl xl:text-5xl font-semibold leading-tight max-w-lg">
                         What our clients <i class="font-playfair">says about us.</i>
                     </h2>
                 </div>
 
                 {{-- ? buttons --}}
                 <div class="flex flex-wrap gap-3 mb-12">
-                    <a href="#"
-                        class="flex items-center gap-3 whitespace-nowrap font-inter font-semibold text-md sm:text-xl py-2.5 px-5 bg-cst-yellow-400 w-fit rounded-md text-black hover:scale-105 transition">
+                    <a href="{{ route('contact') }}#comment-form"
+                        class="flex items-center gap-3 whitespace-nowrap font-inter font-semibold text-sm sm:text-xl py-2.5 px-5 bg-cst-yellow-400 w-fit rounded-md text-black hover:scale-105 transition">
                         <svg class="size-6 text-black" viewBox="0 0 19 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M4 6H12V4H4V6ZM4 10H9V8H4V10ZM14 17V14H11V12H14V9H16V12H19V14H16V17H14ZM0 17V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H14C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2V7.075C15.8333 7.04167 15.6667 7.02083 15.5 7.0125C15.3333 7.00417 15.1667 7 15 7C13.3167 7 11.8958 7.58333 10.7375 8.75C9.57917 9.91667 9 11.3333 9 13C9 13.1667 9.00417 13.3333 9.0125 13.5C9.02083 13.6667 9.04167 13.8333 9.075 14H3L0 17Z"
+                                d="M4 6H12V4H4V6ZM4 10H9V8H4V10ZM14 17V14H11V12H14V9H16V12H19V14H16V17H14ZM0 17V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H14C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2V7.075C15.8333 7.04167 15.6667 7.02083 15.5 7.0125C15.3333 7.00417 15.1667 7 15 7C13.3167 7 11.8958 7.58833 10.7375 8.75C9.57917 9.91667 9 11.3333 9 13C9 13.1667 9.00417 13.3333 9.0125 13.5C9.02083 13.6667 9.04167 13.8333 9.075 14H3L0 17Z"
                                 fill="currentColor" />
                         </svg> Comment
                     </a>
                     <a class="group relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-transparent border-3 border-cst-yellow-400 py-2.5 px-5 text-cst-yellow-400 focus:ring-3 focus:outline-hidden"
-                        href="#">
+                        href="{{ route('comment') }}">
                         <span class="absolute -end-full transition-all lg:group-hover:end-4">
                             <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -327,49 +344,54 @@
                 <x-social-media />
             </div>
 
-            <div x-data="carousel()" x-init="init()" class="relative flex-1 sm:max-w-sm lg:max-w-3xl">
+            <div x-data="carousel()" x-init="init()" class="w-full md:w-7/12">
                 {{-- viewport --}}
-                <div x-ref="viewport" class="overflow-hidden w-full">
-                    <!-- left shadow -->
-                    <div
-                        class="pointer-events-none absolute -left-6 top-0 h-full w-10 bg-gradient-to-r from-[#16352d] to-transparent z-10">
-                    </div>
-                    <!-- right shadow -->
-                    <div
-                        class="pointer-events-none absolute -right-6 top-0 h-full w-10 bg-gradient-to-l from-[#16352d] to-transparent z-10">
-                    </div>
+                <div class="relative">
+                    <div x-ref="viewport" class="overflow-hidden w-full">
+                        <!-- left shadow -->
+                        <div
+                            class="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[#16352d] to-transparent z-10">
+                        </div>
 
-                    <div x-ref="track" class="flex transition-transform duration-500 ease-out"
-                        :style="`transform: translateX(${translate}px)`">
+                        <!-- right shadow -->
+                        <div
+                            class="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#16352d] to-transparent z-10">
+                        </div>
 
-                        @for ($i = 0; $i < 6; $i++)
-                            <div class="w-full lg:w-1/2 flex-shrink-0 px-4">
-                                <div class="bg-white px-6 py-8 pt-20 rounded-md rounded-tr-[5rem]">
-                                    <svg class="w-14 aspect-auto text-gray-300 mb-8" viewBox="0 0 63 57" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M63 35.625C63 47.4347 55.4484 57 46.125 57H45C42.5109 57 40.5 54.4528 40.5 51.3C40.5 48.1472 42.5109 45.6 45 45.6H46.125C50.4703 45.6 54 41.1291 54 35.625V34.2H45C40.0359 34.2 36 29.0878 36 22.8V11.4C36 5.11219 40.0359 0 45 0H54C58.9641 0 63 5.11219 63 11.4V35.625ZM27 35.625C27 47.4347 19.4484 57 10.125 57H9C6.51094 57 4.5 54.4528 4.5 51.3C4.5 48.1472 6.51094 45.6 9 45.6H10.125C14.4703 45.6 18 41.1291 18 35.625V34.2H9C4.03594 34.2 0 29.0878 0 22.8V11.4C0 5.11219 4.03594 0 9 0H18C22.9641 0 27 5.11219 27 11.4V35.625Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <p class="text-black font-inter font-medium text-xl mb-16">
-                                        {{ $i + 1 }}. This service is great! I love it, I would recommend this to my
-                                        relatives.
-                                    </p>
-                                    <div class="font-inter pt-4 border-t-2 border-gray-400 w-full text-black">
-                                        <p class="font-semibold text-lg">Jackson Harry</p>
-                                        <a href="#" target="_blank"
-                                            class="text-gray-500 text-md italic hover:underline">@loremipsum</a>
+                        <div x-ref="track" class="flex transition-transform duration-500 ease-out w-full px-8"
+                            :style="`transform: translateX(${translate}px)`">
+
+                            @for ($i = 0; $i < 6; $i++)
+                                <div class="w-full xl:w-1/2 flex-shrink-0 px-4">
+                                    <div class="bg-white px-6 py-8 pt-20 rounded-md rounded-tr-[5rem]">
+                                        <svg class="w-14 aspect-auto text-gray-300 mb-8" viewBox="0 0 63 57"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M63 35.625C63 47.4347 55.4484 57 46.125 57H45C42.5109 57 40.5 54.4528 40.5 51.3C40.5 48.1472 42.5109 45.6 45 45.6H46.125C50.4703 45.6 54 41.1291 54 35.625V34.2H45C40.0359 34.2 36 29.0878 36 22.8V11.4C36 5.11219 40.0359 0 45 0H54C58.9641 0 63 5.11219 63 11.4V35.625ZM27 35.625C27 47.4347 19.4484 57 10.125 57H9C6.51094 57 4.5 54.4528 4.5 51.3C4.5 48.1472 6.51094 45.6 9 45.6H10.125C14.4703 45.6 18 41.1291 18 35.625V34.2H9C4.03594 34.2 0 29.0878 0 22.8V11.4C0 5.11219 4.03594 0 9 0H18C22.9641 0 27 5.11219 27 11.4V35.625Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <p class="text-black font-inter font-medium text-xl mb-10 md:mb-16">
+                                            {{ $i + 1 }}. This service is great! I love it, I would recommend this to
+                                            my
+                                            relatives.
+                                        </p>
+                                        <div class="font-inter pt-4 border-t-2 border-gray-400 w-full text-black">
+                                            <p class="font-semibold text-lg">Jackson Harry</p>
+                                            <a href="#" target="_blank"
+                                                class="text-gray-500 text-md italic hover:underline">@loremipsum</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endfor
+                            @endfor
 
+                        </div>
                     </div>
                 </div>
+
                 {{-- controls --}}
                 <div class="mt-10 flex items-center justify-center gap-4">
-                    <button @click="prev()" :disabled="page === 0"
-                        class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40">
+                    <button aria-label="previous button for carousel navigation" @click="prev()" :disabled="page === 0"
+                        class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                             stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -377,12 +399,14 @@
                     </button>
                     <div class="flex items-center gap-2 [&>span]:w-4 [&>span]:h-4 [&>span]:rounded-full">
                         <template x-for="i in totalPages" :key="i">
-                            <span @click="goTo(i-1)" :class="(i - 1) === page ? 'bg-cst-yellow-400' : 'bg-gray-400'"
-                                class="cursor-pointer"></span>
+                            <span @click="goTo(i - 1)" :class="(i - 1) === page ? 'bg-cst-yellow-400' : 'bg-gray-400'"
+                                class="cursor-pointer transition-colors hover:opacity-80">
+                            </span>
                         </template>
                     </div>
-                    <button @click="next()" :disabled="page >= totalPages - 1"
-                        class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40">
+                    <button aria-label="next button for carousel navigation" @click="next()"
+                        :disabled="page >= totalPages - 1"
+                        class="px-3 py-1 cursor-pointer rounded-full bg-cst-green-400 text-cst-yellow-400 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                             stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -394,36 +418,58 @@
                     function carousel() {
                         return {
                             page: 0,
-                            perPage: 2,
+                            perPage: 1,
                             translate: 0,
                             totalPages: 1,
+
                             init() {
-                                this.update();
-                                window.addEventListener('resize', () => this.update());
+                                this.updateCarousel();
+                                window.addEventListener('resize', () => this.updateCarousel());
                             },
-                            update() {
-                                this.perPage = window.innerWidth < 1000 ? 1 : 2;
-                                const vp = this.$refs.viewport;
-                                const count = this.$refs.track.children.length;
-                                this.totalPages = Math.ceil(count / this.perPage);
-                                if (this.page > this.totalPages - 1) this.page = this.totalPages - 1;
-                                this.translate = -this.page * vp.clientWidth;
+
+                            updateCarousel() {
+                                // Align with Tailwind's xl breakpoint (1280px)
+                                this.perPage = window.innerWidth >= 1280 ? 2 : 1;
+
+                                const viewport = this.$refs.viewport;
+                                const track = this.$refs.track;
+                                const items = track.children;
+                                const totalItems = items.length;
+
+                                // Calculate total pages
+                                this.totalPages = Math.ceil(totalItems / this.perPage);
+
+                                // Keep page in bounds
+                                if (this.page >= this.totalPages) {
+                                    this.page = this.totalPages - 1;
+                                }
+
+                                // Calculate translation based on actual item width
+                                if (items.length > 0) {
+                                    const itemWidth = items[0].offsetWidth;
+                                    this.translate = -this.page * itemWidth * this.perPage;
+                                }
                             },
+
                             next() {
                                 if (this.page < this.totalPages - 1) {
                                     this.page++;
-                                    this.update();
+                                    this.updateCarousel();
                                 }
                             },
+
                             prev() {
                                 if (this.page > 0) {
                                     this.page--;
-                                    this.update();
+                                    this.updateCarousel();
                                 }
                             },
-                            goTo(i) {
-                                this.page = i;
-                                this.update();
+
+                            goTo(pageIndex) {
+                                if (pageIndex >= 0 && pageIndex < this.totalPages) {
+                                    this.page = pageIndex;
+                                    this.updateCarousel();
+                                }
                             }
                         }
                     }
@@ -436,10 +482,11 @@
     {{-- ? GALLERY SECTION --}}
     <section class="bg-cst-green-800">
         <div
-            class="flex flex-col items-center px-4 sm:px-8 py-14 sm:py-20 relative overflow-x-hidden text-white container mx-auto">
+            class="flex flex-col items-center px-8 py-14 sm:py-20 relative overflow-x-hidden text-white container mx-auto">
 
             <span class="absolute top-0 inset-x-8 h-px bg-cst-green-200/40"></span>
-            <div class="mb-10 sm:mb-16">
+
+            <div class="mb-10 sm:mb-16"k>
                 <p class="font-inter text-gray-300 text-md sm:text-xl mb-2 text-center">Gallery / Pictures</p>
                 <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg text-center">
                     Our <i class="font-playfair">Captured Story</i>
@@ -469,9 +516,11 @@
                             <div
                                 class="absolute inset-0 p-4 sm:p-6 opacity-0 bg-black/60 transition-opacity duration-300
                        group-hover:opacity-100 z-10">
-                                <h3 class="mt-4 text-xl font-semibold text-cst-yellow-400 sm:text-2xl">Kintamani, Ubud</h3>
+                                <h3 class="mt-4 text-xl font-semibold text-cst-yellow-400 sm:text-2xl">Kintamani,
+                                    Ubud</h3>
                                 <p class="mt-4 text-sm font-light sm:text-base">
-                                    This image taken place at Kintamani, Ubud. Explore our tour packages or activities and
+                                    This image taken place at Kintamani, Ubud. Explore our tour packages or
+                                    activities and
                                     find
                                     the
                                     perfect way to
@@ -509,7 +558,7 @@
                 alt="">
         </div>
 
-        <div class="flex flex-col px-4 sm:px-8 pt-8 pb-20 relative overflow-hidden text-white container mx-auto">
+        <div class="flex flex-col px-8 pt-8 pb-20 relative overflow-hidden text-white container mx-auto">
             <div class="flex flex-col sm:flex-row items-center justify-between mb-10 sm:mb-16">
                 <div class="text-center sm:text-start mb-5 sm:mb-0">
                     <p class="font-inter text-gray-300 text-md sm:text-xl">Our blog / articles</p>
@@ -531,7 +580,7 @@
                     </span>
                 </a>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 @for ($i = 0; $i < 4; $i++)
                     <article
                         class="{{ $i < 3 ? 'block' : 'hidden sm:block' }} overflow-hidden shadow-lg transition hover:shadow-lg hover:-translate-y-2">
@@ -539,17 +588,21 @@
                             src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                             class="h-56 w-full object-cover" />
                         <div class="bg-white p-4 sm:p-6 font-inter">
-                            <time datetime="2022-10-10" class="block text-sm italic text-gray-500">July 4th, 2025</time>
+                            <time datetime="2022-10-10" class="block text-sm italic text-gray-500">July 4th,
+                                2025</time>
                             <a href="#">
                                 <h3 class="mt-0.5 text-2xl text-gray-900 font-roboto font-semibold hover:underline">
                                     How to position your furniture for positivity
                                 </h3>
                             </a>
                             <p class="mt-4 line-clamp-3 text-md/relaxed text-gray-500">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
-                                pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores,
+                                possimus
+                                pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet
+                                corporis
                                 quidem,
-                                mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius atque
+                                mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius
+                                atque
                                 dignissimos. Molestias explicabo corporis voluptatem?
                             </p>
                         </div>
@@ -561,7 +614,7 @@
     </section>
 
     {{-- ? FAQ SECTION --}}
-    <section class="flex flex-col gap-10 lg:flex-row px-4 sm:px-8 py-8 relative overflow-hidden container mx-auto">
+    <section class="flex flex-col gap-10 lg:flex-row px-8 py-8 relative overflow-hidden container mx-auto">
 
         <div class="flex-5">
             <img class="w-full max-h-[20rem] sm:max-h-[45rem] object-cover object-center"
@@ -577,7 +630,7 @@
                 </h2>
             </div>
 
-            <div class="space-y-4 font-inter min-h-[70vh] sm:min-h-[40vh]" x-data="{ active: null }">
+            <div class="space-y-4 font-inter min-h-[70vh] lg:min-h-fit" x-data="{ active: null }">
 
                 <!-- FAQ 1 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
@@ -593,8 +646,10 @@
                     </button>
                     <div x-show="active === 1" x-collapse class="overflow-hidden">
                         <p class="pt-4 text-gray-500">
-                            You can book directly through our website by selecting your preferred package, filling in
-                            your details, and submit. After, you will be directed to Whatsapp and continue confirmations
+                            You can book directly through our website by selecting your preferred package, filling
+                            in
+                            your details, and submit. After, you will be directed to Whatsapp and continue
+                            confirmations
                             with our agent.
                         </p>
                     </div>
@@ -634,7 +689,8 @@
                     </button>
                     <div x-show="active === 3" x-collapse class="overflow-hidden">
                         <p class="pt-4 text-gray-500">
-                            Yes, cancellations and reschedules is possible. By chatting our agent on Whatsapp, you can
+                            Yes, cancellations and reschedules is possible. By chatting our agent on Whatsapp, you
+                            can
                             discuss further more and find an answer.
                         </p>
                     </div>
@@ -654,7 +710,8 @@
                     </button>
                     <div x-show="active === 4" x-collapse class="overflow-hidden">
                         <p class="pt-4 text-gray-500">
-                            Absolutely! We offer airport and harbor transfers with comfortable, air-conditioned vehicles
+                            Absolutely! We offer airport and harbor transfers with comfortable, air-conditioned
+                            vehicles
                             to ensure your trip starts smoothly.
                         </p>
                     </div>
@@ -686,51 +743,49 @@
     </section>
 
     {{-- ? CONTACT SECTION --}}
-    <section class="relative">
-        <div class="flex flex-col lg:flex-row gap-12 relative pt-8 pb-0 container mx-auto">
+    <section class="container mx-auto relative flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:flex-1 w-full xl:max-w-1/2 px-8 space-y-4 relative lg:pl-8 pb-0">
 
-            <div class="flex-1 flex flex-col justify-center px-8 sm:pr-0">
-                <div class="mb-6">
-                    <p class="font-inter text-gray-500 text-md sm:text-xl">Contact form</p>
-                    <h2 class="font-roboto text-4xl font-semibold leading-tight">
-                        Leave us <i class="font-playfair">a message!</i>
-                    </h2>
+            <div class="mb-6">
+                <p class="font-inter text-gray-500 text-md sm:text-xl">Contact form</p>
+                <h2 class="font-roboto text-4xl font-semibold leading-tight">
+                    Leave us <i class="font-playfair">a message!</i>
+                </h2>
+            </div>
+            <div class="">
+                <x-input class="mb-4" label="Full name" type="text" placeholder="Jacob Holden" name="fullname"
+                    id="index-fullname" required />
+                <div class="flex flex-col sm:flex-row w-full gap-4 mb-4">
+                    <x-input label="Phone number" type="number" placeholder="+112223334444" name="phone"
+                        id="index-phone" required autocomplete>
+                        <svg class="size-5 text-cst-green-400" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.95 18C14.8667 18 12.8083 17.5458 10.775 16.6375C8.74167 15.7292 6.89167 14.4417 5.225 12.775C3.55833 11.1083 2.27083 9.25833 1.3625 7.225C0.454167 5.19167 0 3.13333 0 1.05C0 0.75 0.1 0.5 0.3 0.3C0.5 0.1 0.75 0 1.05 0H5.1C5.33333 0 5.54167 0.0791667 5.725 0.2375C5.90833 0.395833 6.01667 0.583333 6.05 0.8L6.7 4.3C6.73333 4.56667 6.725 4.79167 6.675 4.975C6.625 5.15833 6.53333 5.31667 6.4 5.45L3.975 7.9C4.30833 8.51667 4.70417 9.1125 5.1625 9.6875C5.62083 10.2625 6.125 10.8167 6.675 11.35C7.19167 11.8667 7.73333 12.3458 8.3 12.7875C8.86667 13.2292 9.46667 13.6333 10.1 14L12.45 11.65C12.6 11.5 12.7958 11.3875 13.0375 11.3125C13.2792 11.2375 13.5167 11.2167 13.75 11.25L17.2 11.95C17.4333 12.0167 17.625 12.1375 17.775 12.3125C17.925 12.4875 18 12.6833 18 12.9V16.95C18 17.25 17.9 17.5 17.7 17.7C17.5 17.9 17.25 18 16.95 18Z"
+                                fill="currentColor" />
+                        </svg>
+                    </x-input>
+                    <x-input label="Email (optional)" type="email" placeholder="test@example.com" name="email"
+                        id="index-email" autocomplete>
+                        <svg class="size-5 text-cst-green-400" viewBox="0 0 20 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM10 9L18 4V2L10 7L2 2V4L10 9Z"
+                                fill="currentColor" />
+                        </svg>
+                    </x-input>
                 </div>
-                <div>
-                    <x-input class="mb-4" label="Full name" type="text" placeholder="Jacob Holden" name="fullname"
-                        id="fullname" required />
-                    <div class="flex flex-col sm:flex-row w-full gap-4 mb-4">
-                        <x-input label="Phone number" type="number" placeholder="+112223334444" name="phone"
-                            id="phone" required>
-                            <svg class="size-5 text-cst-green-400" viewBox="0 0 18 18" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M16.95 18C14.8667 18 12.8083 17.5458 10.775 16.6375C8.74167 15.7292 6.89167 14.4417 5.225 12.775C3.55833 11.1083 2.27083 9.25833 1.3625 7.225C0.454167 5.19167 0 3.13333 0 1.05C0 0.75 0.1 0.5 0.3 0.3C0.5 0.1 0.75 0 1.05 0H5.1C5.33333 0 5.54167 0.0791667 5.725 0.2375C5.90833 0.395833 6.01667 0.583333 6.05 0.8L6.7 4.3C6.73333 4.56667 6.725 4.79167 6.675 4.975C6.625 5.15833 6.53333 5.31667 6.4 5.45L3.975 7.9C4.30833 8.51667 4.70417 9.1125 5.1625 9.6875C5.62083 10.2625 6.125 10.8167 6.675 11.35C7.19167 11.8667 7.73333 12.3458 8.3 12.7875C8.86667 13.2292 9.46667 13.6333 10.1 14L12.45 11.65C12.6 11.5 12.7958 11.3875 13.0375 11.3125C13.2792 11.2375 13.5167 11.2167 13.75 11.25L17.2 11.95C17.4333 12.0167 17.625 12.1375 17.775 12.3125C17.925 12.4875 18 12.6833 18 12.9V16.95C18 17.25 17.9 17.5 17.7 17.7C17.5 17.9 17.25 18 16.95 18Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </x-input>
-                        <x-input label="Email (optional)" type="email" placeholder="test@example.com" name="email"
-                            id="email">
-                            <svg class="size-5 text-cst-green-400" viewBox="0 0 20 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H18C18.55 0 19.0208 0.195833 19.4125 0.5875C19.8042 0.979167 20 1.45 20 2V14C20 14.55 19.8042 15.0208 19.4125 15.4125C19.0208 15.8042 18.55 16 18 16H2ZM10 9L18 4V2L10 7L2 2V4L10 9Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </x-input>
-                    </div>
-                    <x-textarea class="mb-4" label="Message" placeholder="Type your message here" name="message"
-                        id="message" required rows="3" />
-                    <x-whatsapp-button class="w-full">Send message via Whatsapp</x-whatsapp-button>
-                </div>
+                <x-textarea class="mb-4" label="Message" placeholder="Type your message here" name="message"
+                    id="index-message" required rows="3" />
+                <x-whatsapp-button class="w-full text-xl py-3">Send message via Whatsapp</x-whatsapp-button>
             </div>
 
-            <div class="flex-1 w-screen">
-                <img class="w-full max-h-[25rem] sm:max-h-[42rem] object-cover object-center mr-[calc(50%-50vw)]"
-                    src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1920&auto=format&fit=crop"
-                    alt="Contact background">
-            </div>
+        </div>
 
+        <div class="lg:flex-1 w-screen h-[30rem] md:max-h-none lg:h-[40rem] lg:mr-[calc(50%-50vw)]">
+            <img class="w-full h-full object-cover object-center"
+                src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1920&auto=format&fit=crop"
+                alt="Contact background">
         </div>
     </section>
 
