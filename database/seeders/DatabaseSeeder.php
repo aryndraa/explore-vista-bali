@@ -2,13 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Agent;
-use App\Models\PackageDestination;
-use App\Models\PackageFeature;
 use App\Models\ShuttleVehicle;
-use App\Models\User;
-use App\Models\Vehicle;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -32,7 +26,9 @@ class DatabaseSeeder extends Seeder
             ShuttleBookingSeeder::class,
             GallerySeeder::class,
             VehicleRentalSeeder::class,
-            AgentSeeder::class
+            AgentSeeder::class,
+            BlogSeeder::class,
+            TestimonialSeeder::class,
         ]);
     }
 }

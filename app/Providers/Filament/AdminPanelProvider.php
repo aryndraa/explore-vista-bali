@@ -5,6 +5,9 @@ namespace App\Providers\Filament;
 use App\Filament\Pages\AgentCalendar;
 use App\Filament\Pages\Dashboard;
 use App\Filament\Resources\Agents\AgentResource;
+use App\Filament\Resources\Blogs\BlogResource;
+use App\Filament\Resources\Galleries\GalleryResource;
+use App\Filament\Resources\Testimonials\TestimonialResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -34,11 +37,26 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Travel Agents')
                     ->icon('gmdi-supervised-user-circle-r')
                     ->url(fn (): string => AgentResource::getUrl('index')),
-
+            
                 'date' => MenuItem::make()
-                    ->label('Booking Date')
+                    ->label('Calender')
                     ->icon('gmdi-date-range-r')
                     ->url(fn (): string => AgentCalendar::getUrl()),
+
+                'gallery' => MenuItem::make()
+                    ->label('Galleries')
+                    ->icon('gmdi-image-o')
+                    ->url(fn (): string => GalleryResource::getUrl('index')),
+
+                'blog' => MenuItem::make()
+                    ->label('Blogs')
+                    ->icon('gmdi-article-o')
+                    ->url(fn (): string => BlogResource::getUrl('index')),
+
+                'testimonials' => MenuItem::make()
+                    ->label('Testimonials')
+                    ->icon('gmdi-comment-bank-o')
+                    ->url(fn (): string => TestimonialResource::getUrl('index')),
             ])
             ->colors([
                 'primary' => '#052e16',

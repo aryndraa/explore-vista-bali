@@ -1,38 +1,34 @@
 <?php
 
-namespace App\Filament\Resources\Agents\Tables;
+namespace App\Filament\Resources\Blogs\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class AgentsTable
+class BlogsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-            SpatieMediaLibraryImageColumn::make('cover')
-                ->label('Photo Profile')
-                ->collection('profile')
-                ->limit(1)
-                ->height(60)
-                ->rounded(),
-                TextColumn::make('name')
+                TextColumn::make("title")
                     ->searchable(),
-                TextColumn::make('email')
-                    ->label('Email address')
+                TextColumn::make('author')
                     ->searchable(),
-                TextColumn::make('phone')
-                    ->searchable(),
+                TextColumn::make('created_at')
+                    ->label('Publishing Date')
+                    ->date()
+                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
             ])
             ->toolbarActions([
