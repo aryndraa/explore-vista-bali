@@ -115,7 +115,7 @@
     </section>
 
     {{-- ? OTHER METHOD SECTION --}}
-    <section class="container mx-auto px-8 py-14">
+    <section class="container mx-auto px-8 py-24">
 
         <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-8">
             Or <i class="font-playfair">reach us</i> in another way
@@ -138,7 +138,7 @@
 
                 <div class="flex-10">
                     <h5 class="font-roboto font-semibold text-xl mb-1">Address</h5>
-                    <p class="font-inter text-lg">Jln. Lorem ipsum dolor sit, gg sit amet, br., lore ipsum</p>
+                    <p class="font-inter 2xl:text-lg">Jln. Lorem ipsum dolor sit, gg sit amet, br., lore ipsum</p>
                 </div>
             </div>
 
@@ -159,7 +159,7 @@
                     <h5 class="font-roboto font-semibold text-xl mb-1">
                         No. Telp
                     </h5>
-                    <p class="font-inter text-lg">
+                    <p class="font-inter 2xl:text-lg">
                         <a href="#">+00 (111) 222 3333</a>
                     </p>
                 </div>
@@ -182,7 +182,7 @@
                     <h5 class="font-roboto font-semibold text-xl mb-1">
                         Email
                     </h5>
-                    <p class="font-inter text-lg">
+                    <p class="font-inter 2xl:text-lg">
                         <a href="#">emailtest@example.com</a>
                     </p>
                 </div>
@@ -205,9 +205,9 @@
     </section>
 
     {{-- ? COMMENT FORM SECTION --}}
-    <section id="comment-form" class="container mx-auto px-8 py-20">
+    <section id="comment-form" class="container mx-auto px-8 py-24">
 
-        <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-8">
+        <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-12">
             Maybe leave <i class="font-playfair">a comment</i> for us?
         </h1>
 

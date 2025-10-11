@@ -31,7 +31,7 @@
             value="{{ old($name, $value) }}" placeholder="{{ $placeholder }}" {{ $required ? 'required' : '' }}
             @if ($type === 'tel') pattern="^\+?[0-9\s\-().]{7,20}$" @endif
             {{ $attributes->except(['class', 'id', 'name', 'value', 'required']) }}
-            class="bg-transparent w-full text-xl text-black font-medium
+            class="bg-transparent w-full 2xl:text-lg text-black font-medium
                    placeholder:text-gray-400/60 placeholder:italic focus:border-cst-yellow-400 transition-colors duration-200 focus:outline-none">
     </div>
 </div>

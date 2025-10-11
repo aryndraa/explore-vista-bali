@@ -73,11 +73,10 @@
             </div>
         </div>
 
-        <div class="lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8 xl:gap-12">
+        <div class="lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8 xl:gap-10">
             <!-- Desktop Sidebar Filter -->
             <div class="hidden lg:block lg:col-span-1 sticky top-20">
-                <div
-                    class="space-y-4 bg-gray-200 px-6 py-12 shadow-xl min-h-[85vh] max-h-[35rem] overflow-y-scroll [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-gray-200">
+                <div class="space-y-4">
 
                     <h3 class="font-playfair text-4xl font-medium mb-8 italic">Filters</h3>
 
@@ -99,7 +98,7 @@
             <!-- Tours Grid -->
             <div class="lg:col-span-3">
                 <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">8 Vehicle available</p>
-                <ul class="grid gap-4 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
+                <ul class="grid gap-4 sm:gap-5 lg:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
 
                     @for ($i = 0; $i < 6; $i++)
                         <li>

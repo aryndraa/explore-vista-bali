@@ -8,7 +8,7 @@
         <img class="-z-10 w-full max-h-50 object-cover object-center transition group-hover:scale-105"
             src="{{ $img }}" alt="">
     </div>
-    <div class="bg-gray-200 p-5 rounded-t-xl z-10">
+    <div class="bg-gray-200 p-5 rounded-xl z-10">
         <h4 class="font-roboto text-xl font-semibold">Tour Package Title</h4>
         <p class="font-inter text-md italic text-gray-600">Kintamani, Bali</p>
 

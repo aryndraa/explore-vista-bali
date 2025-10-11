@@ -22,7 +22,7 @@
     <section
         class="relative after:absolute after:inset-0 after:bg-black/50 after:-z-10 isolate bg-center bg-no-repeat bg-cover"
         style="background-image: url('https://images.unsplash.com/photo-1557093793-e196ae071479?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="container mx-auto flex justify-center items-end px-8 pt-16 pb-10 min-h-60 w-full text-white">
+        <div class="container mx-auto flex justify-center items-end px-8 py-16 min-h-64 w-full text-white">
 
             <div class="flex flex-col items-center text-center">
                 <nav aria-label="Breadcrumb" class="text-cst-yellow-400 mb-2">

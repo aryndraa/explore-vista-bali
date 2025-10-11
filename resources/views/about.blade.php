@@ -68,13 +68,13 @@
     </section>
 
     {{-- ? VISION SECTION --}}
-    <section class="container mx-auto flex flex-col items-center py-12 px-8 border-b-2 border-b-gray-300">
+    <section class="container mx-auto flex flex-col items-center py-24 px-8 border-b-2 border-b-gray-300">
 
-        <h2 class="font-roboto text-3xl text-center font-bold whitespace-nowrap mb-4">
+        <h2 class="font-roboto text-3xl 2xl:text-4xl  text-center font-bold whitespace-nowrap mb-4">
             What is <i class="font-playfair">our vision?</i>
         </h2>
 
-        <p class="font-inter text-sm text-center max-w-lg">
+        <p class="font-inter text-sm lg:text-base text-center max-w-lg">
             To be the trusted travel companion that connects visitors with the beauty, culture, and spirit of Bali through
             seamless journeys and unforgettable experiences.
         </p>
@@ -82,7 +82,7 @@
     </section>
 
     {{-- ? MISSION AND GOALS SECTION --}}
-    <section class="container mx-auto py-12 px-8">
+    <section class="container mx-auto py-24 px-8">
 
         {{-- ? Missions --}}
         <div class="flex flex-col md:flex-row md:gap-10 mb-12">
@@ -196,7 +196,7 @@
     <section class="bg-cst-green-800 overflow-x-hidden">
 
         <div class="flex flex-col lg:flex-row sm:gap-12 relative container mx-auto text-white">
-            <div class="relative min-h-[20rem] lg:min-h-[32rem] bg-fixed bg-cover bg-center
+            <div class="relative min-h-[20rem] lg:min-h-[32rem] bg-cover bg-center
             w-screen ml-[calc(50%-50vw)]"
                 style="background-image: url('https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?q=80&w=1920&auto=format&fit=crop');">
             </div>
@@ -220,8 +220,8 @@
                             </svg>
                         </div>
                         <div class="font-inter">
-                            <h4 class="text-2xl font-medium leading-tight mt-1 mb-4">Several shuttle type</h4>
-                            <p class="text-xl text-gray-200 max-w-2xl">
+                            <h4 class="text-xl font-medium leading-tight mt-1 mb-4">Several shuttle type</h4>
+                            <p class="2xl:text-lg text-gray-200 max-w-2xl">
                                 Choose from airport, harbor, or point-to-point shuttles across Bali. Our reliable and
                                 comfortable transfers ensure you arrive safely and on time, wherever your destination may
                                 be.
@@ -238,8 +238,8 @@
                             </svg>
                         </div>
                         <div class="font-inter">
-                            <h4 class="text-2xl font-medium leading-tight mt-1 mb-4">Tours & Activities</h4>
-                            <p class="text-xl text-gray-200 max-w-2xl">
+                            <h4 class="text-xl font-medium leading-tight mt-1 mb-4">Tours & Activities</h4>
+                            <p class="2xl:text-lg text-gray-200 max-w-2xl">
                                 Discover Bali through half-day or full-day tours, paired with fun activities like banana
                                 boat rides, waterfall trips, and cultural experiences. Each package is designed for
                                 unforgettable memories.
@@ -256,8 +256,8 @@
                             </svg>
                         </div>
                         <div class="font-inter">
-                            <h4 class="text-2xl font-medium leading-tight mt-1 mb-4">Vehicle Rental</h4>
-                            <p class="text-xl text-gray-200 max-w-2xl">
+                            <h4 class="text-xl font-medium leading-tight mt-1 mb-4">Vehicle Rental</h4>
+                            <p class="2xl:text-lg text-gray-200 max-w-2xl">
                                 Travel at your own pace with our vehicle rental service. From cars to vans with professional
                                 drivers, we offer safe, comfortable, and flexible options for any journey.
                             </p>
@@ -266,7 +266,7 @@
                 </div>
                 <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
                     secondTextClasses="text-black font-playfair font-bold italic"
-                    class="text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
+                    class="text-lg 2xl:text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
                     Find Tours!
                 </x-wave-button>
             </div>
@@ -276,7 +276,7 @@
 
     {{-- ? OUR TEAM SECTION --}}
     <section class="bg-cst-green-800">
-        <div class="container mx-auto py-20 px-8 text-white">
+        <div class="container mx-auto py-24 px-8 text-white">
 
             <div class="flex flex-col text-center w-fit mb-10 mx-auto">
                 <p class="font-inter text-cst-green-200 text-md sm:text-xl">Our team</p>
@@ -323,7 +323,7 @@
     </section>
 
     {{-- ? FAQ SECTION --}}
-    <section class="flex flex-col gap-10 lg:flex-row px-4 sm:px-8 py-8 relative overflow-hidden container mx-auto">
+    <section class="flex flex-col gap-10 lg:flex-row px-4 sm:px-8 py-24 relative overflow-hidden container mx-auto">
 
         <div class="flex-5">
             <img class="w-full h-full max-h-[20rem] sm:min-h-[45rem] object-cover object-center"
@@ -449,7 +449,7 @@
     </section>
 
     {{-- ? OFFICE LOCATION SECTION --}}
-    <section class="container mx-auto py-16 px-8">
+    <section class="container mx-auto py-24 px-8">
 
         <div class="mb-8">
             <p class="font-inter text-gray-500 text-md text-center sm:text-xl">

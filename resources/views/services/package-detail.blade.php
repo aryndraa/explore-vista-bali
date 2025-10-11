@@ -16,7 +16,7 @@
     <section
         class="relative after:absolute after:inset-0 after:bg-black/50 after:-z-10 isolate bg-center bg-no-repeat bg-cover"
         style="background-image: url('https://images.unsplash.com/photo-1557093793-e196ae071479?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="container mx-auto flex justify-center items-end px-8 pt-16 pb-10 min-h-60 w-full text-white">
+        <div class="container mx-auto flex justify-center items-end px-8 py-16 min-h-64 w-full text-white">
 
             <div class="flex flex-col items-center text-center">
                 <h1 class="font-roboto font-semibold text-3xl sm:text-4xl mb-2">
@@ -219,7 +219,7 @@
     {{-- ? PACKAGE DETAIL SECTION --}}
     <section class="bg-gray-200/80">
         <div
-            class="container mx-auto flex flex-col lg:flex-row lg:gap-12 xl:gap-16 py-16 px-8 [&_h4]:font-roboto [&_h4]:font-medium [&_h4]:text-xl">
+            class="container mx-auto flex flex-col lg:flex-row lg:gap-12 xl:gap-16 py-24 px-8 [&_h4]:font-roboto [&_h4]:font-medium [&_h4]:text-xl">
 
             <div class="lg:flex-7 xl:flex-8">
                 <h2
@@ -399,11 +399,11 @@
     {{-- ? HOOK SECTION --}}
     <section
         class="relative lg:-mt-[15rem] lg:pt-[15rem] overflow-hidden after:absolute after:inset-0 after:bg-black/70 after:-z-10 z-10">
-        <div class="isolate absolute inset-0 bg-fixed bg-cover bg-center -z-20"
+        <div class="isolate absolute inset-0  bg-cover bg-center -z-20"
             style="background-image: url('https://images.unsplash.com/photo-1558005530-a7958896ec60?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
         </div>
 
-        <div class="container mx-auto flex flex-col items-center justify-center py-20 px-8 min-h-[90vh]">
+        <div class="container mx-auto flex flex-col items-center justify-center py-20 px-8 min-h-[60vh]">
 
             <h2
                 class="font-roboto [&>i]:font-playfair font-semibold text-center text-4xl md:text-5xl text-white mb-12 max-w-xl md:max-w-2xl leading-tight">

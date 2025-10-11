@@ -20,23 +20,23 @@
 @section('content')
 
     {{-- ? HERO SECTION --}}
-    <section class="relative min-h-screen flex items-end pt-32 pb-14 text-white">
-        <div class="absolute inset-y-0 -inset-x-20 bg-black -z-20">
-            <video autoplay loop class="opacity-50 h-full w-full object-cover"
+    <section class="relative min-h-[100dvh] flex items-end  pb-20 2xl:pb-28 text-white">
+        <div class="absolute inset-y-0 -inset-x-20 bg-black -z-20 min-h-[100dvh]">
+            <video autoplay loop class="opacity-50 h-full w-full object-cover min-h-[100dvh]"
                 src="https://videocdn.cdnpk.net/videos/79ab4de0-c5fb-4370-82b0-8c84e204d765/horizontal/previews/clear/large.mp4?token=exp=1758954049~hmac=4865dfd32e61ac0ea52fb0ca690d4dea6909e3a303529ea65a7e415357412fdb">
             </video>
         </div>
 
         <div
-            class="flex flex-col md:flex-row w-full justify-between gap-20 items-center md:items-end px-8 container mx-auto">
+            class="flex flex-col lg:flex-row w-full justify-between gap-20 items-center lg:items-end px-8 container mx-auto">
             <div class="flex flex-col items-center md:items-start">
                 <p
-                    class="text-start md:text-center text-gray-200 py-2 px-4 rounded-md text-lg w-fit font-inter italic mb-1 backdrop-blur-[10px] backdrop-saturate-[165%] bg-[rgba(160,160,160,0.2)] border border-[rgba(255,255,255,0.125)]">
+                    class="text-start md:text-center text-gray-200 py-2 px-4 rounded-md text-base w-fit font-inter italic mb-1 backdrop-blur-[10px] backdrop-saturate-[165%] bg-[rgba(160,160,160,0.2)] border border-[rgba(255,255,255,0.125)]">
                     Welcome to Bali, Indonesia
                 </p>
 
                 <h1
-                    class="text-center md:text-start font-roboto font-semibold text-4xl md:text-5xl max-w-lg leading-snug mb-10">
+                    class="text-center md:text-start font-roboto font-semibold text-4xl md:text-5xl 2xl:text-6xl max-w-lg 2xl:max-w-2xl leading-snug mb-10">
                     Get to know <span class="font-playfair italic">Bali</span> with Explore Vista Bali!
                 </h1>
 
@@ -48,13 +48,13 @@
                 </x-wave-button>
             </div>
 
-            <div class="flex flex-col items-center md:items-end">
-                <div class="bg-white text-black p-4 font-inter rounded-sm mb-4 w-full md:max-w-xs">
-                    <p class="text-lg mb-4">
+            <div class="flex flex-col items-center lg:items-end">
+                <div class="bg-white text-black p-4 font-inter rounded-sm mb-4 w-full lg:max-w-sm">
+                    <p class="text-base mb-4">
                         “This service is great! I love it, I would recommend this to my relatives”
                     </p>
                     <div class="">
-                        <h4 class="text-lg font-roboto leading-tight font-medium italic">Jackson Harry</h4>
+                        <h4 class="text-base font-roboto leading-tight font-medium italic">Jackson Harry</h4>
                         <a href="#" class="text-sm text-gray-500">@loremipsum</a>
                     </div>
                 </div>
@@ -70,27 +70,27 @@
 
     {{-- ? EXPERIENCE SECTION --}}
     <section class="relative">
-        <img class="hidden -z-10 lg:block absolute -left-28 top-1/4 rotate-45 w-80 opacity-30"
+        <img class="hidden -z-10 lg:block absolute -left-28 top-1/3 rotate-45 w-80 opacity-30"
             src="{{ asset('img/decoration_left.png') }}" alt="left flower decoration">
-        <img class="hidden -z-10 lg:block absolute -right-28 w-80 top-1/4 opacity-30"
+        <img class="hidden -z-10 lg:block absolute -right-28 w-80 top-1/3 opacity-30"
             src="{{ asset('img/decoration_right.png') }}" alt="right flower decoration">
 
-        <div class="px-8 py-20 relative mx-auto container">
+        <div class="px-8 py-24 relative mx-auto container">
 
-            <div class="flex flex-col-reverse md:flex-row gap-5 lg:gap-0 justify-between md:items-center w-full mb-8">
+            <div class="flex flex-col-reverse md:flex-row gap-5 lg:gap-0 justify-between md:items-center w-full mb-20">
                 <p class="text-lg font-inter font-normal md:max-w-md lg:max-w-lg">
                     Explore Vista Bali is trusted by travelers worldwide, delivering seamless tours and unforgettable
                     experiences across the island.
                 </p>
                 <div class="flex flex-col items-start md:items-end">
-                    <p class="font-inter text-gray-600 text-lg">Tours, places, clients</p>
+                    <p class="font-inter text-gray-600 text-base">Tours, places, clients</p>
                     <h2 class="font-roboto text-4xl font-bold text-end whitespace-nowrap">
                         Our <i class="font-playfair">Experience</i>
                     </h2>
                 </div>
             </div>
 
-            <div class="flex flex-col lg:px-14 md:flex-row gap-4 lg:gap-6 items-center justify-center">
+            <div class="flex flex-col lg:px-14 md:flex-row gap-4 lg:gap-15 items-center justify-center">
                 <div class="flex-1 w-full md:max-w-80">
                     <div
                         class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
@@ -155,9 +155,9 @@
     {{-- ? ABOUT SECTION --}}
     <section class="bg-cst-green-200/40">
 
-        <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-24 px-8 py-10 relative overflow-x-hidden">
+        <div class="container mx-auto flex flex-col lg:flex-row  gap-10 lg:gap-24 px-8 py-18 relative overflow-x-hidden">
             <div class="">
-                <div class="flex flex-col mb-4">
+                <div class="flex flex-col mb-6">
                     <p class="font-inter text-gray-600 text-xl">Tours, places, clients</p>
                     <h2 class="font-roboto text-4xl font-bold whitespace-nowrap">
                         Our <i class="font-playfair">Experience</i>
@@ -175,7 +175,7 @@
                     <span class="text-md font-inter font-medium transition-all group-hover:me-6"> More about us </span>
                 </a>
             </div>
-            <div class="flex flex-col font-inter text-gray-600 text-xl text-justify lg:flex-row gap-5 lg:gap-10">
+            <div class="flex flex-col font-inter text-gray-600 text-base 2xl:text-lg text-justify lg:flex-row gap-5 lg:gap-10">
                 <p class="">
                     At Explore Vista Bali, we're passionate about helping
                     travellers discover the island with ease. From shuttle services to curated tours, we make every journey
@@ -195,12 +195,12 @@
     <section class="bg-cst-green-200/40 overflow-x-hidden">
 
         <div class="flex flex-col lg:flex-row sm:gap-12 relative container mx-auto">
-            <div class="relative min-h-[20rem] lg:min-h-[32rem] bg-fixed bg-cover bg-center
+            <div class="relative min-h-[20rem] lg:min-h-[32rem]  bg-cover bg-center
             w-screen ml-[calc(50%-50vw)]"
                 style="background-image: url('https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?q=80&w=1920&auto=format&fit=crop');">
             </div>
 
-            <div class="pt-12 pb-12 px-8 lg:px-0 w-full lg:pr-8">
+            <div class="py-12 px-8 lg:px-0 w-full lg:pr-8">
                 <div class="flex flex-col mb-12">
                     <p class="font-inter text-gray-600 text-xl">Available services</p>
                     <h2 class="font-roboto text-4xl sm:text-5xl font-bold whitespace-nowrap">
@@ -219,8 +219,8 @@
                             </svg>
                         </div>
                         <div class="font-inter">
-                            <h4 class="text-2xl font-semibold leading-tight mt-1 mb-4">Shuttle Service</h4>
-                            <p class="text-xl text-gray-600 max-w-2xl">
+                            <h4 class="text-xl font-semibold leading-tight mt-1 mb-3">Shuttle Service</h4>
+                            <p class="2xl:text-lg text-gray-600 max-w-2xl">
                                 Reliable and comfortable shuttle service from the airport,
                                 harbor, or point-to-point transfers anywhere in Bali.</p>
                         </div>
@@ -235,8 +235,8 @@
                             </svg>
                         </div>
                         <div class="font-inter">
-                            <h4 class="text-2xl font-semibold leading-tight mt-1 mb-4">Tours & Activities</h4>
-                            <p class="text-xl text-gray-600 max-w-2xl">A wide range of exciting activities, from
+                            <h4 class="text-xl font-semibold leading-tight mt-1 mb-3">Tours & Activities</h4>
+                            <p class="2xl:text-lg text-gray-600 max-w-2xl">A wide range of exciting activities, from
                                 cultural
                                 experiences and culinary delights to outdoor adventures.</p>
                         </div>
@@ -251,15 +251,15 @@
                             </svg>
                         </div>
                         <div class="font-inter">
-                            <h4 class="text-2xl font-semibold leading-tight mt-1 mb-4">Vehicle Rental</h4>
-                            <p class="text-xl text-gray-600 max-w-2xl">Discover Bali with our reliable vehicle rentals,
+                            <h4 class="text-xl font-semibold leading-tight mt-1 mb-3">Vehicle Rental</h4>
+                            <p class="2xl:text-lg text-gray-600 max-w-2xl">Discover Bali with our reliable vehicle rentals,
                                 offering comfort, safety, and flexibility for your journey.</p>
                         </div>
                     </div>
                 </div>
                 <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
                     secondTextClasses="text-black font-playfair font-bold italic"
-                    class="text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
+                    class="text-lg 2xl:text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
                     Book Tours!
                 </x-wave-button>
             </div>
@@ -268,7 +268,7 @@
     </section>
 
     {{-- ? TOUR PACKAGES & ACTIVITIES SECTION --}}
-    <section class="flex flex-col items-center px-8 py-16 relative overflow-x-hidden">
+    <section class="flex flex-col items-center px-8 py-24 relative overflow-x-hidden">
 
         <div class="flex items-center justify-center mb-6 w-full">
             <span class="hidden sm:inline-block h-0.5 w-full bg-gray-300"></span>
@@ -281,7 +281,7 @@
             <span class="hidden sm:inline-block h-0.5 w-full bg-gray-300"></span>
         </div>
 
-        <a href="#" class="flex text-lg gap-2 items-center text-cst-green-400 underline mb-14">
+        <a href="#" class="flex text-base gap-2 items-center text-cst-green-400 underline mb-14">
             See all packages <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -305,11 +305,11 @@
     {{-- ? TESTIMONIAL SECTION --}}
     <section class="bg-cst-green-800">
         <div
-            class="flex flex-col md:flex-row gap-14 items-center justify-between px-4 sm:px-8 py-24 relative overflow-x-hidden text-white container mx-auto">
+            class="flex flex-col md:flex-row gap-14 items-center justify-between px-4 sm:px-8 py-24  relative overflow-x-hidden text-white container mx-auto">
 
             <div class="px-4 sm:px-0 w-full md:w-5/12">
                 <div class="mb-6 md:mb-16">
-                    <p class="font-inter text-gray-300 text-md sm:text-xl mb-2">Testimonials / Comments</p>
+                    <p class="font-inter text-gray-300 text-md sm:text-xl mb-2">Testimonials </p>
                     <h2 class="font-roboto text-4xl xl:text-5xl font-semibold leading-tight max-w-lg">
                         What our clients <i class="font-playfair">says about us.</i>
                     </h2>
@@ -318,8 +318,8 @@
                 {{-- ? buttons --}}
                 <div class="flex flex-wrap gap-3 mb-12">
                     <a href="{{ route('contact') }}#comment-form"
-                        class="flex items-center gap-3 whitespace-nowrap font-inter font-semibold text-sm sm:text-xl py-2.5 px-5 bg-cst-yellow-400 w-fit rounded-md text-black hover:scale-105 transition">
-                        <svg class="size-6 text-black" viewBox="0 0 19 17" fill="none"
+                        class="flex items-center gap-3 whitespace-nowrap font-inter font-medium text-sm sm:text-lg py-2.5 px-5 bg-cst-yellow-400 w-fit rounded-md text-black hover:scale-105 transition">
+                        <svg class="size-5 text-black" viewBox="0 0 19 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M4 6H12V4H4V6ZM4 10H9V8H4V10ZM14 17V14H11V12H14V9H16V12H19V14H16V17H14ZM0 17V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H14C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2V7.075C15.8333 7.04167 15.6667 7.02083 15.5 7.0125C15.3333 7.00417 15.1667 7 15 7C13.3167 7 11.8958 7.58833 10.7375 8.75C9.57917 9.91667 9 11.3333 9 13C9 13.1667 9.00417 13.3333 9.0125 13.5C9.02083 13.6667 9.04167 13.8333 9.075 14H3L0 17Z"
@@ -335,7 +335,7 @@
                                     d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </span>
-                        <span class="text-sm lg:text-xl italic font-inter font-medium transition-all lg:group-hover:me-6">
+                        <span class="text-sm lg:text-lg italic font-inter font-medium transition-all lg:group-hover:me-6">
                             View all comments
                         </span>
                     </a>
@@ -376,7 +376,7 @@
                                             relatives.
                                         </p>
                                         <div class="font-inter pt-4 border-t-2 border-gray-400 w-full text-black">
-                                            <p class="font-semibold text-lg">Jackson Harry</p>
+                                            <p class="font-semibold text-base">Jackson Harry</p>
                                             <a href="#" target="_blank"
                                                 class="text-gray-500 text-md italic hover:underline">@loremipsum</a>
                                         </div>
@@ -541,7 +541,7 @@
                             d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </span>
-                <span class="text-sm lg:text-lg italic font-inter font-medium transition-all lg:group-hover:me-6">
+                <span class="text-sm lg:text-base italic font-inter font-medium transition-all lg:group-hover:me-6">
                     View all pictures
                 </span>
             </a>
@@ -575,7 +575,7 @@
                                 d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </span>
-                    <span class="text-sm lg:text-lg italic font-inter font-semibold transition-all lg:group-hover:me-6">
+                    <span class="text-sm lg:text-base italic font-inter font-semibold transition-all lg:group-hover:me-6">
                         See all articles
                     </span>
                 </a>
@@ -614,7 +614,7 @@
     </section>
 
     {{-- ? FAQ SECTION --}}
-    <section class="flex flex-col gap-10 lg:flex-row px-8 py-8 relative overflow-hidden container mx-auto">
+    <section class="flex flex-col gap-10 lg:flex-row px-8 py-24 relative overflow-hidden container mx-auto">
 
         <div class="flex-5">
             <img class="w-full max-h-[20rem] sm:max-h-[45rem] object-cover object-center"
@@ -637,7 +637,7 @@
                     :class="{ 'border-cst-green-400': active === 1 }">
                     <button @click="active === 1 ? active = null : active = 1"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
-                        <h2 class="text-lg font-medium text-start">How do I book a tour package?</h2>
+                        <h2 class="text-base font-medium text-start">How do I book a tour package?</h2>
                         <svg class="size-5 shrink-0 transition-transform duration-300"
                             :class="{ '-rotate-180': active === 1 }" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -660,7 +660,7 @@
                     :class="{ 'border-cst-green-400': active === 2 }">
                     <button @click="active === 2 ? active = null : active = 2"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
-                        <h2 class="text-lg font-medium text-start">What payment methods are accepted?</h2>
+                        <h2 class="text-base font-medium text-start">What payment methods are accepted?</h2>
                         <svg class="size-5 shrink-0 transition-transform duration-300"
                             :class="{ '-rotate-180': active === 2 }" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -680,7 +680,7 @@
                     :class="{ 'border-cst-green-400': active === 3 }">
                     <button @click="active === 3 ? active = null : active = 3"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
-                        <h2 class="text-lg font-medium text-start">Can I cancel or reschedule my booking?</h2>
+                        <h2 class="text-base font-medium text-start">Can I cancel or reschedule my booking?</h2>
                         <svg class="size-5 shrink-0 transition-transform duration-300"
                             :class="{ '-rotate-180': active === 3 }" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -701,7 +701,7 @@
                     :class="{ 'border-cst-green-400': active === 4 }">
                     <button @click="active === 4 ? active = null : active = 4"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
-                        <h2 class="text-lg font-medium text-start">Do you provide airport transfers?</h2>
+                        <h2 class="text-base font-medium text-start">Do you provide airport transfers?</h2>
                         <svg class="size-5 shrink-0 transition-transform duration-300"
                             :class="{ '-rotate-180': active === 4 }" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -722,7 +722,7 @@
                     :class="{ 'border-cst-green-400': active === 5 }">
                     <button @click="active === 5 ? active = null : active = 5"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
-                        <h2 class="text-lg font-medium text-start">Is hotel pickup included in the tours?</h2>
+                        <h2 class="text-base font-medium text-start">Is hotel pickup included in the tours?</h2>
                         <svg class="size-5 shrink-0 transition-transform duration-300"
                             :class="{ '-rotate-180': active === 5 }" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -774,7 +774,7 @@
                                 fill="currentColor" />
                         </svg>
                     </x-input>
-                </div>
+                </div>      
                 <x-textarea class="mb-4" label="Message" placeholder="Type your message here" name="message"
                     id="index-message" required rows="3" />
                 <x-whatsapp-button class="w-full text-xl py-3">Send message via Whatsapp</x-whatsapp-button>
@@ -782,7 +782,7 @@
 
         </div>
 
-        <div class="lg:flex-1 w-screen h-[30rem] md:max-h-none lg:h-[40rem] lg:mr-[calc(50%-50vw)]">
+        <div class="lg:flex-1 w-screen h-[30rem] md:max-h-none lg:h-[46rem] lg:mr-[calc(50%-50vw)]">
             <img class="w-full h-full object-cover object-center"
                 src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=1920&auto=format&fit=crop"
                 alt="Contact background">

@@ -18,15 +18,15 @@
         '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
     <div class="mx-auto px-8 container">
-        <div class="flex items-center justify-between h-16">
+        <div class="grid grid-cols-2 lg:grid-cols-4 h-16">
 
             {{-- ? Logo --}}
-            <a href="{{ route('home') }}" class="text-2xl font-bold font-roboto text-inherit">
+            <a href="{{ route('home') }}" class="text-2xl font-bold font-roboto flex items-center text-inherit ">
                 LOGO
             </a>
 
             {{-- ? Desktop nav --}}
-            <nav class="hidden lg:flex items-center gap-6 h-full font-inter">
+            <nav class="hidden lg:flex items-center justify-center gap-6 h-full font-inter  col-span-2">
                 <a href="{{ route('home') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('home') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Home</a>
@@ -126,7 +126,7 @@
             </nav>
 
             {{-- Right actions --}}
-            <div class="flex items-center">
+            <div class="flex items-center justify-end gap-3 ">
 
                 <a href="#" aria-label="Know more about us by calling this number"
                     class="group relative hidden p-2 sm:inline-block hover:scale-110 transition"

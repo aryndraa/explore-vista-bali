@@ -57,7 +57,7 @@
         options
     }) {
         return {
-            open: false,
+            open: true,
             title,
             options,
             selected: [],

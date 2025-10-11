@@ -60,12 +60,12 @@
 
     {{-- ? COMMENTS SECTION --}}
     <section class="bg-gray-100">
-        <div class="container mx-auto py-12 px-8">
+        <div class="container mx-auto py-24 px-8">
 
-            <h2 class="font-roboto font-semibold text-3xl mb-4">4 Comments</h2>
+            <h2 class="font-roboto font-semibold text-3xl mb-12">4 Comments</h2>
 
             {{-- comments wrapper --}}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
 
                 @for ($i = 0; $i < 8; $i++)
                     <div
