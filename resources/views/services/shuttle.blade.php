@@ -122,7 +122,7 @@
                         </p>
                     </div>
 
-                    <x-wave-button href="{{ route('services.shuttle-form', ['type' => 'custom-point']) }}"
+                    <x-wave-button href="{{ route('services.shuttle-form', ['type' => 'point-to-point']) }}"
                         firstTextClasses="text-black font-inter font-semibold"
                         secondTextClasses="text-black font-playfair font-bold italic"
                         class="text-md w-full py-1.5 px-5 rounded-sm bg-cst-yellow-400">

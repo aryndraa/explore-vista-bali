@@ -1,0 +1,71 @@
+<?php
+
+namespace App\Http\Controllers\Web\Shuttle;
+
+use App\Models\Shuttle;
+use Illuminate\Http\Request;
+use App\Models\ShuttleBooking;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Shuttle\BookingRequest;
+use App\Models\User;
+use Filament\Notifications\Notification;
+
+class ShuttleController extends Controller
+{
+    public function index()
+    {
+        return view("services.shuttle");
+    }
+
+    public function form(Request $request) 
+    {
+        $type = $request->get('type') ;
+
+        $shuttle = Shuttle::query()
+            ->where('name', $type)
+            ->with('vehicles.vehicle')
+            ->first();
+
+
+        return view("services.shuttle-form", ['shuttle' => $shuttle]);
+    }
+
+    public function booking(BookingRequest $request)
+    {
+        $booking = ShuttleBooking::query()->create($request->all());
+
+        User::all()->each(function ($admin) use ($booking) {
+            Notification::make()
+                ->title('🚐 New Shuttle Booking Received')
+                ->body("📍 {$booking->customer_name} has booked a {$booking->shuttle->type} shuttle from {$booking->from} to {$booking->to} on " 
+                    . \Carbon\Carbon::parse($booking->booking_date)->format('d M Y') 
+                    . " at {$booking->pickup_time} WITA. 👥 People: {$booking->people_amount}.")
+                ->sendToDatabase($admin);
+        });
+        
+        $shuttle = $booking->shuttle ?? null;
+        $vehicle = $booking->vehicle ?? null;
+
+        $shuttleType = $shuttle ? ucfirst($shuttle->type) : 'Shuttle';
+        $vehicleName = $vehicle ? "{$vehicle->type} - {$vehicle->name}" : 'Not specified';
+
+        $message = "Hello, I would like to confirm my shuttle booking:\n\n"
+        . "*Shuttle Type:* {$shuttleType}\n"
+        . "*Name:* {$booking->customer_name}\n"
+        . "*Phone:* {$booking->customer_phone}\n"
+        . "*Email:* {$booking->customer_email}\n"
+        . "*From:* {$booking->from}\n"
+        . "*To:* {$booking->to}\n"
+        . "*Booking Date:* " . \Carbon\Carbon::parse($booking->booking_date)->format('d M Y') . "\n"
+        . "*Pickup Time:* {$booking->pickup_time} WITA\n"
+        . "*People:* {$booking->people_amount}\n"
+        . "*Vehicle:* {$vehicleName}\n\n"
+        . "Please confirm my booking. Thank you! 🙏";
+
+
+        $adminPhone = '6282144915822';
+        $waUrl = 'https://wa.me/' . $adminPhone . '?text=' . urlencode($message);
+
+        return redirect()->away($waUrl);
+    }
+}

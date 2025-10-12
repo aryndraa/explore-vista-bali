@@ -34,7 +34,8 @@ class VehicleForm
 
                 SpatieMediaLibraryFileUpload::make('image')
                     ->label('Vehicle Image')
-                    ->collection('vehicles') // nama koleksi Spatie
+                    ->collection('vehicles') 
+                    ->disk('public')
                     ->image()
                     ->maxFiles(1)
                     ->imageCropAspectRatio('16:9')

@@ -59,7 +59,6 @@ class ShuttleBooking extends Model
         'from',
         'to',
         'vehicle_id',
-        'package_id',
         'status',
         'agent_id'
     ];

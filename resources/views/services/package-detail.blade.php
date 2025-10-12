@@ -225,14 +225,12 @@
                 <p class="font-inter text-justify leading-normal mb-6">
                   {!! nl2br(e($package->description)) !!}
                 </p>
-
-                @if (request('type') === 'tour')
+                @if ($package->tour->name === 'Full Day Tour' || $package->tour->name === 'Half Day Tour' )
                     <h3 class="mb-2">Destinations</h3>
                     <ol class="list-decimal pl-5">
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit.</li>
-                        <li>Lorem ipsum dolor sit amet.</li>
-                        <li>Lorem, ipsum dolor.</li>
+                        @foreach ($package->destinations as $destination )
+                            <li>{{ $destination->name }}</li>
+                        @endforeach
                     </ol>
                 @elseif (request('type') === 'activity')
                     <h3 class="mb-2">Prices list</h3>

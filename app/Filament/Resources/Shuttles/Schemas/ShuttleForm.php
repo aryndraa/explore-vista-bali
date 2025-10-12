@@ -23,26 +23,6 @@ class ShuttleForm
                         ->columnSpanFull(),
                 ])
                 ->columnSpanFull(),
-
-                Section::make([
-                    SpatieMediaLibraryFileUpload::make('icon')
-                        ->label('Shuttle Icon')
-                        ->collection('shuttle-icons')
-                        ->deletable()
-                        ->imageCropAspectRatio('1:1')
-                        ->maxFiles(1)
-                        ->required(),
-                    SpatieMediaLibraryFileUpload::make('banner')
-                        ->label('Shuttle Banner')
-                        ->collection('shuttle-banners')
-                        ->deletable()
-                        ->imageCropAspectRatio('16:9')
-                        ->maxFiles(1)
-                        ->columnSpan(2)
-                        ->required()
-                ])
-                ->columns(3)
-                ->columnSpanFull()
             ]);
     }
 }

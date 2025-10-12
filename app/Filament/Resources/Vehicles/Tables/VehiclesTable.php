@@ -22,6 +22,7 @@ class VehiclesTable
                 SpatieMediaLibraryImageColumn::make('image')
                     ->label('Image')
                     ->collection('vehicles')
+                    ->disk('public')
                     ->height(100)
                     ->limit(1),
                 TextColumn::make('name')

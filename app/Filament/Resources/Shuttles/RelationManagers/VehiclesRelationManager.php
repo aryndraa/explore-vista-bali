@@ -27,13 +27,16 @@ class VehiclesRelationManager extends RelationManager
             ->components([
                 Select::make('vehicle_id')
                     ->label('Vehicle')
-                    ->options(function () {
-                        return \App\Models\Vehicle::all()
-                            ->mapWithKeys(function ($vehicle) {
-                                return [
-                                    $vehicle->id => "{$vehicle->name} - {$vehicle->type  }",
-                                ];
-                            })
+                     ->options(function () {
+                        $allVehicles = \App\Models\Vehicle::all();
+
+                        $usedVehicleIds = $this->ownerRecord?->vehicles()->pluck('vehicle_id')->toArray() ?? [];
+
+                        return $allVehicles
+                            ->reject(fn ($vehicle) => in_array($vehicle->id, $usedVehicleIds))
+                            ->mapWithKeys(fn ($vehicle) => [
+                                $vehicle->id => "{$vehicle->name} - {$vehicle->type}",
+                            ])
                             ->toArray();
                     })
                     ->searchable()
