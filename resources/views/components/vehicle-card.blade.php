@@ -5,6 +5,7 @@
     'img',
     'seat' => 2,
     'transmission' => 'manual',
+    'href'
 ])
 
 <div class="group">
@@ -63,31 +64,10 @@
                     </svg>
                     {{ $seat }}
                 </span>
-
-                @if ($transmission === 'automatic')
-                    <span class="flex items-center">
-                        <svg class="size-5 text-cst-yellow-400" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 -960 960 960" fill="currentColor">
-                            <path
-                                d="M276-280h76l40-112h176l40 112h76L520-720h-80L276-280Zm138-176 64-182h4l64 182H414Zm66 376q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z" />
-                        </svg>
-                        Automatic
-                    </span>
-                @elseif($transmission === 'manual')
-                    <span class="flex items-center">
-                        <svg class="size-4 text-cst-yellow-400" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 -960 960 960" fill="currentColor">
-                            <path
-                                d="M160-120q-50 0-85-35t-35-85q0-39 22.5-70t57.5-43v-254q-35-12-57.5-43T40-720q0-50 35-85t85-35q50 0 85 35t35 85q0 39-22.5 70T200-607v87h240v-87q-35-12-57.5-43T360-720q0-50 35-85t85-35q50 0 85 35t35 85q0 39-22.5 70T520-607v87h200q17 0 28.5-11.5T760-560v-47q-35-12-57.5-43T680-720q0-50 35-85t85-35q50 0 85 35t35 85q0 39-22.5 70T840-607v47q0 50-35 85t-85 35H520v87q35 12 57.5 43t22.5 70q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-39 22.5-70t57.5-43v-87H200v87q35 12 57.5 43t22.5 70q0 50-35 85t-85 35Z" />
-                        </svg>
-                        Manual
-                    </span>
-                @endif
-
             </div>
         </div>
         {{-- svg --}}
-        <x-whatsapp-button href="#" aria-label="Whatsapp contact page" class="p-0! h-fit rounded-full!"
+        <x-whatsapp-button href="{{ $href }}" aria-label="Whatsapp contact page" class="p-0! size-12 rounded-full!"
             iconClass="size-12" />
     </div>
 </div>

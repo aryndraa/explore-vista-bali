@@ -101,7 +101,7 @@
 
             <!-- Tours Grid -->
             <div class="lg:col-span-3">
-                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">{{ $packages->total() }}  Tours available</p>
+                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">{{ $packages->count() }}  Tours available</p>
                 <ul class="grid gap-4 sm:gap-5 lg:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
 
                    @foreach ($packages as $package)
@@ -115,7 +115,6 @@
                             :description="$package->description"
                             :startTime="$package->start_time"
                         />
-
                     </li>
                 @endforeach
 

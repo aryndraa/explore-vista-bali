@@ -47,14 +47,17 @@
 
                     <div class="space-y-4">
                         <x-filter-dropdown title="Vehicle Type" :options="[
-                            ['id' => 'twowheel', 'label' => '2 Wheels'],
-                            ['id' => 'fourwheel', 'label' => '4 Wheels'],
+                            ['id' => 'bike', 'label' => 'Bike'],
+                            ['id' => 'car', 'label' => 'Car'],
                         ]" />
 
-                        <x-filter-dropdown title="Seat Amount" :options="[
-                            ['id' => 'twoseat', 'label' => '2 Seat'],
-                            ['id' => 'fourseat', 'label' => '4 Seat'],
-                            ['id' => 'sixseat', 'label' => '6 Seat'],
+                        <x-filter-dropdown 
+                            title="Seat Amount" 
+                            wireModel="seatAmount"
+                            :options="[
+                                ['id' => '2', 'label' => '2 Seat'],
+                                ['id' => '4', 'label' => '4 Seat'],
+                                ['id' => '6', 'label' => '6 Seat'],
                         ]" />
                     </div>
                 </div>
@@ -81,15 +84,21 @@
                     <h3 class="font-playfair text-4xl font-medium mb-8 italic">Filters</h3>
 
                     <div class="space-y-4">
-                        <x-filter-dropdown title="Vehicle Type" :options="[
-                            ['id' => 'twowheel', 'label' => '2 Wheels'],
-                            ['id' => 'fourwheel', 'label' => '4 Wheels'],
+                        <x-filter-dropdown 
+                            title="Vehicle Type"
+                            wireModel="vehicleType"
+                            :options="[
+                                ['id' => 'bike', 'label' => 'Bike'],
+                                ['id' => 'car', 'label' => 'Car']
                         ]" />
 
-                        <x-filter-dropdown title="Seat Amount" :options="[
-                            ['id' => 'twoseat', 'label' => '2 Seat'],
-                            ['id' => 'fourseat', 'label' => '4 Seat'],
-                            ['id' => 'sixseat', 'label' => '6 Seat'],
+                        <x-filter-dropdown 
+                            title="Seat Amount" 
+                            wireModel="seatAmount"
+                            :options="[
+                                ['id' => '2', 'label' => '2 Seat'],
+                                ['id' => '4', 'label' => '4 Seat'],
+                                ['id' => '6', 'label' => '6 Seat'],
                         ]" />
                     </div>
                 </div>
@@ -97,16 +106,22 @@
 
             <!-- Tours Grid -->
             <div class="lg:col-span-3">
-                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">8 Vehicle available</p>
+                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">{{ $vehicles->count() }} Vehicle available</p>
                 <ul class="grid gap-4 sm:gap-5 lg:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
 
-                    @for ($i = 0; $i < 6; $i++)
+                    @foreach ($vehicles as $vehicle )
                         <li>
-                            <x-vehicle-card vehicleType="bike" label="Vehicle name or type" transmission="automatic"
-                                price="$5"
-                                img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.aw-jplm6V4oq-Avfo-zdLQHaEK%3Fcb%3D12%26pid%3DApi&f=1&ipt=672d3a679336e6d687f950c92c9b70894c4ab25acf9463e25447bc4dce497a20" />
+                            <x-vehicle-card 
+                                vehicleType="{{ $vehicle->type }}" 
+                                label="{{ $vehicle->name }}"
+                                transmission="automatic"
+                                price="${{ $vehicle->price_per_day }}"
+                                seat="{{ $vehicle->person }} Seats"
+                                img="{{ $vehicle->getFirstMediaUrl('vehicles') }}" 
+                                href="{{ $this->getWhatsappLink($vehicle) }}" 
+                            />
                         </li>
-                    @endfor
+                    @endforeach
 
                 </ul>
             </div>

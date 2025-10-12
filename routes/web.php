@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\Shuttle\ShuttleController;
 use App\Http\Controllers\Web\TourPackage\TourPackageController;
+use App\Http\Controllers\Web\Vehicle\VehicleController;
 use App\Models\Shuttle;
 use App\Models\Tour;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +30,7 @@ Route::name('services.')
         Route::post('/shuttle-form/booking', [ShuttleController::class, 'booking'])
             ->name('shuttle-booking');
 
-        Route::get('/vehicle-rent', fn() => view('services.vehicle-rent'))
+        Route::get('/vehicle-rent', [VehicleController::class, 'index'])
             ->name('vehicle-rent');
     });
 
