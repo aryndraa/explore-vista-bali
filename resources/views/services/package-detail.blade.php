@@ -15,12 +15,11 @@
     {{-- ? TITLE SECTION --}}
     <section
         class="relative after:absolute after:inset-0 after:bg-black/50 after:-z-10 isolate bg-center bg-no-repeat bg-cover"
-        style="background-image: url('https://images.unsplash.com/photo-1557093793-e196ae071479?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        style="background-image: url({{ $package->getFirstMediaUrl('cover') }});">
         <div class="container mx-auto flex justify-center items-end px-8 py-16 min-h-64 w-full text-white">
-
             <div class="flex flex-col items-center text-center">
                 <h1 class="font-roboto font-semibold text-3xl sm:text-4xl mb-2">
-                    Ubud Tour
+                    {{ $package->name }}
                 </h1>
 
                 <nav aria-label="Breadcrumb" class="text-cst-yellow-400">
@@ -73,7 +72,7 @@
 
                         <li>
                             <p class="block transition-colors">
-                                This Package
+                                {{ $package->name }}
                             </p>
                         </li>
                     </ol>
@@ -87,15 +86,13 @@
 
     @php
         //? EXAMPLE
-        $sampleImage = 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=400';
-        $carouselItems = [
-            ['id' => 1, 'image' => $sampleImage, 'title' => 'Slide 1'],
-            ['id' => 2, 'image' => $sampleImage, 'title' => 'Slide 2'],
-            ['id' => 3, 'image' => $sampleImage, 'title' => 'Slide 3'],
-            ['id' => 4, 'image' => $sampleImage, 'title' => 'Slide 4'],
-            ['id' => 5, 'image' => $sampleImage, 'title' => 'Slide 5'],
-            ['id' => 6, 'image' => $sampleImage, 'title' => 'Slide 6'],
-        ];
+        $carouselItems = $package->getMedia('packages')->map(function ($media, $index) {
+            return [
+                'id' => $media->id,
+                'image' => $media->getUrl(),
+                'title' => 'Slide ' . ($index + 1),
+            ];
+        });
     @endphp
 
     <section x-data="{
@@ -226,13 +223,7 @@
                     class="relative mb-6 z-10 w-fit font-roboto text-2xl font-semibold text-cst-green-800 after:absolute after:-inset-x-2 after:h-3 after:top-1/2 after:-translate-y-1/2 after:rounded-full after:transition after:bg-cst-yellow-400/40 after:isolate after:-z-10">
                     Package Details</h2>
                 <p class="font-inter text-justify leading-normal mb-6">
-                    Lorem ipsum dolor sit amet consectetur. Vulputate quis sed pellentesque non metus nullam dapibus. Elit
-                    diam
-                    vel porttitor bibendum condimentum vulputate sed. Ultrices molestie vel interdum et turpis. Blandit elit
-                    non
-                    aliquam enim in diam faucibus. Praesent nulla turpis nunc pulvinar dui fusce cursus in. Aliquam feugiat
-                    suspendisse tempor urna leo ipsum arcu. Sodales vel erat vitae dictum morbi pretium varius imperdiet
-                    ante.
+                  {!! nl2br(e($package->description)) !!}
                 </p>
 
                 @if (request('type') === 'tour')
@@ -270,31 +261,31 @@
                     </div>
                 @endif
 
-                <h3 class="mb-2 mt-6">Included</h3>
+                <h3 class="mb-2 mt-6 font-semibold">Included</h3>
                 <ul class="space-y-2 mb-6">
-                    @for ($i = 0; $i < 4; $i++)
+                    @foreach ($included as $feature)
                         <li class="flex items-start gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-6 text-green-600 shrink-0">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
-                            <span>Lorem ipsum dolor sit.</span>
+                            <span>{{ $feature->name }}</span>
                         </li>
-                    @endfor
+                    @endforeach
                 </ul>
-                <h3 class="mb-2">Excluded</h3>
+                <h3 class="mb-2 font-semibold">Excluded</h3>
                 <ul class="space-y-2">
-                    @for ($i = 0; $i < 2; $i++)
+                    @foreach ($excluded as $feature)
                         <li class="flex items-start gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-6 text-red-600 shrink-0">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
-                            <span>Lorem ipsum dolor sit.</span>
+                             <span>{{ $feature->name }}</span>
                         </li>
-                    @endfor
+                    @endforeach
                 </ul>
 
                 {{-- Start time and Price --}}
@@ -309,7 +300,7 @@
 
                         <div class="font-inter">
                             <p class="italic text-gray-300">Start Time</p>
-                            <h5 class="text-white text-2xl font-medium whitespace-nowrap">09.00 <b>AM</b></h5>
+                            <h5 class="text-white text-2xl font-medium whitespace-nowrap">{{ date('h:i', strtotime($package->start_time)) }} <b>WITA</b></h5>
                         </div>
                     </div>
 
@@ -325,36 +316,58 @@
 
                         <div class="font-inter">
                             <p class="italic text-gray-300">Price</p>
-                            <h5 class="text-white text-2xl font-normal whitespace-nowrap"><b>AUD</b> $50</h5>
+                            <h5 class="text-white text-2xl font-normal whitespace-nowrap"><b>USD</b> ${{ $package->price }}</h5>
                         </div>
                     </div>
                 </div>
             </div>
 
             {{-- Book Form --}}
-            <form action="" class="lg:flex-5 xl:flex-4 bg-white p-6 font-inter rounded-md h-fit lg:sticky top-20">
+            @if ($errors->any())
+                <div class="bg-red-100 text-red-700 p-3 mb-4 rounded">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>• {{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form action="{{ route('services.package-booking', $package->id) }}" method="post" class="lg:flex-5 xl:flex-4 bg-white p-6 font-inter rounded-md h-fit  top-20">
                 @csrf
                 <h4 class="font-roboto font-bold! text-3xl! text-center mb-5">Booking Form</h4>
 
                 <div class="flex flex-col gap-3 [&>div]:p-3 mb-8">
-                    <x-input id="full-name" name="fullname" label="Full name" placeholder="Jacob Holden" type="text"
-                        required />
-                    <x-input id="phone" name="phone" label="Phone" placeholder="+00 112 3456 7890"
-                        type="tel" required />
-                    <x-input id="email" name="email" label="Email" placeholder="test@example.com" type="email"
-                        required />
+                    <x-input id="customer_name" name="customer_name" label="Full name" placeholder="Jacob Holden" type="text" required />
+                    <x-input id="customer_phone" name="customer_phone" label="Phone" placeholder="+00 112 3456 7890" type="text" required />
+                    <x-input id="customer_email" name="customer_email" label="Email" placeholder="test@example.com" type="email" required />
+                    
+                    
+                    <span class="grid grid-cols-2 w-full gap-3">
+                       <div class="flex flex-1 flex-col p-4 bg-gray-100 font-inter shadow-sm rounded-md">
+                            {{-- Label --}}
+                            <label for="booking_date" class="text-sm text-gray-600 mb-2">
+                                Booking Date
+                                <span class="text-red-400">*</span>
+                            </label>
 
-                    <span class="flex flex-wrap w-full gap-3">
-                        <x-input id="date" name="date" label="Date" type="date" required />
-
-                        <x-input id="peopleamount" name="peopleamount" label="People amount" placeholder="2"
-                            type="number" required />
+                            <div class="flex gap-3 items-center w-full">
+                                <input 
+                                    type="text" 
+                                    id="booking_date" 
+                                    name="booking_date" 
+                                    placeholder="Select a date" 
+                                    required
+                                    class="bg-transparent w-full 2xl:text-lg text-black font-medium
+                                        placeholder:text-gray-400/60 placeholder:italic focus:border-cst-yellow-400 transition-colors duration-200 focus:outline-none  rounded "
+                                >
+                            </div>
+                        </div>
+                        <x-input id="people_amount" name="people_amount" label="People amount" placeholder="2" type="number" required />
                     </span>
+                        <x-input id="address" name="address" label="Address" placeholder="Jln. xxx" type="text" required />
                 </div>
 
-                <x-whatsapp-button class="w-full text-lg py-2">
-                    Confirm via Whatsapp
-                </x-whatsapp-button>
+               <x-whatsapp-button type="submit" class="w-full text-lg py-2"> Confirm via WhatsApp </x-whatsapp-button> </form>
             </form>
 
         </div>
@@ -383,12 +396,16 @@
 
                 <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
 
-                    @for ($i = 0; $i < 3; $i++)
-                        <x-package-card
-                            img="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            :$i />
-                    @endfor
-
+                   @foreach ($randomPackages as $item)
+                        <x-package-card 
+                            :id="$item->id"
+                            :title="$item->title"
+                            :img="$item->image_url"
+                            :price="$item->price"
+                            :description="$item->description"
+                            :packageType="$item->tour->name ?? 'Tour'"
+                        />
+                    @endforeach
                 </div>
 
             </div>
@@ -427,5 +444,19 @@
 
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fullyBookedDates = @json($fullyBookedDates);
+
+            flatpickr("#booking_date", {
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                disable: fullyBookedDates,
+            });
+
+            console.log(fullyBookedDates)
+        });
+    </script>
 
 @endsection

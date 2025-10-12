@@ -23,7 +23,7 @@ class PackagesTable
             ->columns([
                 SpatieMediaLibraryImageColumn::make('image')
                     ->label('Image')
-                    ->collection('packages')
+                    ->collection('cover')
                     ->height(90)
                     ->limit(1),
                 TextColumn::make('name')

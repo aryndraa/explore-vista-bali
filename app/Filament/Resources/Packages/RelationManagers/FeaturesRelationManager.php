@@ -60,6 +60,8 @@ class FeaturesRelationManager extends RelationManager
             ->recordActions([
                 DissociateAction::make()
                     ->label('Remove'),
+                DeleteAction::make()
+                    ->label('Delete Feature')
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -53,3 +53,6 @@ animatedHoverBtn.forEach((btn) => {
 });
 import "./bootstrap";
 import { Calendar } from "fullcalendar";
+
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";

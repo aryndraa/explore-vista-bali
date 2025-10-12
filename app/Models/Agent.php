@@ -19,6 +19,15 @@ class Agent extends Model implements HasMedia
         'phone',
     ];
 
+    public static function isFullyBooked(string $date): bool
+    {
+        $totalAgents = self::count();
+
+        $bookingsCount = TourBooking::whereDate('booking_date', $date)->count();
+
+        return $bookingsCount >= $totalAgents;
+    }
+
     public function tourBooking()
     {
         return $this->hasMany(TourBooking::class);

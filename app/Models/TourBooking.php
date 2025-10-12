@@ -42,9 +42,9 @@ class TourBooking extends Model
     protected $fillable = [
         'package_id',
         'customer_name',
+        'address',
         'customer_phone',
         'customer_email',
-        'address',
         'booking_date',
         'people_amount',
         'status',

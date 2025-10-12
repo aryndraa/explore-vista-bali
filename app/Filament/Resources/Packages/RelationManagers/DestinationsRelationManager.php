@@ -34,6 +34,12 @@ class DestinationsRelationManager extends RelationManager
 
                 Select::make('place_id')
                     ->label('Location')
+                    ->createOptionForm([
+                        TextInput::make('name')
+                            ->label('Place Name')
+                            ->required()
+                            ->maxLength(255),
+                    ])
                     ->columnSpanFull()
                     ->relationship('place', 'name')
                     ->searchable()

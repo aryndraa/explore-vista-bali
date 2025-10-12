@@ -1,5 +1,4 @@
 <section class="container mx-auto">
-
     <div class="py-8 sm:py-12 px-8" x-data="{ filterOpen: false }">
         <!-- Mobile Filter Button -->
         <div class="block lg:hidden mb-6">
@@ -46,25 +45,19 @@
                     class="flex-1 overflow-y-scroll px-6 py-6 [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-lg [&::-webkit-scrollbar-thumb]:border-2 [&::-webkit-scrollbar-thumb]:border-white">
 
                     <div class="space-y-4">
-                        <x-filter-dropdown title="Package Type" :options="[
-                            ['id' => 'activities', 'label' => 'Activities'],
-                            ['id' => 'halfday', 'label' => 'Half-day tours'],
-                            ['id' => 'fullday', 'label' => 'Full-day tours'],
-                        ]" />
+                        {{-- Tour Type Filter --}}
+                        <x-filter-dropdown 
+                            title="Package Type" 
+                            :options="$tourTypes"
+                            wireModel="type"
+                        />
 
-                        <x-filter-dropdown title="Places" :options="[
-                            ['id' => 'ubud', 'label' => 'Ubud'],
-                            ['id' => 'kintamani', 'label' => 'Kintamani'],
-                            ['id' => 'seminyak', 'label' => 'Seminyak'],
-                            ['id' => 'nusa-penida', 'label' => 'Nusa Penida'],
-                            ['id' => 'nusa-dua', 'label' => 'Nusa Dua'],
-                            ['id' => 'canggu', 'label' => 'Canggu'],
-                            ['id' => 'kuta', 'label' => 'Kuta'],
-                            ['id' => 'karangasem', 'label' => 'Karangasem'],
-                            ['id' => 'uluwatu', 'label' => 'Uluwatu'],
-                            ['id' => 'serangan', 'label' => 'Serangan'],
-                            ['id' => 'jimbaran', 'label' => 'Jimbaran'],
-                        ]" />
+                        {{-- Destination Filter --}}
+                        <x-filter-dropdown 
+                            title="Destination" 
+                            :options="$destinations"
+                            wireModel="place"
+                        />
                     </div>
                 </div>
 
@@ -89,41 +82,42 @@
                     <h3 class="font-playfair text-4xl font-medium mb-8 italic">Filters</h3>
 
                     <div class="space-y-4">
-                        <x-filter-dropdown title="Package Type" :options="[
-                            ['id' => 'activities', 'label' => 'Activities'],
-                            ['id' => 'halfday', 'label' => 'Half-day tours'],
-                            ['id' => 'fullday', 'label' => 'Full-day tours'],
-                        ]" />
+                          {{-- Tour Type Filter --}}
+                            <x-filter-dropdown 
+                                title="Package Type" 
+                                :options="$tourTypes"
+                                wireModel="type"
+                            />
 
-                        <x-filter-dropdown title="Places" :options="[
-                            ['id' => 'ubud', 'label' => 'Ubud'],
-                            ['id' => 'kintamani', 'label' => 'Kintamani'],
-                            ['id' => 'seminyak', 'label' => 'Seminyak'],
-                            ['id' => 'nusa-penida', 'label' => 'Nusa Penida'],
-                            ['id' => 'nusa-dua', 'label' => 'Nusa Dua'],
-                            ['id' => 'canggu', 'label' => 'Canggu'],
-                            ['id' => 'kuta', 'label' => 'Kuta'],
-                            ['id' => 'karangasem', 'label' => 'Karangasem'],
-                            ['id' => 'uluwatu', 'label' => 'Uluwatu'],
-                            ['id' => 'serangan', 'label' => 'Serangan'],
-                            ['id' => 'jimbaran', 'label' => 'Jimbaran'],
-                        ]" />
+                            {{-- Destination Filter --}}
+                            <x-filter-dropdown 
+                                title="Destination" 
+                                :options="$destinations"
+                                wireModel="place"
+                            />
                     </div>
                 </div>
             </div>
 
             <!-- Tours Grid -->
             <div class="lg:col-span-3">
-                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">8 Tours available</p>
+                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">{{ $packages->total() }}  Tours available</p>
                 <ul class="grid gap-4 sm:gap-5 lg:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
 
-                    @for ($i = 0; $i < 6; $i++)
-                        <li>
-                            <x-package-card
-                                img="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                packageType="tour" :$i />
-                        </li>
-                    @endfor
+                   @foreach ($packages as $package)
+                    <li>
+                       <x-package-card
+                            :id="$package->id"
+                            :packageType="$package->tour?->type"
+                            :img="$package->getFirstMediaUrl('cover')"
+                            :title="$package->name"
+                            :price="$package->price"
+                            :description="$package->description"
+                            :startTime="$package->start_time"
+                        />
+
+                    </li>
+                @endforeach
 
                 </ul>
             </div>

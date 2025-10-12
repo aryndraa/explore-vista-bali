@@ -62,6 +62,7 @@ class PackageForm
                                 Section::make()
                                     ->schema([
                                         SpatieMediaLibraryFileUpload::make('cover')
+                                            ->disk('public')
                                             ->label('Cover Image')
                                             ->collection('cover')
                                             ->image()
@@ -92,6 +93,7 @@ class PackageForm
                                     ->schema([
                                         SpatieMediaLibraryFileUpload::make('image')
                                             ->label('Package Images')
+                                            ->disk('public')
                                             ->collection('packages')
                                             ->multiple()
                                             ->deletable()
