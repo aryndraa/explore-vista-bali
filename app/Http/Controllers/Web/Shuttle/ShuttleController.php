@@ -23,7 +23,13 @@ class ShuttleController extends Controller
 
         $shuttle = Shuttle::query()
             ->where('name', $type)
-            ->with('vehicles.vehicle')
+            ->with(['vehicles' => function ($query) {
+                $query->whereHas('vehicle', function ($q) {
+                    $q->where('is_active', true);
+                })->with(['vehicle' => function ($q) {
+                    $q->where('is_active', true);
+                }]);
+            }])
             ->first();
 
 

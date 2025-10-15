@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * @property int $id
@@ -62,6 +63,37 @@ class Package extends Model implements HasMedia
         'is_active'
     ];
 
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('packages')
+            ->useDisk('public');
+    }
+
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('optimized')
+            ->format('webp')
+            ->quality(70)
+            ->width(1280) 
+            ->height(720) 
+            ->sharpen(10)
+            ->performOnCollections('packages')
+            ->nonQueued(); 
+
+         $this
+            ->addMediaConversion('optimized')
+            ->format('webp')
+            ->quality(70)
+            ->width(1280) 
+            ->height(720) 
+            ->sharpen(10)
+            ->performOnCollections('cover')
+            ->nonQueued(); 
+    }
+
     public function tour(): BelongsTo
     {
         return $this->belongsTo(Tour::class);
@@ -70,16 +102,6 @@ class Package extends Model implements HasMedia
     public function destinations(): HasMany
     {
         return $this->hasMany(PackageDestination::class);
-    }
-
-    public function features (): HasMany
-    {
-        return $this->hasMany(PackageFeature::class);
-    }
-
-    public function activities(): HasMany
-    {
-        return $this->hasMany(PackageActivity::class);
     }
 
     public function bookings(): HasMany

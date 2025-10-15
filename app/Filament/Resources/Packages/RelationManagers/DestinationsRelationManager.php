@@ -38,6 +38,7 @@ class DestinationsRelationManager extends RelationManager
                         TextInput::make('name')
                             ->label('Place Name')
                             ->required()
+                            ->unique('places', 'name')
                             ->maxLength(255),
                     ])
                     ->columnSpanFull()
@@ -53,6 +54,8 @@ class DestinationsRelationManager extends RelationManager
     {
         return $table
             ->recordTitleAttribute('name')
+            ->reorderable('sort_order') 
+            ->defaultSort('sort_order') 
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),

@@ -105,11 +105,11 @@
                 <ul class="grid gap-4 sm:gap-5 lg:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
 
                    @foreach ($packages as $package)
-                    <li>
+                    <li class="h-full">
                        <x-package-card
                             :id="$package->id"
-                            :packageType="$package->tour?->type"
-                            :img="$package->getFirstMediaUrl('cover')"
+                            :packageType="$package->tour?->name"
+                            :img="$package->getFirstMediaUrl('cover', 'optimized')"
                             :title="$package->name"
                             :price="$package->price"
                             :description="$package->description"

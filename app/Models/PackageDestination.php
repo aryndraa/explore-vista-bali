@@ -38,6 +38,10 @@ class PackageDestination extends Model
         'name'
     ];
 
+     protected $casts = [
+        'sort_order' => 'integer',
+    ];
+
     public function package(): BelongsTo
     {
         return $this->belongsTo(Package::class);

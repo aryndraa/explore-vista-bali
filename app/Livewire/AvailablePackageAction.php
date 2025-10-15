@@ -67,7 +67,7 @@ class AvailablePackageAction extends Component
                 });
             })
             ->where('is_active', true)
-            ->paginate(6);
+            ->get();
 
         return view('livewire.available-package-action', [
             'packages' => $packages

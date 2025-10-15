@@ -46,8 +46,6 @@ class PackageResource extends Resource
     {
         return [
             DestinationsRelationManager::class,
-            ActivitiesRelationManager::class,
-            FeaturesRelationManager::class,
         ];
     }
 

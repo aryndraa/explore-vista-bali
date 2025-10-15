@@ -20,8 +20,11 @@ class TourPackageController extends Controller
 
     public function show(Package $package)
     {
-        $included = $package->features->where('is_include', true);
-        $excluded = $package->features->where('is_include', false);
+        $package->load([
+            'destinations' => function ($query) {
+                $query->orderBy('sort_order');
+            },
+        ]);
 
         $randomPackages = Package::where('id', '!=', $package->id)
             ->inRandomOrder()
@@ -36,8 +39,6 @@ class TourPackageController extends Controller
 
         return view('services.package-detail', [
             'package' => $package,
-            'included' => $included,
-            'excluded' => $excluded,
             'randomPackages' => $randomPackages,
             'fullyBookedDates' => $fullyBookedDates,
         ]);

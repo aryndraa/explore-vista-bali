@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Packages\Schemas;
 
 use App\Models\Tour;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -40,10 +41,10 @@ class PackageForm
                                             ->label('Tour Category'),
                                         TextInput::make('name')
                                             ->required(),
-                                        Textarea::make('description')
+                                        MarkdownEditor::make('description')
                                             ->required()
-                                            ->columnSpanFull()
-                                            ->autosize(),
+                                            ->disableToolbarButtons(['attachFiles', 'codeBlock', 'blockquote', 'link'])
+                                            ->columnSpanFull(),
                                         TimePicker::make('start_time')
                                             ->seconds(false)
                                             ->suffix(' WITA')
@@ -52,10 +53,6 @@ class PackageForm
                                             ->required()
                                             ->numeric()
                                             ->prefix('$'),
-                                        Textarea::make('notes')
-                                            ->label('Notes (optional)')
-                                            ->columnSpanFull()
-                                            ->autosize(),
                                     ])
                                     ->columnSpan(2),
 
@@ -97,10 +94,11 @@ class PackageForm
                                             ->collection('packages')
                                             ->multiple()
                                             ->deletable()
-                                            ->imageCropAspectRatio('16:9')
                                             ->panelLayout('grid')
                                             ->required()
-                                            ->minFiles(3),
+                                            ->reorderable()
+                                            ->minFiles(3)
+                                            ->maxSize('20480'),
                                     ]),
                             ]),
                     ])

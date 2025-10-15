@@ -9,7 +9,7 @@
     'startTime' => null,
 ])
 
-<div class="-space-y-5 group overflow-hidden isolate">
+<div class="-space-y-5 group overflow-hidden isolate rounded-t-xl ">
     <!-- Image -->
     <div class="cursor-pointer relative -z-10">
         @if ($packageType)
@@ -27,10 +27,10 @@
     <div class="bg-gray-200 p-5 rounded-b-xl z-10">
         <h4 class="font-roboto text-xl font-semibold mb-1">{{ $title }}</h4>
 
-        <p class="font-inter text-md italic text-gray-600 mb-2">Indonesia, Bali</p>
+        <p class="font-inter text-sm italic text-gray-600 mb-2">Indonesia, Bali</p>
 
         @if ($description)
-            <p class="font-inter text-md text-gray-600 my-4 line-clamp-3">
+            <p class="font-inter text-base text-gray-600 my-4 line-clamp-3">
                 {{ Str::limit($description, 100, '...') }}
             </p>
         @endif

@@ -23,7 +23,7 @@
     <section class="relative min-h-[100dvh] flex items-end  pb-20 2xl:pb-28 text-white">
         <div class="absolute inset-y-0 -inset-x-20 bg-black -z-20 min-h-[100dvh]">
             <video autoplay loop class="opacity-50 h-full w-full object-cover min-h-[100dvh]"
-                src="https://videocdn.cdnpk.net/videos/79ab4de0-c5fb-4370-82b0-8c84e204d765/horizontal/previews/clear/large.mp4?token=exp=1758954049~hmac=4865dfd32e61ac0ea52fb0ca690d4dea6909e3a303529ea65a7e415357412fdb">
+                src="{{ asset('video/1013.mp4') }}">
             </video>
         </div>
 

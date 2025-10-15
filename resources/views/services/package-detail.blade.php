@@ -1,13 +1,13 @@
 @extends('components.layouts.app', ['variant' => 'light'])
 
 {{-- SEO --}}
-{{-- @section('title', '{{ $package->name }} | Explore Vista Bali')
-@section('meta_description', 'Experience {{ $package->name }} with Explore Vista Bali. {{ Str::limit(strip_tags($package->short_description), 150) }} Book now for an unforgettable Bali adventure.')
+@section('title', $package->name . ' | Explore Vista Bali')
+@section('meta_description', 'Experience {{ $package->name }} with Explore Vista Bali. {{ Str::limit(strip_tags($package->description), 150) }} Book now for an unforgettable Bali adventure.')
 @section('meta_keywords', 'Bali tour, {{ $package->name }}, Bali travel package, Bali private tour, Bali adventure, Explore Vista Bali')
 @section('og_title', '{{ $package->name }} | Explore Vista Bali')
-@section('og_description', '{{ Str::limit(strip_tags($package->short_description), 150) }}')
+@section('og_description', '{{ Str::limit(strip_tags($package->description), 150) }}')
 @section('og_image', asset($package->featured_image ?? 'images/og-default.jpg'))
-@section('og_type', 'article') --}}
+@section('og_type', 'article')
 {{-- SEO END --}}
 
 @section('content')
@@ -15,7 +15,7 @@
     {{-- ? TITLE SECTION --}}
     <section
         class="relative after:absolute after:inset-0 after:bg-black/50 after:-z-10 isolate bg-center bg-no-repeat bg-cover"
-        style="background-image: url({{ $package->getFirstMediaUrl('cover') }});">
+        style="background-image: url({{ $package->getFirstMediaUrl('cover', 'optimized') }});">
         <div class="container mx-auto flex justify-center items-end px-8 py-16 min-h-64 w-full text-white">
             <div class="flex flex-col items-center text-center">
                 <h1 class="font-roboto font-semibold text-3xl sm:text-4xl mb-2">
@@ -86,10 +86,13 @@
 
     @php
         //? EXAMPLE
-        $carouselItems = $package->getMedia('packages')->map(function ($media, $index) {
+        $carouselItems = $package->getMedia('packages')
+            ->sortBy('order_column')
+            ->values()
+            ->map(function ($media, $index) {
             return [
                 'id' => $media->id,
-                'image' => $media->getUrl(),
+                'image' => $media->getUrl('optimized'),
                 'title' => 'Slide ' . ($index + 1),
             ];
         });
@@ -163,7 +166,7 @@
                     <!-- Each Page Group -->
                     <template x-for="pageIndex in totalPages" :key="'page-' + pageIndex">
                         <div class="flex-shrink-0 w-full grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4"
-                            :class="itemsPerPage === 1 ? 'gap-0 px-6' : 'gap-6'">
+                            :class="itemsPerPage === 1 ? 'gap-0 px-6' : 'gap-4'">
                             <template
                                 x-for="(item, idx) in items.slice((pageIndex - 1) * itemsPerPage, pageIndex * itemsPerPage)"
                                 :key="item.id">
@@ -179,36 +182,89 @@
                 </div>
             </div>
 
-            <!-- Navigation Buttons -->
-            <div class="flex items-center justify-center gap-6">
-                <!-- Previous Button -->
-                <button aria-label="previous button for carousel navigation" @click="prev" :disabled="!canGoPrev"
-                    :class="canGoPrev ? 'bg-white hover:bg-gray-50 cursor-pointer' : 'bg-gray-100 cursor-not-allowed'"
-                    class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
-                    <svg class="w-5 h-5" :class="canGoPrev ? 'text-gray-700' : 'text-gray-400'" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
-
-                <!-- Page Indicators -->
-                <div class="flex items-center justify-center gap-2">
-                    <template x-for="i in totalPages" :key="i">
-                        <button aria-label="dots for carousel navigation" @click="currentIndex = i - 1"
-                            class="transition-all duration-300 rounded-full"
-                            :class="currentIndex === i - 1 ? 'bg-emerald-700 w-8 h-2' : 'bg-gray-300 hover:bg-gray-400 w-2 h-2'">
+            <div 
+                x-data="{ 
+                    isMobile: window.innerWidth < 1024, 
+                    update() { this.isMobile = window.innerWidth < 1024 } 
+                }"
+                x-init="update(); window.addEventListener('resize', () => update())"
+            >
+                @if($package->getMedia('packages')->count() > 4)
+                    <!-- Selalu tampil jika gambar lebih dari 4 -->
+                    <div class="flex items-center justify-center gap-6 mt-4">
+                        <!-- Tombol navigasi -->
+                        <!-- Previous Button -->
+                        <button aria-label="previous button for carousel navigation" 
+                            @click="prev" 
+                            :disabled="!canGoPrev"
+                            :class="canGoPrev ? 'bg-white hover:bg-gray-50 cursor-pointer' : 'bg-gray-100 cursor-not-allowed'"
+                            class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
+                            <svg class="w-5 h-5" :class="canGoPrev ? 'text-gray-700' : 'text-gray-400'" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
                         </button>
-                    </template>
-                </div>
 
-                <!-- Next Button -->
-                <button aria-label="previous button for carousel navigation" @click="next" :disabled="!canGoNext"
-                    :class="canGoNext ? 'bg-emerald-700 hover:bg-emerald-800 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'"
-                    class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
+                        <!-- Page Indicators -->
+                        <div class="flex items-center justify-center gap-2">
+                            <template x-for="i in totalPages" :key="i">
+                                <button aria-label="dots for carousel navigation" @click="currentIndex = i - 1"
+                                    class="transition-all duration-300 rounded-full"
+                                    :class="currentIndex === i - 1 ? 'bg-emerald-700 w-8 h-2' : 'bg-gray-300 hover:bg-gray-400 w-2 h-2'">
+                                </button>
+                            </template>
+                        </div>
+
+                        <!-- Next Button -->
+                        <button aria-label="next button for carousel navigation" 
+                            @click="next" 
+                            :disabled="!canGoNext"
+                            :class="canGoNext ? 'bg-emerald-700 hover:bg-emerald-800 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'"
+                            class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                @else
+                    <!-- Jika gambar <= 4, tampilkan hanya di mobile -->
+                    <template x-if="isMobile">
+                        <div class="flex items-center justify-center gap-6 mt-4">
+                            <!-- Previous Button -->
+                            <button aria-label="previous button for carousel navigation" 
+                                @click="prev" 
+                                :disabled="!canGoPrev"
+                                :class="canGoPrev ? 'bg-white hover:bg-gray-50 cursor-pointer' : 'bg-gray-100 cursor-not-allowed'"
+                                class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
+                                <svg class="w-5 h-5" :class="canGoPrev ? 'text-gray-700' : 'text-gray-400'" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Page Indicators -->
+                            <div class="flex items-center justify-center gap-2">
+                                <template x-for="i in totalPages" :key="i">
+                                    <button aria-label="dots for carousel navigation" @click="currentIndex = i - 1"
+                                        class="transition-all duration-300 rounded-full"
+                                        :class="currentIndex === i - 1 ? 'bg-emerald-700 w-8 h-2' : 'bg-gray-300 hover:bg-gray-400 w-2 h-2'">
+                                    </button>
+                                </template>
+                            </div>
+
+                            <!-- Next Button -->
+                            <button aria-label="next button for carousel navigation" 
+                                @click="next" 
+                                :disabled="!canGoNext"
+                                :class="canGoNext ? 'bg-emerald-700 hover:bg-emerald-800 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'"
+                                class="w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-all duration-200">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </template>
+                @endif
             </div>
         </div>
     </section>
@@ -221,70 +277,21 @@
             <div class="lg:flex-7 xl:flex-8">
                 <h2
                     class="relative mb-6 z-10 w-fit font-roboto text-2xl font-semibold text-cst-green-800 after:absolute after:-inset-x-2 after:h-3 after:top-1/2 after:-translate-y-1/2 after:rounded-full after:transition after:bg-cst-yellow-400/40 after:isolate after:-z-10">
-                    Package Details</h2>
-                <p class="font-inter text-justify leading-normal mb-6">
-                  {!! nl2br(e($package->description)) !!}
-                </p>
-                @if ($package->tour->name === 'Full Day Tour' || $package->tour->name === 'Half Day Tour' )
-                    <h3 class="mb-2">Destinations</h3>
-                    <ol class="list-decimal pl-5">
-                        @foreach ($package->destinations as $destination )
-                            <li>{{ $destination->name }}</li>
-                        @endforeach
-                    </ol>
-                @elseif (request('type') === 'activity')
-                    <h3 class="mb-2">Prices list</h3>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full divide-y-2 divide-gray-200 shadow-lg">
-                            <thead class="ltr:text-left rtl:text-right bg-cst-green-200/70">
-                                <tr class="*:font-medium *:text-gray-900">
-                                    <th class="px-3 py-2 whitespace-nowrap">Activities</th>
-                                    <th class="px-3 py-2 whitespace-nowrap">Duration</th>
-                                    <th class="px-3 py-2 whitespace-nowrap">Price</th>
-                                </tr>
-                            </thead>
+                    Package Details
+                </h2>
+                @php
+                    $content = str_replace("\r\n", "\n", $package->description);
+                @endphp
+               <div class="prose prose-neutral max-w-none font-inter leading-normal">
+                    {!! str($package->description)->markdown(['breaks' => true])->sanitizeHtml() !!}
+                </div>
 
-                            <tbody class="divide-y divide-gray-200 bg-gray-100 *:even:bg-gray-50">
-
-                                @for ($i = 0; $i < 7; $i++)
-                                    <tr class="*:text-gray-900 *:first:font-medium">
-                                        <td class="px-3 py-2 whitespace-nowrap">Lorem, ipsum dolor.</td>
-                                        <td class="px-3 py-2 whitespace-nowrap">20 Minutes</td>
-                                        <td class="px-3 py-2 whitespace-nowrap">$0</td>
-                                    </tr>
-                                @endfor
-
-                            </tbody>
-                        </table>
-                    </div>
-                @endif
-
-                <h3 class="mb-2 mt-6 font-semibold">Included</h3>
-                <ul class="space-y-2 mb-6">
-                    @foreach ($included as $feature)
-                        <li class="flex items-start gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6 text-green-600 shrink-0">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                            <span>{{ $feature->name }}</span>
-                        </li>
+                <h3 class="mb-2 font-semibold mt-6">Destinations</h3>
+                <ol class="list-decimal pl-5 space-y-3 ">
+                    @foreach ($package->destinations as $destination )
+                        <li>{{ $destination->name }}</li>
                     @endforeach
-                </ul>
-                <h3 class="mb-2 font-semibold">Excluded</h3>
-                <ul class="space-y-2">
-                    @foreach ($excluded as $feature)
-                        <li class="flex items-start gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="size-6 text-red-600 shrink-0">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                            </svg>
-                             <span>{{ $feature->name }}</span>
-                        </li>
-                    @endforeach
-                </ul>
+                </ol>
 
                 {{-- Start time and Price --}}
                 <div class="mt-8 mb-8 flex w-full lg:w-fit flex-wrap gap-4">
@@ -330,7 +337,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('services.package-booking', $package->id) }}" method="post" class="lg:flex-5 xl:flex-4 bg-white p-6 font-inter rounded-md h-fit  top-20">
+            <form action="{{ route('services.package-booking', $package->id) }}" method="post" class="lg:flex-5 xl:flex-4 bg-white p-6 font-inter rounded-md h-fit top-20">
                 @csrf
                 <h4 class="font-roboto font-bold! text-3xl! text-center mb-5">Booking Form</h4>
 
@@ -397,8 +404,8 @@
                    @foreach ($randomPackages as $item)
                         <x-package-card 
                             :id="$item->id"
-                            :title="$item->title"
-                            :img="$item->image_url"
+                            :title="$item->name"
+                            :img="$item->getFirstMediaUrl('cover', 'optimized')"
                             :price="$item->price"
                             :description="$item->description"
                             :packageType="$item->tour->name ?? 'Tour'"
@@ -433,7 +440,7 @@
                     Find Tours
                 </x-wave-button>
 
-                <x-wave-button href="#" firstTextClasses="text-white font-inter font-medium"
+                <x-wave-button href="{{ route('services.shuttle') }}" firstTextClasses="text-white font-inter font-medium"
                     secondTextClasses="text-cst-yellow-400 font-playfair font-bold italic"
                     class="text-lg w-fit py-1.5 px-5 rounded-sm bg-cst-green-400">
                     Shuttle Service
