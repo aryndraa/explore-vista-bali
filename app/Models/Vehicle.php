@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * @property int $id
@@ -48,6 +49,17 @@ class Vehicle extends Model implements HasMedia
         'price_per_day',
         'is_active',
     ];
+
+     public function registerMediaConversions(?Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('optimized')
+            ->format('webp')
+            ->quality(70)
+            ->sharpen(10)
+            ->performOnCollections('image')
+            ->nonQueued(); 
+    }
 
     public function shuttle(): HasMany
     {

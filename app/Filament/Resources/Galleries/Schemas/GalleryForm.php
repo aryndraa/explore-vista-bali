@@ -17,6 +17,7 @@ class GalleryForm
                     
                 SpatieMediaLibraryFileUpload::make('image')
                     ->label('Picture')
+                    ->disk('public')
                     ->collection('picture')
                     ->image()
                     ->maxFiles(1)

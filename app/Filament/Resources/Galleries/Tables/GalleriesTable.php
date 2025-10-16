@@ -16,6 +16,8 @@ class GalleriesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->reorderable('sort_order') 
+            ->defaultSort('sort_order') 
             ->columns([
                 Grid::make([
                     'lg' => 1,

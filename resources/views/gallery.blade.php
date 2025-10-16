@@ -79,43 +79,43 @@
             class="grid grid-cols-1 grid-rows-6 sm:grid-cols-2 sm:grid-rows-3 lg:grid-cols-4 gap-4 w-full min-h-[80rem] lg:min-h-[40rem] [&>div]:bg-gray-300">
             <div class="lg:row-span-2">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Nusa Penida Island.webp') }}"
+                    location="Nusa Penida Island" />
             </div>
             <div class="">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Mount Batur Sunrise Trekking.webp') }}"
+                    location="Mount Batur Sunrise Trekking" />
             </div>
             <div class="">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Tegallalang Rice Terrace.webp') }}"
+                    location="Tegallalang Rice Terrace" />
             </div>
             <div class="lg:row-span-2">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Uluwatu Temple.webp') }}"
+                    location="Uluwatu Temple" />
             </div>
             <div class="">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Tanah Lot Temple.webp') }}"
+                    location="Tanah Lot Temple" />
             </div>
             <div class="lg:row-span-2">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Sekumpul Waterfall.webp') }}"
+                    location="Sekumpul Waterfall" />
             </div>
             <div class="hidden lg:inline-block col-span-2">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Sanur Beach Sea Walker.webp') }}"
+                    location="Sanur Beach & Sea Walker" />
             </div>
             <div class="hidden lg:inline-block">
                 <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
+                    img="{{ asset('img/galleries/Ulun Danu Beratan Temple.webp') }}"
+                    location="Ulun Danu Beratan Temple" />
             </div>
         </div>
 
@@ -127,17 +127,38 @@
             More <i class="font-playfair">Pictures</i>
         </h2>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full min-h-[25rem] mb-12">
-            @for ($i = 0; $i < 4; $i++)
-                <x-gallery-item
-                    img="https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    location="Kintamani, Bali" />
-            @endfor
-        </div>
+        {{-- Load More Gallery --}}
+        <div 
+            x-data="{
+                visible: 8,
+                total: {{ $moreGalleries->count() }},
+                loadMore() {
+                    this.visible = Math.min(this.visible + 4, this.total);
+                }
+            }"
+            class="w-full"
+        >
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full min-h-[25rem] mb-12">
+                @foreach ($moreGalleries as $index => $gallery)
+                    <div x-show="{{ $index }} < visible" x-transition>
+                        <x-gallery-item
+                            img="{{ $gallery->getFirstMediaUrl('picture', 'optimized') }}"
+                            location="{{ $gallery->name }}"
+                        />
+                    </div>
+                @endforeach
+            </div>
 
-        <button class="bg-gray-800 font-inter py-3 px-8 text-white cursor-pointer hover:scale-105 transition">
-            Load More
-        </button>
+            <div class="flex justify-center">
+                <button 
+                    x-show="visible < total"
+                    @click="loadMore"
+                    class="bg-gray-800 font-inter py-3 px-8 text-white cursor-pointer hover:scale-105 transition rounded-md"
+                >
+                    Load More
+                </button>
+            </div>
+        </div>
 
     </section>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Gallery\GalleryController;
 use App\Http\Controllers\Web\Shuttle\ShuttleController;
 use App\Http\Controllers\Web\TourPackage\TourPackageController;
 use App\Http\Controllers\Web\Vehicle\VehicleController;
@@ -34,6 +35,6 @@ Route::name('services.')
             ->name('vehicle-rent');
     });
 
-Route::get('/gallery', fn() => view('gallery'))->name('gallery');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/contact', fn() => view('contact'))->name('contact');
 Route::get('/comments', fn() => view('comment'))->name('comment');
