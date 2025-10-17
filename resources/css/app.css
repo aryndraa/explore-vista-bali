@@ -34,10 +34,23 @@ html {
     max-width: 100%;
 }
 
+.prose.blog {
+    font-family: "Inter", sans-serif;
+    line-height: 1.75;
+    color: #ffffff;
+    max-width: 100%;
+}
+
 /* === PARAGRAPH & BREAK === */
 .prose p {
     margin-bottom: 1rem;
-    white-space: pre-wrap; /* agar enter (\n) tetap muncul */
+    white-space: pre-wrap;
+}
+
+.prose.blog p {
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    color: #f4f4f4;
 }
 
 /* === LIST === */
@@ -57,6 +70,10 @@ html {
 
 .prose li {
     margin-bottom: 0.5rem;
+}
+
+.prose.blog li {
+    color: #f4f4f4;
 }
 
 /* Sub-list (list dalam list) */
@@ -107,6 +124,13 @@ html {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.3;
+}
+
+.prose.blog h1,
+.prose.blog h2,
+.prose.blog h3,
+.prose.blog h4 {
+    color: #dfe2b7;
 }
 
 .prose h1 {

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Blog\BlogController;
 use App\Http\Controllers\Web\Gallery\GalleryController;
 use App\Http\Controllers\Web\Shuttle\ShuttleController;
 use App\Http\Controllers\Web\TourPackage\TourPackageController;
@@ -38,3 +39,5 @@ Route::name('services.')
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/contact', fn() => view('contact'))->name('contact');
 Route::get('/comments', fn() => view('comment'))->name('comment');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
+Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blog-detail');

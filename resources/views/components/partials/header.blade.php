@@ -117,7 +117,7 @@
                 <a href="{{ route('gallery') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('gallery') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Gallery</a>
-                <a href="#"
+                <a href="{{ route('blogs') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Blog</a>
                 <a href="{{ route('contact') }}"
