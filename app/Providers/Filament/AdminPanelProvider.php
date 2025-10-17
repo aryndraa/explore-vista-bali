@@ -7,6 +7,7 @@ use App\Filament\Pages\Dashboard;
 use App\Filament\Resources\Agents\AgentResource;
 use App\Filament\Resources\Blogs\BlogResource;
 use App\Filament\Resources\Galleries\GalleryResource;
+use App\Filament\Resources\Links\LinkResource;
 use App\Filament\Resources\Testimonials\TestimonialResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -52,6 +53,11 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Blogs')
                     ->icon('gmdi-article-o')
                     ->url(fn (): string => BlogResource::getUrl('index')),
+
+                'link' => MenuItem::make()
+                    ->label('Social Media Links')
+                    ->icon('gmdi-link')
+                    ->url(fn (): string => LinkResource::getUrl('index')),
 
                 'testimonials' => MenuItem::make()
                     ->label('Testimonials')
