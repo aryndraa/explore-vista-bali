@@ -12,7 +12,7 @@ class Testimonial extends Model
 
     protected $fillable = [
         'name',
-        'social_mediau',
+        'social_media',
         'comment',
         'is_active'
     ];

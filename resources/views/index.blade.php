@@ -95,10 +95,10 @@
                     <div
                         class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
                         <img class="absolute inset-0 w-full h-full object-cover -z-10"
-                            src="https://thepointsguy.global.ssl.fastly.net/us/originals/2020/05/GettyImages-1145042281-scaled.jpg"
+                            src="{{ asset('img/journeys.webp') }}"
                             alt="">
                         <div class="pt-32 pb-20">
-                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">90+</span>
+                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">{{ $hooks['journeys'] }}+</span>
                         </div>
                     </div>
                     <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
@@ -108,15 +108,15 @@
                                 d="M9.91667 18.3333L18.1667 10.0833L15.7917 7.75L9.91667 13.625L7.54167 11.25L5.16667 13.625L9.91667 18.3333ZM0 30V3.33333C0 2.41667 0.326389 1.63194 0.979167 0.979167C1.63194 0.326389 2.41667 0 3.33333 0H20C20.9167 0 21.7014 0.326389 22.3542 0.979167C23.0069 1.63194 23.3333 2.41667 23.3333 3.33333V30L11.6667 25L0 30ZM3.33333 24.9167L11.6667 21.3333L20 24.9167V3.33333H3.33333V24.9167Z"
                                 fill="#CAA638" />
                         </svg>
-                        <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">tours</p>
+                        <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">journeys</p>
                     </div>
                 </div>
                 <div class="flex-1 w-full md:max-w-80">
                     <div
                         class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
-                        <img class="absolute inset-0 w-full h-full object-cover -z-10" src="" alt="">
+                        <img class="absolute inset-0 w-full h-full object-cover -z-10" src="{{ asset('img/places.webp') }}" alt="">
                         <div class="pt-32 pb-20">
-                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">20+</span>
+                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">{{ $hooks['places'] }}+</span>
                         </div>
                     </div>
                     <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
@@ -132,9 +132,9 @@
                 <div class="flex-1 w-full md:max-w-80">
                     <div
                         class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
-                        <img class="absolute inset-0 w-full h-full object-cover -z-10" src="" alt="">
+                        <img class="absolute inset-0 w-full h-full object-cover -z-10" src="{{ asset('img/tourists.webp') }}" alt="">
                         <div class="pt-32 pb-20">
-                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">100+</span>
+                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">{{ $hooks['tourist'] }}+</span>
                         </div>
                     </div>
                     <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
@@ -144,7 +144,7 @@
                                 d="M-5.11408e-05 27.3334V22.6667C-5.11408e-05 21.7222 0.243004 20.8542 0.729116 20.0625C1.21523 19.2709 1.86106 18.6667 2.66662 18.25C4.38884 17.3889 6.13884 16.7431 7.91662 16.3125C9.69439 15.882 11.4999 15.6667 13.3333 15.6667C15.1666 15.6667 16.9722 15.882 18.7499 16.3125C20.5277 16.7431 22.2777 17.3889 23.9999 18.25C24.8055 18.6667 25.4513 19.2709 25.9374 20.0625C26.4236 20.8542 26.6666 21.7222 26.6666 22.6667V27.3334H-5.11408e-05ZM29.9999 27.3334V22.3334C29.9999 21.1111 29.6597 19.9375 28.9791 18.8125C28.2986 17.6875 27.3333 16.7222 26.0833 15.9167C27.4999 16.0834 28.8333 16.3681 30.0833 16.7709C31.3333 17.1736 32.4999 17.6667 33.5833 18.25C34.5833 18.8056 35.3472 19.4236 35.8749 20.1042C36.4027 20.7847 36.6666 21.5278 36.6666 22.3334V27.3334H29.9999ZM13.3333 14C11.4999 14 9.93051 13.3472 8.62495 12.0417C7.31939 10.7361 6.66662 9.16669 6.66662 7.33335C6.66662 5.50002 7.31939 3.93058 8.62495 2.62502C9.93051 1.31946 11.4999 0.666687 13.3333 0.666687C15.1666 0.666687 16.7361 1.31946 18.0416 2.62502C19.3472 3.93058 19.9999 5.50002 19.9999 7.33335C19.9999 9.16669 19.3472 10.7361 18.0416 12.0417C16.7361 13.3472 15.1666 14 13.3333 14ZM29.9999 7.33335C29.9999 9.16669 29.3472 10.7361 28.0416 12.0417C26.7361 13.3472 25.1666 14 23.3333 14C23.0277 14 22.6388 13.9653 22.1666 13.8959C21.6944 13.8264 21.3055 13.75 20.9999 13.6667C21.7499 12.7778 22.3263 11.7917 22.7291 10.7084C23.1319 9.62502 23.3333 8.50002 23.3333 7.33335C23.3333 6.16669 23.1319 5.04169 22.7291 3.95835C22.3263 2.87502 21.7499 1.88891 20.9999 1.00002C21.3888 0.861131 21.7777 0.770854 22.1666 0.729187C22.5555 0.68752 22.9444 0.666687 23.3333 0.666687C25.1666 0.666687 26.7361 1.31946 28.0416 2.62502C29.3472 3.93058 29.9999 5.50002 29.9999 7.33335ZM3.33328 24H23.3333V22.6667C23.3333 22.3611 23.2569 22.0834 23.1041 21.8334C22.9513 21.5834 22.7499 21.3889 22.4999 21.25C20.9999 20.5 19.4861 19.9375 17.9583 19.5625C16.4305 19.1875 14.8888 19 13.3333 19C11.7777 19 10.2361 19.1875 8.70828 19.5625C7.1805 19.9375 5.66662 20.5 4.16662 21.25C3.91662 21.3889 3.71523 21.5834 3.56245 21.8334C3.40967 22.0834 3.33328 22.3611 3.33328 22.6667V24ZM13.3333 10.6667C14.2499 10.6667 15.0347 10.3403 15.6874 9.68752C16.3402 9.03474 16.6666 8.25002 16.6666 7.33335C16.6666 6.41669 16.3402 5.63197 15.6874 4.97919C15.0347 4.32641 14.2499 4.00002 13.3333 4.00002C12.4166 4.00002 11.6319 4.32641 10.9791 4.97919C10.3263 5.63197 9.99995 6.41669 9.99995 7.33335C9.99995 8.25002 10.3263 9.03474 10.9791 9.68752C11.6319 10.3403 12.4166 10.6667 13.3333 10.6667Z"
                                 fill="currentColor" />
                         </svg>
-                        <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">clients</p>
+                        <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">Tourist</p>
                     </div>
                 </div>
             </div>
@@ -257,7 +257,7 @@
                         </div>
                     </div>
                 </div>
-                <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
+                <x-wave-button href="{{ route('services.available-packages') }}" firstTextClasses="text-black font-inter font-semibold"
                     secondTextClasses="text-black font-playfair font-bold italic"
                     class="text-lg 2xl:text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
                     Book Tours!
@@ -281,7 +281,7 @@
             <span class="hidden sm:inline-block h-0.5 w-full bg-gray-300"></span>
         </div>
 
-        <a href="#" class="flex text-base gap-2 items-center text-cst-green-400 underline mb-14">
+        <a href="{{ route('services.available-packages') }}" class="flex text-base gap-2 items-center text-cst-green-400 underline mb-14">
             See all packages <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -290,14 +290,18 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full container mx-auto sm:px-8">
 
-            @for ($i = 0; $i < 6; $i++)
-                <div class="{{ $i > 2 ? 'hidden sm:block' : '' }}">
-                  <x-package-card
-                            :id="$i"
-                       
-                        />
-                </div>
-            @endfor
+            @foreach ($tourPackages as $package)
+                <x-package-card
+                    :id="$package->id"
+                    :packageType="$package->tour?->name"
+                    :img="$package->getFirstMediaUrl('cover', 'optimized')"
+                    :title="$package->name"
+                    :price="$package->price"
+                    :description="$package->description"
+                    :startTime="$package->start_time"
+                />
+            @endforeach 
+               
 
         </div>
 
@@ -342,7 +346,12 @@
                     </a>
                 </div>
 
-                <x-social-media />
+                <div class="flex items-center gap-5">
+                    <p class="font-playfair italic font-medium text-2xl text-white">
+                        Find Us :
+                    </p>
+                    <x-social-media />
+                </div>
             </div>
 
             <div x-data="carousel()" x-init="init()" class="w-full md:w-7/12">
@@ -361,8 +370,7 @@
 
                         <div x-ref="track" class="flex transition-transform duration-500 ease-out w-full px-8"
                             :style="`transform: translateX(${translate}px)`">
-
-                            @for ($i = 0; $i < 6; $i++)
+                            @foreach ($testimonials as $testimonial)
                                 <div class="w-full xl:w-1/2 flex-shrink-0 px-4">
                                     <div class="bg-white px-6 py-8 pt-20 rounded-md rounded-tr-[5rem]">
                                         <svg class="w-14 aspect-auto text-gray-300 mb-8" viewBox="0 0 63 57"
@@ -372,18 +380,14 @@
                                                 fill="currentColor" />
                                         </svg>
                                         <p class="text-black font-inter font-medium text-xl mb-10 md:mb-16">
-                                            {{ $i + 1 }}. This service is great! I love it, I would recommend this to
-                                            my
-                                            relatives.
+                                           {{  Str::limit($testimonial->comment, 80, '...') }}
                                         </p>
                                         <div class="font-inter pt-4 border-t-2 border-gray-400 w-full text-black">
                                             <p class="font-semibold text-base">Jackson Harry</p>
-                                            <a href="#" target="_blank"
-                                                class="text-gray-500 text-md italic hover:underline">@loremipsum</a>
                                         </div>
                                     </div>
                                 </div>
-                            @endfor
+                            @endforeach
 
                         </div>
                     </div>
@@ -493,47 +497,24 @@
                     Our <i class="font-playfair">Captured Story</i>
                 </h2>
             </div>
-            <div class="flex flex-wrap gap-6 w-full">
-                @for ($i = 0; $i < 4; $i++)
-                    <a href="#"
-                        class="group {{ $i > 2 ? 'hidden sm:inline-block' : 'inline-block' }} relative flex-3 h-64 sm:h-80 lg:h-96 text-white min-w-xs font-inter">
-                        <div class="relative flex h-full items-end transform
-                    bg-center bg-cover transition-transform group-hover:-translate-y-2"
-                            style="background-image: url('https://images.unsplash.com/photo-1531778272849-d1dd22444c06?q=80&w=760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                            <!-- front content -->
-                            <div
-                                class="absolute inset-0 flex gap-2 items-end p-4 sm:p-6
-                       transition-opacity duration-300 group-hover:opacity-0 z-10">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="size-4 sm:size-8" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                                </svg>
-                                <h2 class="mt-6 text-xl font-medium sm:text-2xl">Kintamani, Ubud</h2>
-                            </div>
-                            <!-- back content -->
-                            <div
-                                class="absolute inset-0 p-4 sm:p-6 opacity-0 bg-black/60 transition-opacity duration-300
-                       group-hover:opacity-100 z-10">
-                                <h3 class="mt-4 text-xl font-semibold text-cst-yellow-400 sm:text-2xl">Kintamani,
-                                    Ubud</h3>
-                                <p class="mt-4 text-sm font-light sm:text-base">
-                                    This image taken place at Kintamani, Ubud. Explore our tour packages or
-                                    activities and
-                                    find
-                                    the
-                                    perfect way to
-                                    experience Bali.
-                                </p>
-                                <p class="mt-10 font-semibold italic">View Gallery &rightarrow;</p>
+            <div class="flex flex-wrap gap-6 gap-y-6 w-full">
+                @foreach ($galleries as $gallery)
+                    <a href="{{ route('gallery') }}"
+                        class="group {{ $loop->index > 2 ? 'hidden sm:inline-block' : 'inline-block' }} relative flex-3 h-64 sm:h-80 lg:h-96 text-white min-w-xs font-inter">
+                        <div 
+                            class="relative flex h-full items-end transform bg-center bg-cover transition-transform group-hover:-translate-y-2"
+                            style="background-image: url('{{ $gallery->getFirstMediaUrl('picture', 'optimized')  }}');"
+                        >
+                          <div class="absolute bottom-0 left-0 w-full flex flex-wrap gap-3 p-4 lg:p-6 transition-opacity duration-300 group-hover:opacity-0 z-10">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent -z-10"></div>
+
+                                <h2 class="text-sm font-semibold  whitespace-nowrap">{{ $gallery->name }}</h2>
                             </div>
                         </div>
                     </a>
-                @endfor
+                @endforeach
             </div>
-            <a href="#"
+            <a href="{{ route('gallery') }}"
                 class="group mt-10 relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-transparent border-3 border-cst-yellow-400 py-2.5 px-5 text-cst-yellow-400 focus:ring-3 focus:outline-hidden">
                 <span class="absolute -end-full transition-all lg:group-hover:end-4">
                     <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -567,7 +548,7 @@
                         Read our <i class="font-playfair">articles</i>
                     </h2>
                 </div>
-                <a href="#"
+                <a href="{{ route('blogs') }}"
                     class="group relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-cst-yellow-400 py-2.5 px-5 text-black focus:ring-3 focus:outline-hidden">
                     <span class="absolute -end-full transition-all lg:group-hover:end-4">
                         <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -582,33 +563,25 @@
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-                @for ($i = 0; $i < 4; $i++)
+                @foreach ($blogs as $blog)
                     <article
-                        class="{{ $i < 3 ? 'block' : 'hidden sm:block' }} overflow-hidden shadow-lg transition hover:shadow-lg hover:-translate-y-2">
+                        class="{{ $loop->index < 3 ? 'block' : 'hidden sm:block' }} overflow-hidden shadow-lg transition hover:shadow-lg hover:-translate-y-2">
                         <img alt=""
-                            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                            src="{{ $blog->getFirstMediaUrl('picture', 'optimize') }}"
                             class="h-56 w-full object-cover" />
                         <div class="bg-white p-4 sm:p-6 font-inter">
-                            <time datetime="2022-10-10" class="block text-sm italic text-gray-500">July 4th,
-                                2025</time>
-                            <a href="#">
+                            <time datetime="{{ $blog->created_at->format('d M Y') }}" class="block text-sm italic text-gray-500">{{ $blog->created_at->format('d M Y') }}</time>
+                            <a href="{{ route('blog-detail', $blog->id) }}">
                                 <h3 class="mt-0.5 text-2xl text-gray-900 font-roboto font-semibold hover:underline">
-                                    How to position your furniture for positivity
+                                 {{  Str::limit( $blog->title, 40, '...') }}
                                 </h3>
                             </a>
                             <p class="mt-4 line-clamp-3 text-md/relaxed text-gray-500">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores,
-                                possimus
-                                pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet
-                                corporis
-                                quidem,
-                                mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius
-                                atque
-                                dignissimos. Molestias explicabo corporis voluptatem?
+                               {{ Str::limit( $blog->content, 80, '...')  }}
                             </p>
                         </div>
                     </article>
-                @endfor
+                @endforeach
             </div>
         </div>
 
@@ -753,7 +726,8 @@
                     Leave us <i class="font-playfair">a message!</i>
                 </h2>
             </div>
-            <div class="">
+            <form action="{{ route('whatsapp.send') }}" method="POST">
+                @csrf
                 <x-input class="mb-4" label="Full name" type="text" placeholder="Jacob Holden" name="fullname"
                     id="index-fullname" required />
                 <div class="flex flex-col sm:flex-row w-full gap-4 mb-4">
@@ -778,8 +752,8 @@
                 </div>      
                 <x-textarea class="mb-4" label="Message" placeholder="Type your message here" name="message"
                     id="index-message" required rows="3" />
-                <x-whatsapp-button class="w-full text-xl py-3">Send message via Whatsapp</x-whatsapp-button>
-            </div>
+                <x-whatsapp-button class="w-full text-xl py-3"  type="submit">Send message via Whatsapp</x-whatsapp-button>
+            </form>
 
         </div>
 

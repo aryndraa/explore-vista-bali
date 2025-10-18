@@ -219,17 +219,42 @@
             </div>
 
             {{-- form --}}
-            <form action="" class="space-y-4 w-full">
+           <form action="{{ route('testimonials.store') }}" method="POST" class="space-y-4 w-full">
                 @csrf
 
-                <x-input label="Full name" placeholder="ex: Jacob Holden" id="fullname" name="fullname" required />
-                <x-input label="Instagram (optional)" placeholder="ex: @exampleuser" id="instagram" name="instagram"
-                    required />
-                <x-textarea label="Message" placeholder="Your message here" />
+                <!-- Name -->
+                <x-input 
+                    label="Full Name" 
+                    placeholder="ex: Jacob Holden" 
+                    id="name" 
+                    name="name" 
+                    required 
+                />
 
-                <button type="submit"
-                    class="bg-cst-yellow-400 font-bold w-full rounded-sm px-8 py-3 text-xl hover:scale-105 active:scale-100 transition cursor-pointer">Send
-                    Comment</button>
+                <!-- Social Media -->
+                <x-input 
+                    label="Instagram (optional)" 
+                    placeholder="ex: @exampleuser" 
+                    id="social_media" 
+                    name="social_media" 
+                />
+
+                <!-- Comment -->
+                <x-textarea 
+                    label="Your Comment" 
+                    placeholder="Share your experience or feedback..." 
+                    id="comment" 
+                    name="comment" 
+                    required 
+                />
+
+                <!-- Submit Button -->
+                <button 
+                    type="submit"
+                    class="bg-cst-yellow-400 font-bold w-full rounded-sm px-8 py-3 text-xl hover:scale-105 active:scale-100 transition cursor-pointer"
+                >
+                    Send Comment
+                </button>
             </form>
         </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\TourPackage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TourPackage\BookingRequest;
 use App\Models\Agent;
+use App\Models\Link;
 use App\Models\Package;
 use App\Models\TourBooking;
 use App\Models\User;
@@ -72,9 +73,13 @@ class TourPackageController extends Controller
             . "*Address:* {$booking->address}\n"
             . "*Booking Date:* " . \Carbon\Carbon::parse($booking->booking_date)->format('d M Y') . "\n"
             . "*People:* {$booking->people_amount}\n\n"
-            . "Please confirm my booking. Thank you! 🙏";
+            . "Please confirm my booking. Thank you!";
 
-        $adminPhone = '6282144915822';
+        $adminPhone = Link::query()
+            ->where('name', 'wa')
+            ->pluck('url')
+            ->first(); 
+
         $waUrl = 'https://wa.me/' . $adminPhone . '?text=' . urlencode($message);
 
         return redirect()->away($waUrl);

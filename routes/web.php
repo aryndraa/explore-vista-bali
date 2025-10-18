@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\Blog\BlogController;
 use App\Http\Controllers\Web\Gallery\GalleryController;
+use App\Http\Controllers\Web\Home\HomeController;
 use App\Http\Controllers\Web\Shuttle\ShuttleController;
 use App\Http\Controllers\Web\TourPackage\TourPackageController;
 use App\Http\Controllers\Web\Vehicle\VehicleController;
@@ -9,7 +10,7 @@ use App\Models\Shuttle;
 use App\Models\Tour;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('index'))->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', fn() => view('about'))->name('about');
 
 Route::name('services.')
@@ -41,3 +42,5 @@ Route::get('/contact', fn() => view('contact'))->name('contact');
 Route::get('/comments', fn() => view('comment'))->name('comment');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blog-detail');
+Route::post('/testimonials', [HomeController::class, 'makeComment'])->name('testimonials.store');
+Route::post('/send-whatsapp', [HomeController::class, 'sendMessage'])->name('whatsapp.send');

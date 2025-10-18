@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\ShuttleBooking;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Shuttle\BookingRequest;
+use App\Models\Link;
 use App\Models\User;
 use Filament\Notifications\Notification;
 
@@ -66,10 +67,13 @@ class ShuttleController extends Controller
         . "*Pickup Time:* {$booking->pickup_time} WITA\n"
         . "*People:* {$booking->people_amount}\n"
         . "*Vehicle:* {$vehicleName}\n\n"
-        . "Please confirm my booking. Thank you! 🙏";
+        . "Please confirm my booking. Thank you!";
 
 
-        $adminPhone = '6282144915822';
+        $adminPhone = Link::query()
+            ->where('name', 'wa')
+            ->pluck('url')
+            ->first(); 
         $waUrl = 'https://wa.me/' . $adminPhone . '?text=' . urlencode($message);
 
         return redirect()->away($waUrl);
