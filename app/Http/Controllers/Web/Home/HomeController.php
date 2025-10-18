@@ -49,31 +49,6 @@ class HomeController extends Controller
         ]); 
     }
 
-  public function makeComment(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'social_media' => 'nullable|string|max:255',
-            'comment' => 'required|string',
-        ]);
-
-        $comment = Testimonial::create([
-            'name' => $validated['name'],
-            'social_media' => $validated['social_media'] ?? null,
-            'comment' => $validated['comment'],
-            'is_active' => false, 
-        ]);
-
-         User::all()->each(function ($admin) use ($comment) {
-            Notification::make()
-                ->title('New comment received')
-                ->body("{$comment->name} has just submitted a new testimonial.")
-                ->sendToDatabase($admin);
-        });
-
-        return back();
-    }
-
     public function sendMessage(Request $request)
     {
         $validated = $request->validate([
@@ -98,5 +73,17 @@ class HomeController extends Controller
         $waLink = "https://wa.me/{$waNumber}?text={$encodedText}";
 
         return redirect()->away($waLink);
+    }
+
+    public function redirectToWhatsapp()
+    {
+        $phone = Link::query()
+            ->where('name', 'wa')
+            ->pluck('url')
+            ->first(); 
+
+        $url = "https://wa.me/{$phone}";
+
+        return redirect()->away($url);
     }
 }

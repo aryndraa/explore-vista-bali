@@ -59,32 +59,44 @@
     </section>
 
     {{-- ? COMMENTS SECTION --}}
-    <section class="bg-gray-100">
+    <section class="bg-gray-100" 
+        x-data="{
+            visible: 8,
+            total: {{ count($testimonials) }},
+            loadMore() {
+                this.visible = Math.min(this.visible + 4, this.total);
+            }
+        }">
         <div class="container mx-auto py-24 px-8">
 
-            <h2 class="font-roboto font-semibold text-3xl mb-12">4 Comments</h2>
+            <h2 class="font-roboto font-semibold text-3xl mb-12">
+                {{ count($testimonials) }} Comments
+            </h2>
 
             {{-- comments wrapper --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-
-                @for ($i = 0; $i < 8; $i++)
+                @foreach ($testimonials as $index => $testimonial)
                     <div
-                        class="bg-white text-black p-4 font-inter rounded-sm w-full shadow-md hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400/40 transition">
+                        x-show="{{ $index }} < visible"
+                        x-transition
+                        class="bg-white text-black p-4 font-inter rounded-sm w-full shadow-md hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-400/40 transition flex flex-col justify-between">
                         <p class="text-lg mb-4">
-                            “This service is great! I love it, I would recommend this to my relatives”
+                            {{ $testimonial->comment }}
                         </p>
-                        <div class="">
+                        <div>
                             <h4 class="text-lg font-roboto leading-tight font-medium italic">
-                                Jackson Harry</h4>
+                                {{ $testimonial->name }}
+                            </h4>
                             <a href="#" target="_blank"
-                                class="text-sm text-gray-500 hover:text-cst-yellow-600">@loremipsum</a>
+                                class="text-sm text-gray-500 hover:text-cst-yellow-600">{{ $testimonial->social_media ?? '-' }}</a>
                         </div>
                     </div>
-                @endfor
-
+                @endforeach
             </div>
 
             <button
+                x-show="visible < total"
+                @click="loadMore"
                 class="w-fit mx-auto block bg-gray-800 font-inter py-3 px-8 text-white cursor-pointer hover:scale-105 transition">
                 Load More
             </button>

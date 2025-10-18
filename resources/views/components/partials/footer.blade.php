@@ -73,31 +73,31 @@
 
                         <ul class="mt-6 space-y-2 text-sm">
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('services.shuttle') }}" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Shuttle
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('services.available-packages') }}" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Full-day tours
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('services.available-packages') }}"  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Half-day tours
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('services.available-packages') }}"  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Activities
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('services.vehicle-rent') }}"  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Vehicle Rental
                                 </a>
                             </li>
@@ -109,25 +109,25 @@
 
                         <ul class="mt-6 space-y-2 text-sm">
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('about') }}"  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     About
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('gallery') }}"  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Gallery
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('blogs') }}"  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Blog
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                                <a href="{{ route('contact') }}"  class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                                     Contact
                                 </a>
                             </li>

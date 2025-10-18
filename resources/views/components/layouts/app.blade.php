@@ -31,11 +31,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 
-<body class="antialiased bg-gray-50 text-gray-800 overflow-x-hidden font-inter">
+<body class="antialiased bg-gray-50 text-gray-800 overflow-x-hidden mx-auto font-inter">
 
     @include('components.partials.header', ['variant' => $variant ?? 'light'])
 
@@ -46,6 +48,11 @@
     @include('components.partials.footer')
 
     @livewireScripts
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
