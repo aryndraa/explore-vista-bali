@@ -56,3 +56,15 @@ import { Calendar } from "fullcalendar";
 
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+
+// Data aos
+
+AOS.init({
+    offset: 40,
+    delay: 0,
+    duration: 1000,
+    easing: "ease",
+    once: false,
+    mirror: false,
+    anchorPlacement: "top-bottom",
+});

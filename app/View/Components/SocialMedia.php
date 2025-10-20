@@ -11,11 +11,15 @@ class SocialMedia extends Component
 {
     public $type;
     public $instagramUrl;
+    public $email;
+    public $phone;
 
     public function __construct($type = 'default')
     {   
         $this->type = $type;
         $this->instagramUrl = Link::where('name', 'instagram')->value('url') ?? '#';
+        $this->email = Link::where('name', 'email')->value('url') ?? '#';
+        $this->phone = Link::where('name', 'wa')->value('url') ?? '#';
     }
 
     public function render(): View|Closure|string

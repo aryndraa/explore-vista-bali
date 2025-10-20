@@ -70,11 +70,11 @@
     {{-- ? VISION SECTION --}}
     <section class="container mx-auto flex flex-col items-center py-24 px-8 border-b-2 border-b-gray-300">
 
-        <h2 class="font-roboto text-3xl 2xl:text-4xl  text-center font-bold whitespace-nowrap mb-4">
+        <h2 class="font-roboto text-3xl 2xl:text-4xl  text-center font-bold whitespace-nowrap mb-4" data-aos="fade-up" >
             What is <i class="font-playfair">our vision?</i>
         </h2>
 
-        <p class="font-inter text-sm lg:text-base text-center max-w-lg">
+        <p class="font-inter text-sm lg:text-base text-center max-w-lg" data-aos="fade-up" >
             To be the trusted travel companion that connects visitors with the beauty, culture, and spirit of Bali through
             seamless journeys and unforgettable experiences.
         </p>
@@ -86,7 +86,7 @@
 
         {{-- ? Missions --}}
         <div class="flex flex-col md:flex-row md:gap-10 mb-12">
-            <div class="py-0 md:py-10">
+            <div class="py-0 md:py-10" data-aos="fade-up" >
                 <h2 class="font-roboto text-4xl font-bold mb-8">
                     Our <br class="hidden md:inline-block" /> <i class="font-playfair">Missions</i>
                 </h2>
@@ -99,7 +99,7 @@
             </div>
 
             <div class="flex flex-col md:flex-row gap-4 [&>div]:flex-1">
-                <div class="p-5 bg-gray-200 rounded-lg">
+                <div class="p-5 bg-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="200" >
                     <svg class="h-12 aspect-auto text-cst-yellow-600 mb-3" viewBox="0 0 49 61" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -111,7 +111,7 @@
                     <p class="font-inter text-gray-600 text-md">Provide reliable shuttle and tour services with a focus on
                         comfort, punctuality, and safety.</p>
                 </div>
-                <div class="p-5 bg-gray-200 rounded-lg">
+                <div class="p-5 bg-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="400">
                     <svg class="h-12 aspect-auto text-cst-yellow-600 mb-3" viewBox="0 0 53 49" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -124,7 +124,7 @@
                         culture,
                         nature, and traditions.</p>
                 </div>
-                <div class="p-5 bg-gray-200 rounded-lg">
+                <div class="p-5 bg-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="600">
                     <svg class="h-12 aspect-auto text-cst-yellow-600 mb-3" viewBox="0 0 56 56" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -141,7 +141,7 @@
 
         {{-- ? Goals --}}
         <div class="flex flex-col md:flex-row-reverse md:gap-10">
-            <div class="py-0 md:py-10">
+            <div class="py-0 md:py-10" data-aos="fade-up" >
                 <h2 class="font-roboto text-4xl font-bold mb-8 md:text-end">
                     Our <br class="hidden md:inline-block" /> <i class="font-playfair">Goals</i>
                 </h2>
@@ -154,7 +154,7 @@
             </div>
 
             <div class="flex flex-col md:flex-row gap-4 [&>div]:flex-1">
-                <div class="p-5 bg-gray-200 rounded-lg">
+                <div class="p-5 bg-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="600">
                     <svg class="h-12 aspect-auto text-cst-yellow-600 mb-3" viewBox="0 0 42 58" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -165,7 +165,7 @@
                     <p class="font-inter text-gray-600 text-md">Make it easy for visitors to book, plan, and enjoy their
                         Bali trips.</p>
                 </div>
-                <div class="p-5 bg-gray-200 rounded-lg">
+                <div class="p-5 bg-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="400">
                     <svg class="h-12 aspect-auto text-cst-yellow-600 mb-3" viewBox="0 0 45 45" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -176,7 +176,7 @@
                     <p class="font-inter text-gray-600 text-md">Support local communities and preserve the island’s natural
                         beauty through responsible practices.</p>
                 </div>
-                <div class="p-5 bg-gray-200 rounded-lg">
+                <div class="p-5 bg-gray-200 rounded-lg" data-aos="fade-up" data-aos-delay="200">
                     <svg class="h-12 aspect-auto text-cst-yellow-600 mb-3" viewBox="0 0 51 46" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -193,7 +193,7 @@
     </section>
 
     {{-- ? SERVICES SECTION --}}
-    <section class="bg-cst-green-800 overflow-x-hidden">
+    <section class="bg-cst-green-800 overflow-x-hidden overflow-y-hidden">
 
         <div class="flex flex-col lg:flex-row sm:gap-12 relative container mx-auto text-white">
             <div class="relative min-h-[20rem] lg:min-h-[32rem] bg-cover bg-center
@@ -203,14 +203,14 @@
 
             <div class="pt-12 pb-12 px-8 lg:px-0 w-full lg:pr-8">
                 <div class="flex flex-col mb-12">
-                    <p class="font-inter text-cst-green-200 text-xl">Our services</p>
-                    <h2 class="font-roboto text-4xl sm:text-5xl font-semibold whitespace-nowrap">
+                    <p class="font-inter text-cst-green-200 text-xl" data-aos="fade-up" >Our services</p>
+                    <h2 class="font-roboto text-4xl sm:text-5xl font-semibold whitespace-nowrap" data-aos="fade-up" >
                         Services <i class="font-playfair">we provide</i>
                     </h2>
                 </div>
                 <div
                     class="space-y-8 mb-8 h-fit [&>div]:flex [&>div]:gap-4 [&_div]:pb-4 [&>div:not(:last-child)]:border-b [&>div:not(:last-child)]:border-gray-500">
-                    <div class="">
+                    <div class="" data-aos="fade-up" >
                         <div class="!p-2 h-fit aspect-square rounded-full bg-cst-green-400">
                             <svg class="size-5 text-cst-yellow-400" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -228,7 +228,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="" data-aos="fade-up" >
                         <div class="!p-2 w-fit h-fit aspect-square rounded-full bg-cst-green-400">
                             <svg class="size-5 text-cst-yellow-400" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -246,7 +246,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="" data-aos="fade-up" >
                         <div class="!p-2 w-fit h-fit aspect-square rounded-full bg-cst-green-400">
                             <svg class="size-5 text-cst-yellow-400" viewBox="0 0 22 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -264,7 +264,7 @@
                         </div>
                     </div>
                 </div>
-                <x-wave-button href="#" firstTextClasses="text-black font-inter font-semibold"
+                <x-wave-button href="#" data-aos="fade-up"  firstTextClasses="text-black font-inter font-semibold"
                     secondTextClasses="text-black font-playfair font-bold italic"
                     class="text-lg 2xl:text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
                     Find Tours!
@@ -279,14 +279,14 @@
         <div class="container mx-auto py-24 px-8 text-white">
 
             <div class="flex flex-col text-center w-fit mb-10 mx-auto">
-                <p class="font-inter text-cst-green-200 text-md sm:text-xl">Our team</p>
-                <h2 class="font-roboto text-4xl font-semibold whitespace-nowrap">
+                <p class="font-inter text-cst-green-200 text-md sm:text-xl" data-aos="fade-up">Our team</p>
+                <h2 class="font-roboto text-4xl font-semibold whitespace-nowrap" data-aos="fade-up" >
                     Who is behind <i class="font-playfair">the scene?</i>
                 </h2>
             </div>
 
             <div class="flex flex-col md:flex-row-reverse gap-10">
-                <div class="w-full">
+                <div class="w-full" data-aos="fade-up">
                     <img class="w-full h-full object-cover object-center"
                         src="https://images.unsplash.com/photo-1603201667141-5a2d4c673378?q=80&w=1196&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="">
@@ -294,27 +294,27 @@
 
                 <div class="flex flex-col justify-center sm:py-10">
                     <h3
-                        class="font-roboto font-semibold text-2xl sm:text-3xl [&>i]:font-playfair [&>i]:text-cst-yellow-400 mb-5">
+                        class="font-roboto font-semibold text-2xl sm:text-3xl [&>i]:font-playfair [&>i]:text-cst-yellow-400 mb-5" data-aos="fade-up">
                         Our <i>Backstory</i> / our <i>Background</i>
                     </h3>
-                    <p class="text-gray-200 text-lg mb-5">
+                    <p class="text-gray-200 text-lg mb-5" data-aos="fade-up">
                         Morbi ut et et nulla leo. Amet neque posuere adipiscing ut. Sagittis odio dui risus dictumst
                         molestie enim quis fermentum et. Feugiat nunc maecenas tellus tellus. Nam elit nam senectus dolor
                         pulvinar.
                     </p>
-                    <x-social-media class="mb-10" />
+                    <x-social-media class="mb-10" data-aos="fade-up" />
 
-                    <h3 class="font-roboto font-semibold text-2xl sm:text-3xl [&>i]:text-cst-yellow-400 mb-5">
+                    <h3 class="font-roboto font-semibold text-2xl sm:text-3xl [&>i]:text-cst-yellow-400 mb-5" data-aos="fade-up">
                         What <i>have we done?</i>
                     </h3>
-                    <p class="text-gray-200 mb-5 text-lg">
+                    <p class="text-gray-200 mb-5 text-lg" data-aos="fade-up">
                         Morbi ut et et nulla leo. Amet neque posuere adipiscing ut. Sagittis odio dui risus dictumst
                         molestie enim quis fermentum et:
                     </p>
                     <ul class="list-disc font-normal text-gray-200 pl-5 text-lg">
-                        <li>Morbi ut et et nulla leo. Amet neque posuere adipiscing ut,</li>
-                        <li>Morbi ut et et nulla leo met neque,</li>
-                        <li>Amet neque posuere adipiscing ut.</li>
+                        <li data-aos="fade-up">Morbi ut et et nulla leo. Amet neque posuere adipiscing ut,</li>
+                        <li data-aos="fade-up">Morbi ut et et nulla leo met neque,</li>
+                        <li data-aos="fade-up">Amet neque posuere adipiscing ut.</li>
                     </ul>
                 </div>
             </div>
@@ -325,7 +325,7 @@
     {{-- ? FAQ SECTION --}}
     <section class="flex flex-col gap-10 lg:flex-row px-4 sm:px-8 py-24 relative overflow-hidden container mx-auto">
 
-        <div class="flex-5">
+        <div class="flex-5" data-aos="fade-up">
             <img class="w-full h-full max-h-[20rem] sm:min-h-[45rem] object-cover object-center"
                 src="https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="">
@@ -333,8 +333,8 @@
 
         <div class="flex-7 lg:py-4">
             <div class="mb-8">
-                <p class="font-inter text-gray-500 text-md sm:text-xl">Frequently Asked Questions</p>
-                <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight">
+                <p class="font-inter text-gray-500 text-md sm:text-xl" data-aos="fade-up">Frequently Asked Questions</p>
+                <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight" data-aos="fade-up" >
                     More about <i class="font-playfair">our company</i>
                 </h2>
             </div>
@@ -344,7 +344,7 @@
 
                 <!-- FAQ 1 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 1 }">
+                    :class="{ 'border-cst-green-400': active === 1 }" data-aos="fade-up">
                     <button @click="active === 1 ? active = null : active = 1"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-lg font-medium text-start">What is Explore Vista Bali?</h2>
@@ -364,7 +364,7 @@
 
                 <!-- FAQ 2 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 2 }">
+                    :class="{ 'border-cst-green-400': active === 2 }" data-aos="fade-up" data-aos-delay="100">
                     <button @click="active === 2 ? active = null : active = 2"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-lg font-medium text-start">Where is your company based?</h2>
@@ -384,7 +384,7 @@
 
                 <!-- FAQ 3 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 3 }">
+                    :class="{ 'border-cst-green-400': active === 3 }" data-aos="fade-up" data-aos-delay="100">
                     <button @click="active === 3 ? active = null : active = 3"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-lg font-medium text-start">What makes Explore Vista Bali different from others?
@@ -405,7 +405,7 @@
 
                 <!-- FAQ 4 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 4 }">
+                    :class="{ 'border-cst-green-400': active === 4 }" data-aos="fade-up" data-aos-delay="100">
                     <button @click="active === 4 ? active = null : active = 4"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-lg font-medium text-start">Who are your main customers?</h2>
@@ -425,7 +425,7 @@
 
                 <!-- FAQ 5 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 5 }">
+                    :class="{ 'border-cst-green-400': active === 5 }" data-aos="fade-up" data-aos-delay="100">
                     <button @click="active === 5 ? active = null : active = 5"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-lg font-medium text-start">How can I trust your services?</h2>
@@ -452,15 +452,15 @@
     <section class="container mx-auto py-24 px-8">
 
         <div class="mb-8">
-            <p class="font-inter text-gray-500 text-md text-center sm:text-xl">
+            <p class="font-inter text-gray-500 text-md text-center sm:text-xl" data-aos="fade-up" >
                 Our office location
             </p>
-            <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight w-fit mx-auto">
+            <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight w-fit mx-auto" data-aos="fade-up"   >
                 Where is <i class="font-playfair">our station?</i>
             </h2>
         </div>
 
-        <div class="inline-block mx-auto w-full">
+        <div class="inline-block mx-auto w-full" data-aos="fade-up" >
             <iframe title="Google Maps location embedding"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.0855362930492!2d115.23143447485441!3d-8.683415891364811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b0e5e80db%3A0xad78f1ff66b638d2!2sSMK%20TI%20Global%20Denpasar!5e0!3m2!1sid!2sid!4v1758849596637!5m2!1sid!2sid"
                 class="mx-auto min-w-full md:min-w-2/3 min-h-[25rem]" style="border:0;" allowfullscreen=""

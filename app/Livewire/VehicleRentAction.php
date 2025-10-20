@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Link;
 use App\Models\Vehicle;
 use Livewire\Component;
 
@@ -10,7 +11,15 @@ class VehicleRentAction extends Component
     public $vehicleType = '';
     public $seatAmount = '';
 
-    public $whatsappNumber = '6282144915822';
+    public $whatsappNumber;
+
+    public function __construct()
+    {
+        $this->whatsappNumber = Link::query()
+            ->where('name', 'wa')
+            ->pluck('url')
+            ->first(); 
+    } 
 
     public function updateVehicleType()
     {

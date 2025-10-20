@@ -25,7 +25,7 @@
 
     <!-- Content -->
     <div class="bg-gray-200 p-5 rounded-b-xl z-10">
-        <h4 class="font-roboto text-xl font-semibold mb-1">{{ $title }}</h4>
+        <h4 class="font-roboto text-xl font-semibold mb-1 line-clamp-1">{{ $title }}</h4>
 
         <p class="font-inter text-sm italic text-gray-600 mb-2">Indonesia, Bali</p>
 

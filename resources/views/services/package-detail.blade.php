@@ -169,7 +169,8 @@
                             :class="itemsPerPage === 1 ? 'gap-0 px-6' : 'gap-4'">
                             <template
                                 x-for="(item, idx) in items.slice((pageIndex - 1) * itemsPerPage, pageIndex * itemsPerPage)"
-                                :key="item.id">
+                                :key="item.id"
+                            >
                                 <div
                                     class="w-full md:w-auto md:h-full aspect-[3/4] bg-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300">
                                     <img :src="item.image" :alt="item.title"
@@ -227,7 +228,6 @@
                         </button>
                     </div>
                 @else
-                    <!-- Jika gambar <= 4, tampilkan hanya di mobile -->
                     <template x-if="isMobile">
                         <div class="flex items-center justify-center gap-6 mt-4">
                             <!-- Previous Button -->
@@ -274,7 +274,7 @@
         <div
             class="container mx-auto flex flex-col lg:flex-row lg:gap-12 xl:gap-16 py-24 px-8 [&_h4]:font-roboto [&_h4]:font-medium [&_h4]:text-xl">
 
-            <div class="lg:flex-7 xl:flex-8">
+            <div class="lg:flex-7 xl:flex-8" data-aos="fade-up">
                 <h2
                     class="relative mb-6 z-10 w-fit font-roboto text-2xl font-semibold text-cst-green-800 after:absolute after:-inset-x-2 after:h-3 after:top-1/2 after:-translate-y-1/2 after:rounded-full after:transition after:bg-cst-yellow-400/40 after:isolate after:-z-10">
                     Package Details
@@ -337,7 +337,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('services.package-booking', $package->id) }}" method="post" class="lg:flex-5 xl:flex-4 bg-white p-6 font-inter rounded-md h-fit top-20">
+            <form action="{{ route('services.package-booking', $package->id) }}" method="post" class="lg:flex-5 xl:flex-4 bg-white p-6 font-inter rounded-md h-fit top-20" data-aos="fade-up">
                 @csrf
                 <h4 class="font-roboto font-bold! text-3xl! text-center mb-5">Booking Form</h4>
 
@@ -401,15 +401,20 @@
 
                 <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
 
-                   @foreach ($randomPackages as $item)
-                        <x-package-card 
-                            :id="$item->id"
-                            :title="$item->name"
-                            :img="$item->getFirstMediaUrl('cover', 'optimized')"
-                            :price="$item->price"
-                            :description="$item->description"
-                            :packageType="$item->tour->name ?? 'Tour'"
-                        />
+                   @foreach ($randomPackages as $index => $item)
+                         <div 
+                            data-aos="fade-up"
+                            data-aos-delay="{{ $index * 100 }}" 
+                        >
+                            <x-package-card 
+                                :id="$item->id"
+                                :title="$item->name"
+                                :img="$item->getFirstMediaUrl('cover', 'optimized')"
+                                :price="$item->price"
+                                :description="$item->description"
+                                :packageType="$item->tour->name ?? 'Tour'"
+                            />
+                        </div>
                     @endforeach
                 </div>
 

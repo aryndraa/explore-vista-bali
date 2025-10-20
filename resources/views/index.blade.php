@@ -28,8 +28,8 @@
         </div>
 
         <div
-            class="flex flex-col lg:flex-row w-full justify-between gap-20 items-center lg:items-end px-8 container mx-auto">
-            <div class="flex flex-col items-center md:items-start">
+            class="flex flex-col lg:flex-row w-full justify-between gap-20 items-center lg:items-end px-8 container mx-auto" data-aos="fade-up" >
+            <div class="flex flex-col items-center md:items-start" >
                 <p
                     class="text-start md:text-center text-gray-200 py-2 px-4 rounded-md text-base w-fit font-inter italic mb-1 backdrop-blur-[10px] backdrop-saturate-[165%] bg-[rgba(160,160,160,0.2)] border border-[rgba(255,255,255,0.125)]">
                     Welcome to Bali, Indonesia
@@ -70,19 +70,23 @@
 
     {{-- ? EXPERIENCE SECTION --}}
     <section class="relative">
-        <img class="hidden -z-10 lg:block absolute -left-28 top-1/3 rotate-45 w-80 opacity-30"
-            src="{{ asset('img/decoration_left.png') }}" alt="left flower decoration">
-        <img class="hidden -z-10 lg:block absolute -right-28 w-80 top-1/3 opacity-30"
-            src="{{ asset('img/decoration_right.png') }}" alt="right flower decoration">
+        <img 
+            class="hidden -z-10 lg:block absolute -left-28 top-1/3 rotate-45 w-80 opacity-30"
+            src="{{ asset('img/decoration_left.png') }}" alt="left flower decoration"
+        >
+        <img 
+            class="hidden -z-10 lg:block absolute -right-28 w-80 top-1/3 opacity-30"
+            src="{{ asset('img/decoration_right.png') }}" alt="right flower decoration"
+        >
 
         <div class="px-8 py-24 relative mx-auto container">
 
-            <div class="flex flex-col-reverse md:flex-row gap-5 lg:gap-0 justify-between md:items-center w-full mb-20">
-                <p class="text-lg font-inter font-normal md:max-w-md lg:max-w-lg">
+            <div class="flex flex-col-reverse md:flex-row gap-5 lg:gap-0 justify-between md:items-center w-full mb-20" >
+                <p class="text-lg font-inter font-normal md:max-w-md lg:max-w-lg" data-aos="fade-up">
                     Explore Vista Bali is trusted by travelers worldwide, delivering seamless tours and unforgettable
                     experiences across the island.
                 </p>
-                <div class="flex flex-col items-start md:items-end">
+                <div class="flex flex-col items-start md:items-end" data-aos="fade-up">
                     <p class="font-inter text-gray-600 text-base">Tours, places, clients</p>
                     <h2 class="font-roboto text-4xl font-bold text-end whitespace-nowrap">
                         Our <i class="font-playfair">Experience</i>
@@ -91,7 +95,7 @@
             </div>
 
             <div class="flex flex-col lg:px-14 md:flex-row gap-4 lg:gap-15 items-center justify-center">
-                <div class="flex-1 w-full md:max-w-80">
+                <div class="flex-1 w-full md:max-w-80" data-aos="fade-up">
                     <div
                         class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
                         <img class="absolute inset-0 w-full h-full object-cover -z-10"
@@ -111,7 +115,7 @@
                         <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">journeys</p>
                     </div>
                 </div>
-                <div class="flex-1 w-full md:max-w-80">
+                <div class="flex-1 w-full md:max-w-80" data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
                         <img class="absolute inset-0 w-full h-full object-cover -z-10" src="{{ asset('img/places.webp') }}" alt="">
@@ -129,7 +133,7 @@
                         <p class="text-cst-green-200 uppercase font-extrabold text-3xl font-inter">places</p>
                     </div>
                 </div>
-                <div class="flex-1 w-full md:max-w-80">
+                <div class="flex-1 w-full md:max-w-80" data-aos="fade-up" data-aos-delay="600">
                     <div
                         class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
                         <img class="absolute inset-0 w-full h-full object-cover -z-10" src="{{ asset('img/tourists.webp') }}" alt="">
@@ -156,15 +160,16 @@
     <section class="bg-cst-green-200/40">
 
         <div class="container mx-auto flex flex-col lg:flex-row  gap-10 lg:gap-24 px-8 py-18 relative overflow-x-hidden">
-            <div class="">
-                <div class="flex flex-col mb-6">
+            <div class="" data-aos="fade-in" >
+                <div class="flex flex-col mb-6" data-aos="fade-in" >
                     <p class="font-inter text-gray-600 text-xl">Tours, places, clients</p>
                     <h2 class="font-roboto text-4xl font-bold whitespace-nowrap">
                         Our <i class="font-playfair">Experience</i>
                     </h2>
                 </div>
                 <a class="group relative inline-flex items-center overflow-hidden rounded-sm bg-cst-green-400 px-5 py-3 text-cst-yellow-400 focus:ring-3 focus:outline-hidden"
-                    href="{{ route('about') }}">
+                    href="{{ route('about') }}"
+                >
                     <span class="absolute -end-full transition-all group-hover:end-4">
                         <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -176,12 +181,12 @@
                 </a>
             </div>
             <div class="flex flex-col font-inter text-gray-600 text-base 2xl:text-lg text-justify lg:flex-row gap-5 lg:gap-10">
-                <p class="">
+                <p class="" data-aos="fade-in" data-aos-delay="300">
                     At Explore Vista Bali, we're passionate about helping
                     travellers discover the island with ease. From shuttle services to curated tours, we make every journey
                     smooth, safe, and unforgettable.
                 </p>
-                <p class="">
+                <p class="" data-aos="fade-in" data-aos-delay="600">
                     More than just getting you from place to place, we're here to share Bali's beauty and culture with
                     genuine
                     hospitality. Our mission is simple, its to create travel experiences that leave lasting memories.
@@ -200,8 +205,8 @@
                 style="background-image: url('https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?q=80&w=1920&auto=format&fit=crop');">
             </div>
 
-            <div class="py-12 px-8 lg:px-0 w-full lg:pr-8">
-                <div class="flex flex-col mb-12">
+            <div class="py-12 px-8 lg:px-0 w-full lg:pr-8 overflow-y-hidden">
+                <div class="flex flex-col mb-12" data-aos="fade-up">
                     <p class="font-inter text-gray-600 text-xl">Available services</p>
                     <h2 class="font-roboto text-4xl sm:text-5xl font-bold whitespace-nowrap">
                         What <i class="font-playfair">can we do?</i>
@@ -209,7 +214,7 @@
                 </div>
                 <div
                     class="space-y-8 mb-8 h-fit [&>div]:flex [&>div]:gap-4 [&_div]:pb-4 [&>div:not(:last-child)]:border-b [&>div:not(:last-child)]:border-gray-500">
-                    <div class="">
+                    <div class="" data-aos="fade-up">
                         <div class="!p-2 h-fit aspect-square rounded-full bg-cst-green-400">
                             <svg class="size-5 text-cst-yellow-400" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -225,7 +230,7 @@
                                 harbor, or point-to-point transfers anywhere in Bali.</p>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="" data-aos="fade-up">
                         <div class="!p-2 w-fit h-fit aspect-square rounded-full bg-cst-green-400">
                             <svg class="size-5 text-cst-yellow-400" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -241,7 +246,7 @@
                                 experiences and culinary delights to outdoor adventures.</p>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="" data-aos="fade-up">
                         <div class="!p-2 w-fit h-fit aspect-square rounded-full bg-cst-green-400">
                             <svg class="size-5 text-cst-yellow-400" viewBox="0 0 22 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -259,7 +264,9 @@
                 </div>
                 <x-wave-button href="{{ route('services.available-packages') }}" firstTextClasses="text-black font-inter font-semibold"
                     secondTextClasses="text-black font-playfair font-bold italic"
-                    class="text-lg 2xl:text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400">
+                    class="text-lg 2xl:text-2xl w-fit py-2.5 px-7 bg-cst-yellow-400 rounded-sm hover:bg-cst-yellow-400"
+                    data-aos="fade-up" 
+                >
                     Book Tours!
                 </x-wave-button>
             </div>
@@ -273,34 +280,39 @@
         <div class="flex items-center justify-center mb-6 w-full">
             <span class="hidden sm:inline-block h-0.5 w-full bg-gray-300"></span>
             <div class="flex flex-col text-center w-fit mx-8">
-                <p class="font-inter text-gray-600 text-md sm:text-xl">Available tour & activity packages</p>
-                <h2 class="font-playfair italic text-4xl sm:text-5xl font-bold whitespace-nowrap">
+                <p class="font-inter text-gray-600 text-md sm:text-xl" data-aos="fade-up">Available tour & activity packages</p>
+                <h2 class="font-playfair italic text-4xl sm:text-5xl font-bold whitespace-nowrap" data-aos="fade-up">
                     Choose your journey
                 </h2>
             </div>
             <span class="hidden sm:inline-block h-0.5 w-full bg-gray-300"></span>
         </div>
 
-        <a href="{{ route('services.available-packages') }}" class="flex text-base gap-2 items-center text-cst-green-400 underline mb-14">
+        <a href="{{ route('services.available-packages') }}" class="flex text-base gap-2 items-center text-cst-green-400 underline mb-14" data-aos="fade-up">
             See all packages <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
             </svg>
         </a>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full container mx-auto sm:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full container mx-auto sm:px-8 overflow-y-hidden">
 
-            @foreach ($tourPackages as $package)
-                <x-package-card
-                    :id="$package->id"
-                    :packageType="$package->tour?->name"
-                    :img="$package->getFirstMediaUrl('cover', 'optimized')"
-                    :title="$package->name"
-                    :price="$package->price"
-                    :description="$package->description"
-                    :startTime="$package->start_time"
-                />
-            @endforeach 
+            @foreach ($tourPackages as $index => $package)
+                <div 
+                    data-aos="fade-up"
+                    data-aos-delay="{{ $index * 100 }}" {{-- delay naik 100ms tiap item --}}
+                >
+                    <x-package-card
+                        :id="$package->id"
+                        :packageType="$package->tour?->name"
+                        :img="$package->getFirstMediaUrl('cover', 'optimized')"
+                        :title="$package->name"
+                        :price="$package->price"
+                        :description="$package->description"
+                        :startTime="$package->start_time"
+                    />
+                </div>
+        @endforeach
                
 
         </div>
@@ -314,14 +326,14 @@
 
             <div class="px-4 sm:px-0 w-full md:w-5/12">
                 <div class="mb-6 md:mb-16">
-                    <p class="font-inter text-gray-300 text-md sm:text-xl mb-2">Testimonials </p>
-                    <h2 class="font-roboto text-4xl xl:text-5xl font-semibold leading-tight max-w-lg">
+                    <p class="font-inter text-gray-300 text-md sm:text-xl mb-2" data-aos="fade-up" >Testimonials </p>
+                    <h2 class="font-roboto text-4xl xl:text-5xl font-semibold leading-tight max-w-lg" data-aos="fade-up">
                         What our clients <i class="font-playfair">says about us.</i>
                     </h2>
                 </div>
 
                 {{-- ? buttons --}}
-                <div class="flex flex-wrap gap-3 mb-12">
+                <div class="flex flex-wrap gap-3 mb-12" data-aos="fade-up">
                     <a href="{{ route('contact') }}#comment-form"
                         class="flex items-center gap-3 whitespace-nowrap font-inter font-medium text-sm sm:text-lg py-2.5 px-5 bg-cst-yellow-400 w-fit rounded-md text-black hover:scale-105 transition">
                         <svg class="size-5 text-black" viewBox="0 0 19 17" fill="none"
@@ -346,7 +358,7 @@
                     </a>
                 </div>
 
-                <div class="flex items-center gap-5">
+                <div class="flex items-center gap-5" data-aos="fade-up">
                     <p class="font-playfair italic font-medium text-2xl text-white">
                         Find Us :
                     </p>
@@ -354,7 +366,7 @@
                 </div>
             </div>
 
-            <div x-data="carousel()" x-init="init()" class="w-full md:w-7/12">
+            <div x-data="carousel()" x-init="init()" class="w-full md:w-7/12 " data-aos="fade-up">
                 {{-- viewport --}}
                 <div class="relative">
                     <div x-ref="viewport" class="overflow-hidden w-full">
@@ -487,35 +499,45 @@
     {{-- ? GALLERY SECTION --}}
     <section class="bg-cst-green-800">
         <div
-            class="flex flex-col items-center px-8 py-14 sm:py-20 relative overflow-x-hidden text-white container mx-auto">
+            class="flex flex-col items-center px-8 py-14 sm:py-20 relative overflow-x-hidden text-white container mx-auto overflow-y-hidden"
+        >
 
             <span class="absolute top-0 inset-x-8 h-px bg-cst-green-200/40"></span>
 
             <div class="mb-10 sm:mb-16"k>
-                <p class="font-inter text-gray-300 text-md sm:text-xl mb-2 text-center">Gallery / Pictures</p>
-                <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg text-center">
+                <p class="font-inter text-gray-300 text-md sm:text-xl mb-2 text-center" data-aos="fade-up">Gallery / Pictures</p>
+                <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg text-center" data-aos="fade-up">
                     Our <i class="font-playfair">Captured Story</i>
                 </h2>
             </div>
             <div class="flex flex-wrap gap-6 gap-y-6 w-full">
-                @foreach ($galleries as $gallery)
-                    <a href="{{ route('gallery') }}"
-                        class="group {{ $loop->index > 2 ? 'hidden sm:inline-block' : 'inline-block' }} relative flex-3 h-64 sm:h-80 lg:h-96 text-white min-w-xs font-inter">
+                @foreach ($galleries as $index => $gallery)
+                    <a 
+                        href="{{ route('gallery') }}"
+                        data-aos="fade-up"
+                        data-aos-delay="{{ $index * 100 }}" 
+                        class="group {{ $loop->index > 2 ? 'hidden sm:inline-block' : 'inline-block' }} 
+                            relative flex-3 h-64 sm:h-80 lg:h-96 text-white min-w-xs font-inter"
+                    >
                         <div 
                             class="relative flex h-full items-end transform bg-center bg-cover transition-transform group-hover:-translate-y-2"
-                            style="background-image: url('{{ $gallery->getFirstMediaUrl('picture', 'optimized')  }}');"
+                            style="background-image: url('{{ $gallery->getFirstMediaUrl('picture', 'optimized') }}');"
                         >
-                          <div class="absolute bottom-0 left-0 w-full flex flex-wrap gap-3 p-4 lg:p-6 transition-opacity duration-300 group-hover:opacity-0 z-10">
+                            <div class="absolute bottom-0 left-0 w-full flex flex-wrap gap-3 p-4 lg:p-6 
+                                        transition-opacity duration-300 group-hover:opacity-0 z-10">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent -z-10"></div>
 
-                                <h2 class="text-sm font-semibold  whitespace-nowrap">{{ $gallery->name }}</h2>
+                                <h2 class="text-sm font-semibold whitespace-nowrap">{{ $gallery->name }}</h2>
                             </div>
                         </div>
                     </a>
                 @endforeach
             </div>
-            <a href="{{ route('gallery') }}"
-                class="group mt-10 relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-transparent border-3 border-cst-yellow-400 py-2.5 px-5 text-cst-yellow-400 focus:ring-3 focus:outline-hidden">
+            <a 
+                href="{{ route('gallery') }}"
+                class="group mt-10 relative whitespace-nowrap inline-flex items-center overflow-hidden rounded-md bg-transparent border-3 border-cst-yellow-400 py-2.5 px-5 text-cst-yellow-400 focus:ring-3 focus:outline-hidden"
+                data-aos="fade-up"
+            >
                 <span class="absolute -end-full transition-all lg:group-hover:end-4">
                     <svg class="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -541,7 +563,7 @@
         </div>
 
         <div class="flex flex-col px-8 pt-8 pb-20 relative overflow-hidden text-white container mx-auto">
-            <div class="flex flex-col sm:flex-row items-center justify-between mb-10 sm:mb-16">
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-10 sm:mb-16"   data-aos="fade-up">
                 <div class="text-center sm:text-start mb-5 sm:mb-0">
                     <p class="font-inter text-gray-300 text-md sm:text-xl">Our blog / articles</p>
                     <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight max-w-lg">
@@ -563,21 +585,35 @@
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-                @foreach ($blogs as $blog)
+                @foreach ($blogs as $index => $blog)
                     <article
-                        class="{{ $loop->index < 3 ? 'block' : 'hidden sm:block' }} overflow-hidden shadow-lg transition hover:shadow-lg hover:-translate-y-2">
-                        <img alt=""
+                        data-aos="fade-up"
+                        data-aos-delay="{{ $index * 100 }}" 
+                        class="{{ $loop->index < 3 ? 'block' : 'hidden sm:block' }} 
+                            overflow-hidden shadow-lg transition hover:shadow-lg hover:-translate-y-2"
+                    >
+                        <img 
+                            alt=""
                             src="{{ $blog->getFirstMediaUrl('picture', 'optimize') }}"
-                            class="h-56 w-full object-cover" />
+                            class="h-56 w-full object-cover"
+                        />
+
                         <div class="bg-white p-4 sm:p-6 font-inter">
-                            <time datetime="{{ $blog->created_at->format('d M Y') }}" class="block text-sm italic text-gray-500">{{ $blog->created_at->format('d M Y') }}</time>
+                            <time 
+                                datetime="{{ $blog->created_at->format('Y-m-d') }}" 
+                                class="block text-sm italic text-gray-500"
+                            >
+                                {{ $blog->created_at->format('d M Y') }}
+                            </time>
+
                             <a href="{{ route('blog-detail', $blog->id) }}">
                                 <h3 class="mt-0.5 text-2xl text-gray-900 font-roboto font-semibold hover:underline">
-                                 {{  Str::limit( $blog->title, 40, '...') }}
+                                    {{ Str::limit($blog->title, 40, '...') }}
                                 </h3>
                             </a>
+
                             <p class="mt-4 line-clamp-3 text-md/relaxed text-gray-500">
-                               {{ Str::limit( $blog->content, 80, '...')  }}
+                                {{ Str::limit($blog->content, 80, '...') }}
                             </p>
                         </div>
                     </article>
@@ -590,7 +626,7 @@
     {{-- ? FAQ SECTION --}}
     <section class="flex flex-col gap-10 lg:flex-row px-8 py-24 relative overflow-hidden container mx-auto">
 
-        <div class="flex-5">
+        <div class="flex-5" data-aos="fade-up">
             <img class="w-full max-h-[20rem] sm:max-h-[45rem] object-cover object-center"
                 src="https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="">
@@ -598,8 +634,8 @@
 
         <div class="flex-7 lg:py-4">
             <div class="mb-8">
-                <p class="font-inter text-gray-500 text-md sm:text-xl">Frequently Asked Questions</p>
-                <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight">
+                <p class="font-inter text-gray-500 text-md sm:text-xl" data-aos="fade-up">Frequently Asked Questions</p>
+                <h2 class="font-roboto text-4xl lg:text-5xl font-semibold leading-tight" data-aos="fade-up">
                     What are <i class="font-playfair">people asking?</i>
                 </h2>
             </div>
@@ -608,7 +644,7 @@
 
                 <!-- FAQ 1 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 1 }">
+                    :class="{ 'border-cst-green-400': active === 1 }" data-aos="fade-up">
                     <button @click="active === 1 ? active = null : active = 1"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-base font-medium text-start">How do I book a tour package?</h2>
@@ -631,7 +667,7 @@
 
                 <!-- FAQ 2 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 2 }">
+                    :class="{ 'border-cst-green-400': active === 2 }" data-aos="fade-up" data-aos-delay="100">
                     <button @click="active === 2 ? active = null : active = 2"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-base font-medium text-start">What payment methods are accepted?</h2>
@@ -651,7 +687,7 @@
 
                 <!-- FAQ 3 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 3 }">
+                    :class="{ 'border-cst-green-400': active === 3 }" data-aos="fade-up" data-aos-delay="200">
                     <button @click="active === 3 ? active = null : active = 3"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-base font-medium text-start">Can I cancel or reschedule my booking?</h2>
@@ -672,7 +708,7 @@
 
                 <!-- FAQ 4 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 4 }">
+                    :class="{ 'border-cst-green-400': active === 4 }" data-aos="fade-up" data-aos-delay="300">
                     <button @click="active === 4 ? active = null : active = 4"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-base font-medium text-start">Do you provide airport transfers?</h2>
@@ -693,7 +729,7 @@
 
                 <!-- FAQ 5 -->
                 <div class="group border-s-4 border-cst-green-400/40 bg-gray-50 p-4"
-                    :class="{ 'border-cst-green-400': active === 5 }">
+                    :class="{ 'border-cst-green-400': active === 5 }" data-aos="fade-up" data-aos-delay="500">
                     <button @click="active === 5 ? active = null : active = 5"
                         class="flex w-full items-center justify-between gap-1.5 cursor-pointer text-gray-900 select-none">
                         <h2 class="text-base font-medium text-start">Is hotel pickup included in the tours?</h2>

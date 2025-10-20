@@ -71,12 +71,12 @@
     {{-- ? GALLERY SECTION --}}
     <section class="container mx-auto flex flex-col items-center py-12 px-8 border-b-2 border-b-gray-300">
 
-        <h2 class="font-roboto text-4xl text-center font-bold whitespace-nowrap mb-12">
+        <h2 class="font-roboto text-4xl text-center font-bold whitespace-nowrap mb-12" data-aos="fade-up">
             Our <i class="font-playfair">Gallery</i>
         </h2>
 
         <div
-            class="grid grid-cols-1 grid-rows-6 sm:grid-cols-2 sm:grid-rows-3 lg:grid-cols-4 gap-4 w-full min-h-[80rem] lg:min-h-[40rem] [&>div]:bg-gray-300">
+            class="grid grid-cols-1 grid-rows-6 sm:grid-cols-2 sm:grid-rows-3 lg:grid-cols-4 gap-4 w-full min-h-[80rem] lg:min-h-[40rem] [&>div]:bg-gray-300" data-aos="fade-up" data-aos-delay="200">
             <div class="lg:row-span-2">
                 <x-gallery-item
                     img="{{ asset('img/galleries/Nusa Penida Island.webp') }}"
@@ -123,7 +123,7 @@
             <span class="h-px flex-1 bg-gray-600"></span>
         </div>
 
-        <h2 class="font-roboto text-4xl text-center font-bold whitespace-nowrap mb-12">
+        <h2 class="font-roboto text-4xl text-center font-bold whitespace-nowrap mb-12" data-aos="fade-up">
             More <i class="font-playfair">Pictures</i>
         </h2>
 
@@ -138,7 +138,7 @@
             }"
             class="w-full"
         >
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full min-h-[25rem] mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full min-h-[25rem] mb-12" data-aos="fade-up">
                 @foreach ($moreGalleries as $index => $gallery)
                     <div x-show="{{ $index }} < visible" x-transition>
                         <x-gallery-item

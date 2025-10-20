@@ -60,15 +60,20 @@
         <div class="py-16">
             <h2 class="text-4xl font-semibold mb-8">Latest <i class="font-playfair">Articles</i></h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6">
-                @foreach ($latestBlogs as $blog)
-                    <x-blog-card 
-                        type="new"
-                        title="{{ $blog->title }}"
-                        content="{{ Str::limit(strip_tags($blog->content), 120) }}"
-                        img="{{ $blog->getFirstMediaUrl('picture', 'optimize') }}"
-                        date="{{ $blog->created_at->format('d M Y') }}"
-                        href="{{ route('blog-detail', $blog->id) }}"
-                    />
+                @foreach ($latestBlogs as $index => $blog)
+                    <div 
+                        data-aos="fade-up"
+                        data-aos-delay="{{ $index * 100 }}"
+                    >
+                        <x-blog-card 
+                            type="new"
+                            title="{{ $blog->title }}"
+                            content="{{ Str::limit(strip_tags($blog->content), 120) }}"
+                            img="{{ $blog->getFirstMediaUrl('picture', 'optimize') }}"
+                            date="{{ $blog->created_at->format('d M Y') }}"
+                            href="{{ route('blog-detail', $blog->id) }}"
+                        />
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -89,8 +94,18 @@
             <h2 class="text-4xl font-semibold mb-8">More <i class="font-playfair">Articles</i></h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 pb-10">
+                @php $columns = 3; @endphp
+
                 @foreach ($blogs as $index => $blog)
-                    <div x-show="{{ $index }} < visible" x-cloak>
+                    @php $delay = ($index % $columns) * 100; @endphp
+
+                    <div 
+                        x-show="{{ $index }} < visible"
+                        x-cloak
+                        data-aos="fade-up"
+                        data-aos-delay="{{ $delay }}"
+                        data-aos-duration="600"
+                    >
                         <x-blog-card 
                             type="default"
                             title="{{ $blog->title }}"

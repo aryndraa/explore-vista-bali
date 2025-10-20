@@ -45,7 +45,7 @@
         @yield('content')
     </main>
 
-    @include('components.partials.footer')
+    <x-footer />
 
     @livewireScripts
     

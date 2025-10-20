@@ -78,28 +78,33 @@
 
         <div class="lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8 xl:gap-10">
             <!-- Desktop Sidebar Filter -->
-            <div class="hidden lg:block lg:col-span-1 sticky top-20">
+            <div class="hidden lg:block lg:col-span-1 top-20">
                 <div class="space-y-4">
 
                     <h3 class="font-playfair text-4xl font-medium mb-8 italic">Filters</h3>
 
                     <div class="space-y-4">
-                        <x-filter-dropdown 
-                            title="Vehicle Type"
-                            wireModel="vehicleType"
-                            :options="[
-                                ['id' => 'bike', 'label' => 'Bike'],
-                                ['id' => 'car', 'label' => 'Car']
-                        ]" />
+                        <div data-aos="fade-up">   
 
-                        <x-filter-dropdown 
-                            title="Seat Amount" 
-                            wireModel="seatAmount"
-                            :options="[
-                                ['id' => '2', 'label' => '2 Seat'],
-                                ['id' => '4', 'label' => '4 Seat'],
-                                ['id' => '6', 'label' => '6 Seat'],
-                        ]" />
+                            <x-filter-dropdown 
+                                title="Vehicle Type"
+                                wireModel="vehicleType"
+                                :options="[
+                                    ['id' => 'bike', 'label' => 'Bike'],
+                                    ['id' => 'car', 'label' => 'Car']
+                            ]" />
+                        </div> 
+
+                        <div data-aos="fade-up" data-aos-delay="200">   
+                            <x-filter-dropdown 
+                                title="Seat Amount" 
+                                wireModel="seatAmount"
+                                :options="[
+                                    ['id' => '2', 'label' => '2 Seat'],
+                                    ['id' => '4', 'label' => '4 Seat'],
+                                    ['id' => '6', 'label' => '6 Seat'],
+                            ]" />
+                        </div>  
                     </div>
                 </div>
             </div>
@@ -109,8 +114,11 @@
                 <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">{{ $vehicles->count() }} Vehicle available</p>
                 <ul class="grid gap-4 sm:gap-5 lg:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
 
-                    @foreach ($vehicles as $vehicle )
-                        <li>
+                    @foreach ($vehicles as $index => $vehicle)
+                        <li 
+                            data-aos="fade-up"
+                            data-aos-delay="{{ $index * 100 }}" 
+                        >
                             <x-vehicle-card 
                                 vehicleType="{{ $vehicle->type }}" 
                                 label="{{ $vehicle->name }}"

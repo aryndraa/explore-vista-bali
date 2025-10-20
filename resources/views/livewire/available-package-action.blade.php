@@ -77,36 +77,49 @@
 
         <div class="lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8 xl:gap-10">
             <!-- Desktop Sidebar Filter -->
-            <div class="hidden lg:block lg:col-span-1   ">
+            <div class="hidden lg:block lg:col-span-1">
                 <div class="space-y-4">
-                    <h3 class="font-playfair text-4xl font-medium mb-8 italic">Filters</h3>
+                    <h3 class="font-playfair text-4xl font-medium mb-8 italic" data-aos="fade-up">Filters</h3>
 
                     <div class="space-y-4">
                           {{-- Tour Type Filter --}}
-                            <x-filter-dropdown 
+                        <div data-aos="fade-up">
+                             <x-filter-dropdown 
                                 title="Package Type" 
                                 :options="$tourTypes"
                                 wireModel="type"
                             />
+                        </div>
 
-                            {{-- Destination Filter --}}
+                        <div data-aos="fade-up" data-aos-delay="200">   
                             <x-filter-dropdown 
                                 title="Destination" 
                                 :options="$destinations"
                                 wireModel="place"
+                                data-aos="fade-up" data-aos-delay="200"
                             />
+                        </div>
+                        
                     </div>
                 </div>
             </div>
 
             <!-- Tours Grid -->
-            <div class="lg:col-span-3">
-                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6">{{ $packages->count() }}  Tours available</p>
+            <div class="lg:col-span-3"  >
+                <p class="font-inter font-semibold text-xl sm:text-2xl mb-4 sm:mb-6" data-aos="fade-up">{{ $packages->count() }}  Tours available</p>
                 <ul class="grid gap-4 sm:gap-5 lg:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 w-full">
 
-                   @foreach ($packages as $package)
-                    <li class="h-full">
-                       <x-package-card
+                @foreach ($packages as $index => $package)
+                    @php
+                        $delay = ($index % 3) * 100; 
+                    @endphp
+
+                    <li 
+                        class="h-full"
+                        data-aos="fade-up"
+                        data-aos-delay="{{ $delay }}"
+                    >
+                        <x-package-card
                             :id="$package->id"
                             :packageType="$package->tour?->name"
                             :img="$package->getFirstMediaUrl('cover', 'optimized')"
@@ -117,6 +130,7 @@
                         />
                     </li>
                 @endforeach
+
 
                 </ul>
             </div>

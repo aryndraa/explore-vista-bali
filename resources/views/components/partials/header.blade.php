@@ -13,7 +13,7 @@
         "'hover:text-cst-yellow-400': !scrolled, 'hover:text-cst-green-400 after:bg-cst-yellow-400': scrolled";
 @endphp
 
-<header x-data="{ scrolled: false, mobileOpen: false, mobileAccordionOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-50 transition-colors duration-200"
+<header x-data="{ scrolled: false, mobileOpen: false, mobileAccordionOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-[99999] transition-colors duration-200"
     :class="scrolled ? 'bg-white shadow-lg text-black' :
         '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
@@ -118,7 +118,7 @@
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('gallery') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Gallery</a>
                 <a href="{{ route('blogs') }}"
-                    class="text-inherit {{ $linksClasses }} {{ request()->routeIs('blog') ? $activeClasses : '' }}"
+                    class="text-inherit {{ $linksClasses }} {{ request()->routeIs('blogs') ? $activeClasses : '' }}"
                     :class="{ {{ $hoverClasses }} }">Blog</a>
                 <a href="{{ route('contact') }}"
                     class="text-inherit {{ $linksClasses }} {{ request()->routeIs('contact') ? $activeClasses : '' }}"
