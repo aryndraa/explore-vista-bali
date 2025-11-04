@@ -96,13 +96,37 @@
 
             <div class="flex flex-col lg:px-14 md:flex-row gap-4 lg:gap-15 items-center justify-center">
                 <div class="flex-1 w-full md:max-w-80" data-aos="fade-up">
-                    <div
-                        class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
+                   <div 
+                        x-data="{
+                            count: 0,
+                            target: {{ $hooks['journeys'] }},
+                            start() {
+                                let observer = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting) {
+                                            let step = Math.ceil(this.target / 50);
+                                            let interval = setInterval(() => {
+                                                this.count += step;
+                                                if (this.count >= this.target) {
+                                                    this.count = this.target;
+                                                    clearInterval(interval);
+                                                }
+                                            }, 100);
+                                            observer.disconnect();
+                                        }
+                                    });
+                                });
+                                observer.observe($el);
+                            }
+                        }"
+                        x-init="$nextTick(() => start())"
+                        class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40"
+                    >
                         <img class="absolute inset-0 w-full h-full object-cover -z-10"
-                            src="{{ asset('img/journeys.webp') }}"
+                            src="{{ asset('img/places.webp') }}"
                             alt="">
                         <div class="pt-32 pb-20">
-                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">{{ $hooks['journeys'] }}+</span>
+                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl" x-text="count + '+'"></span>
                         </div>
                     </div>
                     <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
@@ -116,11 +140,37 @@
                     </div>
                 </div>
                 <div class="flex-1 w-full md:max-w-80" data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
-                        <img class="absolute inset-0 w-full h-full object-cover -z-10" src="{{ asset('img/places.webp') }}" alt="">
+                    <div 
+                        x-data="{
+                            count: 0,
+                            target: {{ $hooks['places'] }},
+                            start() {
+                                let observer = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting) {
+                                            let step = Math.ceil(this.target / 50);
+                                            let interval = setInterval(() => {
+                                                this.count += step;
+                                                if (this.count >= this.target) {
+                                                    this.count = this.target;
+                                                    clearInterval(interval);
+                                                }
+                                            }, 100);
+                                            observer.disconnect();
+                                        }
+                                    });
+                                });
+                                observer.observe($el);
+                            }
+                        }"
+                        x-init="$nextTick(() => start())"
+                        class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40"
+                    >
+                        <img class="absolute inset-0 w-full h-full object-cover -z-10"
+                            src="{{ asset('img/tourists.webp') }}"
+                            alt="">
                         <div class="pt-32 pb-20">
-                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">{{ $hooks['places'] }}+</span>
+                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl" x-text="count + '+'"></span>
                         </div>
                     </div>
                     <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">
@@ -134,11 +184,37 @@
                     </div>
                 </div>
                 <div class="flex-1 w-full md:max-w-80" data-aos="fade-up" data-aos-delay="600">
-                    <div
-                        class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40">
-                        <img class="absolute inset-0 w-full h-full object-cover -z-10" src="{{ asset('img/tourists.webp') }}" alt="">
+                    <div 
+                        x-data="{
+                            count: 0,
+                            target: {{ $hooks['tourist'] }},
+                            start() {
+                                let observer = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting) {
+                                            let step = Math.ceil(this.target / 50);
+                                            let interval = setInterval(() => {
+                                                this.count += step;
+                                                if (this.count >= this.target) {
+                                                    this.count = this.target;
+                                                    clearInterval(interval);
+                                                }
+                                            }, 100);
+                                            observer.disconnect();
+                                        }
+                                    });
+                                });
+                                observer.observe($el);
+                            }
+                        }"
+                        x-init="$nextTick(() => start())"
+                        class="relative flex items-center justify-center rounded-t-3xl md:rounded-t-full overflow-hidden bg-black/40"
+                        >
+                        <img class="absolute inset-0 w-full h-full object-cover -z-10"
+                            src="{{ asset('img/tourists.webp') }}"
+                            alt="">
                         <div class="pt-32 pb-20">
-                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl">{{ $hooks['tourist'] }}+</span>
+                            <span class="font-roboto text-cst-yellow-400 font-bold text-7xl" x-text="count + '+'"></span>
                         </div>
                     </div>
                     <div class="bg-cst-green-800 px-5 py-8 flex justify-center items-center gap-3">

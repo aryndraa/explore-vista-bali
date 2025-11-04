@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\Blog\BlogController;
+use App\Http\Controllers\Web\Contact\ContactController;
 use App\Http\Controllers\Web\Gallery\GalleryController;
 use App\Http\Controllers\Web\Home\HomeController;
 use App\Http\Controllers\Web\Shuttle\ShuttleController;
@@ -40,7 +41,7 @@ Route::name('services.')
     });
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-Route::get('/contact', fn() => view('contact'))->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/comments', [TestimonialController::class, 'index'])->name('comment');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blog-detail');

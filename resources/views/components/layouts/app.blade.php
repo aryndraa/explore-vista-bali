@@ -37,7 +37,14 @@
     @livewireStyles
 </head>
 
-<body class="antialiased bg-gray-50 text-gray-800 overflow-x-hidden mx-auto font-inter">
+<body class="antialiased bg-gray-50 text-gray-800 overflow-x-hidden mx-auto font-inter relative">
+
+    <div id="loading-screen"
+        class="fixed inset-0 bg-cst-green-800 flex items-center justify-center z-[9999] transition-opacity duration-500">
+        <div class="flex flex-col items-center">
+            <p class="text-white text-3xl font-semibold">Logo</p>
+        </div>
+    </div>
 
     @include('components.partials.header', ['variant' => $variant ?? 'light'])
 

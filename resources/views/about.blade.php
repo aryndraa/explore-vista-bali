@@ -298,9 +298,9 @@
                         Our <i>Backstory</i> / our <i>Background</i>
                     </h3>
                     <p class="text-gray-200 text-lg mb-5" data-aos="fade-up">
-                        Morbi ut et et nulla leo. Amet neque posuere adipiscing ut. Sagittis odio dui risus dictumst
-                        molestie enim quis fermentum et. Feugiat nunc maecenas tellus tellus. Nam elit nam senectus dolor
-                        pulvinar.
+                        <b>Explore Vista Bali</b> was born from a passion to showcase the true beauty of the Island of the Gods. 
+                        We are a team of local travel experts dedicated to creating authentic and memorable experiences — from hidden beaches 
+                        to cultural journeys allowing every traveler to see, feel, and live the real Bali beyond the ordinary.
                     </p>
                     <x-social-media class="mb-10" data-aos="fade-up" />
 
@@ -308,14 +308,16 @@
                         What <i>have we done?</i>
                     </h3>
                     <p class="text-gray-200 mb-5 text-lg" data-aos="fade-up">
-                        Morbi ut et et nulla leo. Amet neque posuere adipiscing ut. Sagittis odio dui risus dictumst
-                        molestie enim quis fermentum et:
+                        At <b>Explore Vista Bali</b>, we’ve spent our time helping travelers explore the island in a more personal and meaningful way. 
+                        From quiet beaches to cultural villages, we aim to make every trip simple, comfortable, and memorable. 
+                        Some of the things we’ve done include:
                     </p>
                     <ul class="list-disc font-normal text-gray-200 pl-5 text-lg">
-                        <li data-aos="fade-up">Morbi ut et et nulla leo. Amet neque posuere adipiscing ut,</li>
-                        <li data-aos="fade-up">Morbi ut et et nulla leo met neque,</li>
-                        <li data-aos="fade-up">Amet neque posuere adipiscing ut.</li>
+                        <li data-aos="fade-up">Arranged private and group tours to popular and hidden destinations.</li>
+                        <li data-aos="fade-up">Worked with local guides to give travelers authentic Balinese experiences.</li>
+                        <li data-aos="fade-up">Provided reliable transport and friendly travel assistance.</li>
                     </ul>
+
                 </div>
             </div>
 

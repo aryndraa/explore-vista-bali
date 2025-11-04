@@ -1,6 +1,17 @@
 import "./bootstrap";
 window.Alpine = Alpine;
 
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loading-screen");
+    const content = document.getElementById("app-content");
+
+    loader.style.opacity = "0";
+    setTimeout(() => {
+        loader.style.display = "none";
+        content.style.opacity = "1";
+    }, 500); // waktu fade out
+});
+
 //? TEMPORARY CODE ==========================
 // if ('scrollRestoration' in history) {
 //     history.scrollRestoration = 'manual'; // or 'auto'

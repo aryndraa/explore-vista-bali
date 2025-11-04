@@ -71,7 +71,7 @@
     </section>
 
     {{-- ? CONTACT FORM --}}
-    <section class="relative container mx-auto px-8 my-8 -mt-[12rem] z-10">
+    <section class="relative container mx-auto px-8 my-8 -mt-[12rem] z-10" data-aos="fade-up">
         <div class="w-full md:w-fit mx-auto flex flex-col md:flex-row gap-8 bg-gray-100 shadow-xl p-4 rounded-md h-min">
 
             {{-- Text Part --}}
@@ -117,14 +117,14 @@
     {{-- ? OTHER METHOD SECTION --}}
     <section class="container mx-auto px-8 py-24">
 
-        <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-8">
+        <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-8" data-aos="fade-up">
             Or <i class="font-playfair">reach us</i> in another way
         </h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 gap-4 md:gap-6 max-w-5xl mx-auto">
 
             {{-- ? ADDRESS --}}
-            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm p-4 overflow-hidden">
+            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm p-4 overflow-hidden" data-aos="fade-up">
                 {{-- background circle --}}
                 <div class="absolute w-40 -left-12 top-1/2 -translate-y-1/2 aspect-square rounded-full bg-gray-200"></div>
 
@@ -138,12 +138,12 @@
 
                 <div class="flex-10">
                     <h5 class="font-roboto font-semibold text-xl mb-1">Address</h5>
-                    <p class="font-inter 2xl:text-lg">Jln. Lorem ipsum dolor sit, gg sit amet, br., lore ipsum</p>
+                    <p class="font-inter 2xl:text-lg">{{ $address }}</p>
                 </div>
             </div>
 
             {{-- ? NO TELP --}}
-            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm p-4 overflow-hidden">
+            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm p-4 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                 {{-- background circle --}}
                 <div class="absolute w-40 -left-12 top-1/2 -translate-y-1/2 aspect-square rounded-full bg-gray-200"></div>
 
@@ -160,13 +160,13 @@
                         No. Telp
                     </h5>
                     <p class="font-inter 2xl:text-lg">
-                        <a href="#">+00 (111) 222 3333</a>
+                        <a href="#">{{ $phone }}</a>
                     </p>
                 </div>
             </div>
 
             {{-- ? EMAIL --}}
-            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm p-4 overflow-hidden">
+            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm p-4 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
                 {{-- background circle --}}
                 <div class="absolute w-40 -left-12 top-1/2 -translate-y-1/2 aspect-square rounded-full bg-gray-200"></div>
 
@@ -183,13 +183,13 @@
                         Email
                     </h5>
                     <p class="font-inter 2xl:text-lg">
-                        <a href="#">emailtest@example.com</a>
+                        <a href="#">{{ $email }}</a>
                     </p>
                 </div>
             </div>
 
             {{-- ? SOCIALS --}}
-            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm py-4 px-8 overflow-hidden">
+            <div class="relative bg-gray-100 shadow-lg flex gap-8 rounded-sm py-4 px-8 overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                 <div class="flex flex-col flex-10 justify-center">
                     <h5 class="font-roboto font-semibold text-xl mb-3">
                         Socials
@@ -207,11 +207,11 @@
     {{-- ? COMMENT FORM SECTION --}}
     <section id="comment-form" class="container mx-auto px-8 py-24">
 
-        <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-12">
+        <h1 class="text-center font-roboto font-semibold text-3xl sm:text-4xl mb-12" data-aos="fade-up">
             Maybe leave <i class="font-playfair">a comment</i> for us?
         </h1>
 
-        <div class="flex flex-col md:flex-row items-center mx-auto gap-6 md:gap-12 w-full md:w-fit">
+        <div class="flex flex-col md:flex-row items-center mx-auto gap-6 md:gap-12 w-full md:w-fit" data-aos="fade-up">
             {{-- illustration --}}
             <div class="">
                 <img class="w-1/2 md:w-[40rem] mx-auto" src="{{ asset('illustration/comment-form-illustration.svg') }}"
