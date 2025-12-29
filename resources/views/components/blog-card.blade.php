@@ -33,7 +33,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3" />
                 </svg>
             </a>
-            <i class="text-cst-green-200 font-medium text-sm col-span-2  {{ $type === 'new' ? 'block' : 'hidden' }}">{{ $date }}</i>
+            {{-- <i class="text-cst-green-200 font-medium text-sm col-span-2  {{ $type === 'new' ? 'block' : 'hidden' }}">{{ $date }}</i> --}}
         </div>
     </div>
 </div>
