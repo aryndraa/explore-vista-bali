@@ -78,4 +78,6 @@ AOS.init({
     once: false,
     mirror: false,
     anchorPlacement: "top-bottom",
+
+    once: true,
 });
