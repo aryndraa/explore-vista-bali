@@ -21,11 +21,11 @@
 
     {{-- ? HERO SECTION --}}
     <section class="relative min-h-[100vh] flex items-end  pb-20 2xl:pb-28 text-white">
-        <div class="absolute inset-y-0 inset-0 bg-black -z-20 min-h-[100dvh] ">
-            <video autoplay loop class="opacity-50 h-full w-full object-cover min-h-[100dvh] "
+        {{-- <div class="absolute inset-y-0 inset-0 bg-black -z-20">
+            <video autoplay loop class="opacity-50 h-full w-full object-cover  "
                 src="{{ asset('video/1013.mp4') }}">
             </video>
-        </div>
+        </div> --}}
 
         <div
             class="flex flex-col lg:flex-row w-full justify-between gap-20 items-center lg:items-end px-8 container mx-auto" data-aos="fade-up" >
