@@ -280,7 +280,7 @@
 
             <div class="flex flex-col text-center w-fit mb-10 mx-auto">
                 <p class="font-inter text-cst-green-200 text-md sm:text-xl" data-aos="fade-up">Our team</p>
-                <h2 class="font-roboto text-4xl font-semibold whitespace-nowrap" data-aos="fade-up" >
+                <h2 class="font-roboto text-4xl font-semibold " data-aos="fade-up" >
                     Who is behind <i class="font-playfair">the scene?</i>
                 </h2>
             </div>
@@ -451,7 +451,7 @@
     </section>
 
     {{-- ? OFFICE LOCATION SECTION --}}
-    {{-- <section class="container mx-auto py-24 px-8">
+    <section class="container mx-auto py-24 px-8">
 
         <div class="mb-8">
             <p class="font-inter text-gray-500 text-md text-center sm:text-xl" data-aos="fade-up" >
@@ -469,6 +469,6 @@
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-    </section> --}}
+    </section>
 
 @endsection

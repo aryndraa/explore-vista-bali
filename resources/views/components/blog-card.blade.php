@@ -8,7 +8,7 @@
 ])
 
 <div
-    class="flex {{ $type === 'new' ? 'flex-row h-[17rem]' : 'flex-col' }} bg-cst-green-800 rounded-xl overflow-hidden transform -translate-x-1">
+    class="flex {{ $type === 'new' ? 'flex-col md:flex-row md:h-[17rem]' : 'flex-col' }} bg-cst-green-800 rounded-xl overflow-hidden transform -translate-x-1">
     
     {{-- Gambar --}}
     <img 

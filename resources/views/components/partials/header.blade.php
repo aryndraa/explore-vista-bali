@@ -13,7 +13,7 @@
         "'hover:text-cst-yellow-400': !scrolled, 'hover:text-cst-green-400 after:bg-cst-yellow-400': scrolled";
 @endphp
 
-<header x-data="{ scrolled: false, mobileOpen: false, mobileAccordionOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-[999] transition-colors duration-200 py-4"
+<header x-data="{ scrolled: false, mobileOpen: false, mobileAccordionOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-[999] transition-colors duration-200 py-3"
     :class="scrolled ? 'bg-white shadow-lg text-black ' :
         '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
@@ -21,7 +21,7 @@
         <div class="grid grid-cols-2 lg:grid-cols-4 h-16">
 
             {{-- ? Logo --}}
-            <a href="{{ route('home') }}" class="text-2xl font-bold flex items-center text-inherit font-playfair">
+            <a href="{{ route('home') }}" class="text-lg md:text-2xl  font-bold flex items-center text-inherit font-playfair">
                 Explore Vista Bali
             </a>
 
@@ -207,7 +207,7 @@
         x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
         x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-2"
-        class="container mx-auto fixed min-w-[17rem] left-1/2 -translate-x-1/2 top-16 bg-white backdrop-blur-sm border-t border-gray-700 lg:hidden max-h-[calc(100vh-4rem)] overflow-auto shadow-md">
+        class="container mx-auto fixed min-w-[17rem] left-1/2 -translate-x-1/2 top-24 bg-white backdrop-blur-sm border-t border-gray-700 lg:hidden max-h-[calc(100vh-4rem)] overflow-auto shadow-md">
         <ul class="p-4 px-8 text-black text-right">
             <li>
                 <a href="{{ route('home') }}"
