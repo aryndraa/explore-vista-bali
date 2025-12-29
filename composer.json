@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.10.1",
         "league/commonmark": "^2.7",
         "livewire/livewire": "^3.6",
-        "spatie/image": "^3.8"
+        "spatie/image": "^3.8",
+        "spatie/laravel-sitemap": "^7.3"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.6",
