@@ -20,7 +20,7 @@
 @section('content')
 
     {{-- ? HERO SECTION --}}
-    <section class="relative  flex items-end  pb-20 2xl:pb-28 text-white">
+    <section class="relative min-h-screen flex items-end  pb-20 2xl:pb-28 text-white">
         <div class="absolute inset-y-0 inset-0 bg-black -z-20">
             <video autoplay loop class="opacity-50 h-full w-full object-cover"
                 src="{{ asset('video/1013.mp4') }}">
@@ -28,7 +28,7 @@
         </div>
 
         <div
-            class="flex flex-col min-h-[100vh] lg:flex-row w-full justify-between gap-20 items-center lg:items-end px-8 container mx-auto" data-aos="fade-up" >
+            class="flex flex-col lg:flex-row w-full justify-between gap-20 items-center lg:items-end px-8 container mx-auto" data-aos="fade-up" >
             <div class="flex flex-col items-center md:items-start" >
                 <p
                     class="text-start md:text-center text-gray-200 py-2 px-4 rounded-md text-base w-fit font-inter italic mb-1 backdrop-blur-[10px] backdrop-saturate-[165%] bg-[rgba(160,160,160,0.2)] border border-[rgba(255,255,255,0.125)]">
