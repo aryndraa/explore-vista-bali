@@ -35,13 +35,6 @@ class TestimonialController extends Controller
             'is_active' => false, 
         ]);
 
-         User::all()->each(function ($admin) use ($comment) {
-            Notification::make()
-                ->title('New comment received')
-                ->body("{$comment->name} has just submitted a new testimonial.")
-                ->sendToDatabase($admin);
-        });
-
         return back();
     }
 }

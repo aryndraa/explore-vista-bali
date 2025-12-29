@@ -40,15 +40,6 @@ class ShuttleController extends Controller
     public function booking(BookingRequest $request)
     {
         $booking = ShuttleBooking::query()->create($request->all());
-
-        User::all()->each(function ($admin) use ($booking) {
-            Notification::make()
-                ->title('🚐 New Shuttle Booking Received')
-                ->body("📍 {$booking->customer_name} has booked a {$booking->shuttle->type} shuttle from {$booking->from} to {$booking->to} on " 
-                    . \Carbon\Carbon::parse($booking->booking_date)->format('d M Y') 
-                    . " at {$booking->pickup_time} WITA. 👥 People: {$booking->people_amount}.")
-                ->sendToDatabase($admin);
-        });
         
         $shuttle = $booking->shuttle ?? null;
         $vehicle = $booking->vehicle ?? null;

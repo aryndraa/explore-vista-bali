@@ -57,13 +57,6 @@ class TourPackageController extends Controller
             'status' => 'pending', // default status
         ]);
 
-        User::all()->each(function ($admin) use ($booking) {
-            Notification::make()
-                ->title('New Booking Received')
-                ->body("📌 {$booking->customer_name} has booked the package '{$booking->package->title}' on " . \Carbon\Carbon::parse($booking->booking_date)->format('d M Y') . ". People: {$booking->people_amount}.")
-                ->sendToDatabase($admin);
-        });
-
 
         $message = "Hello, I would like to confirm my tour booking:\n\n"
             . "*Package:* {$package->title}\n"

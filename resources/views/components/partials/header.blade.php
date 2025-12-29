@@ -13,16 +13,16 @@
         "'hover:text-cst-yellow-400': !scrolled, 'hover:text-cst-green-400 after:bg-cst-yellow-400': scrolled";
 @endphp
 
-<header x-data="{ scrolled: false, mobileOpen: false, mobileAccordionOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-[999] transition-colors duration-200"
-    :class="scrolled ? 'bg-white shadow-lg text-black' :
+<header x-data="{ scrolled: false, mobileOpen: false, mobileAccordionOpen: false }" x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 50)" class="fixed inset-x-0 top-0 z-[999] transition-colors duration-200 py-4"
+    :class="scrolled ? 'bg-white shadow-lg text-black ' :
         '{{ $variant === 'light' ? 'bg-transparent text-white' : 'bg-transparent text-black' }}'">
 
     <div class="mx-auto px-8 container">
         <div class="grid grid-cols-2 lg:grid-cols-4 h-16">
 
             {{-- ? Logo --}}
-            <a href="{{ route('home') }}" class="text-2xl font-bold font-roboto flex items-center text-inherit ">
-                LOGO
+            <a href="{{ route('home') }}" class="text-2xl font-bold flex items-center text-inherit font-playfair">
+                Explore Vista Bali
             </a>
 
             {{-- ? Desktop nav --}}

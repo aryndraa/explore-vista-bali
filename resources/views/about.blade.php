@@ -451,7 +451,7 @@
     </section>
 
     {{-- ? OFFICE LOCATION SECTION --}}
-    <section class="container mx-auto py-24 px-8">
+    {{-- <section class="container mx-auto py-24 px-8">
 
         <div class="mb-8">
             <p class="font-inter text-gray-500 text-md text-center sm:text-xl" data-aos="fade-up" >
@@ -469,6 +469,6 @@
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-    </section>
+    </section> --}}
 
 @endsection
