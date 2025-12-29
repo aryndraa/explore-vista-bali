@@ -20,7 +20,7 @@
 @section('content')
 
     {{-- ? HERO SECTION --}}
-    <section class="relative min-h-[100dvh] flex items-end  pb-20 2xl:pb-28 text-white">
+    <section class="relative min-h-[110dvh] lg:min-h-[100dvh] flex items-end  pb-20 2xl:pb-28 text-white">
         <div class="absolute inset-y-0 inset-0 bg-black -z-20 min-h-[100dvh]">
             <video autoplay loop class="opacity-50 h-full w-full object-cover min-h-[100dvh]"
                 src="{{ asset('video/1013.mp4') }}">
